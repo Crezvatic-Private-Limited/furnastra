@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Outfit:wght@500;600;700;800&family=EB+Garamond:ital,wght@1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F5FA;font-variant-numeric:lining-nums;color:#2A3373;font-family:Raleway,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+*{box-sizing:border-box}
+a{color:#44499E;text-decoration:none}
+a:hover{color:#2A3373}
+img{display:block}
+html{scroll-behavior:smooth}
+.nav-link{display:flex;align-items:center;gap:8px;color:#44499E;padding:8px 0;transition:color 200ms}
+.nav-link:hover{color:#2A3373}
+.nav-dd{position:relative}
+.dd-chev{transition:transform 250ms ease}
+.dd-menu{position:absolute;top:100%;left:-18px;padding-top:18px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity 200ms ease,transform 200ms ease,visibility 200ms}
+.nav-dd:hover .dd-menu,.nav-dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:none}
+.nav-dd:hover .dd-chev,.nav-dd:focus-within .dd-chev{transform:rotate(180deg)}
+.dd-panel{min-width:240px;background:#FFFFFF;border:1px solid #E4E7EF;border-radius:14px;box-shadow:0 18px 40px rgba(42,51,115,0.12);padding:8px;display:flex;flex-direction:column}
+.dd-panel a{display:flex;justify-content:space-between;gap:20px;padding:11px 14px;border-radius:9px;font-size:15px;font-weight:600;color:#2A3373}
+.dd-panel a span{font-weight:500;font-size:13px;color:#5B5F63}
+.dd-panel a:hover{background:#F4F5FA;color:#2A3373}
+.set-row{display:flex;gap:clamp(12px,1.2vw,16px);height:clamp(360px,calc(100vh - 88px - 260px),560px)}
+.set-card{position:relative;flex:1 1 0;min-width:0;border-radius:20px;overflow:hidden;background:#2A3373;color:#FFFFFF;transition:flex 650ms cubic-bezier(.2,.7,.2,1)}
+a.set-card,a.set-card:hover{color:#FFFFFF}
+.set-row:hover .set-card{flex:0.85 1 0}
+.set-row .set-card:hover{flex:1.9 1 0}
+.set-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 900ms cubic-bezier(.2,.7,.2,1)}
+.set-card:hover img{transform:scale(1.06)}
+.set-card .set-desc{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows 550ms cubic-bezier(.2,.7,.2,1),opacity 400ms ease}
+.set-card:hover .set-desc{grid-template-rows:1fr;opacity:1}
+.set-card .set-go{transform:translateX(-6px);opacity:0;transition:all 400ms ease}
+.set-card:hover .set-go{transform:none;opacity:1}
+</style>
+</helmet>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:60;background:#FFFFFF;border-bottom:2px solid #F59067;box-shadow:{{ hdrShadow }};transition:box-shadow 400ms ease">
+  <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px);height:86px;display:flex;align-items:center;gap:clamp(16px,2.4vw,40px)">
+    <a href="#hero" style="display:flex;align-items:flex-start;gap:2px;flex:none"><img src="assets/logo-color.svg" alt="Furnastra" style="height:clamp(26px,2.6vw,34px);width:auto"><span style="font-size:8px;font-weight:600;color:#44499E;line-height:1">™</span></a>
+    <nav style="display:flex;justify-content:center;align-items:center;gap:clamp(14px,2.4vw,36px);font-size:clamp(13.5px,1.15vw,16px);font-weight:500;letter-spacing:0.01em;flex:1;min-width:0;white-space:nowrap">
+      <div class="nav-dd">
+        <a href="#products" class="nav-link">Product <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd-menu"><div class="dd-panel">
+          <a href="#products">Raksha <span>Head &amp; foot bows</span></a>
+          <a href="#products">Sahara <span>Side railings</span></a>
+          <a href="#products">Setu <span>Bed platforms</span></a>
+          <a href="#products">Aakaar <span>Buffer wheels</span></a>
+          <a href="#products">Rahat <span>Over bed tables</span></a>
+          <a href="#products">Rudra <span>Bedside lockers</span></a>
+          <a href="#products">Jivan <span>Spine boards</span></a>
+        </div></div>
+      </div>
+      <a href="#oem" class="nav-link">OEM Solutions</a>
+      <a href="#manufacturing" class="nav-link">Manufacturing</a>
+      <a href="#legacy" class="nav-link">About</a>
+      <div class="nav-dd">
+        <a href="#resources" class="nav-link">Resources <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="dd-menu"><div class="dd-panel">
+          <a href="#resources">Product catalogue</a>
+          <a href="#resources">Technical datasheets</a>
+          <a href="#resources">Insights</a>
+          <a href="#resources">News &amp; events</a>
+        </div></div>
+      </div>
+      <a href="#rfq" class="nav-link">Contact</a>
+    </nav>
+    <a href="#rfq" style="display:flex;align-items:center;gap:12px;background:#E8966C;color:#FFFFFF;font-weight:500;font-size:clamp(14px,1.15vw,16px);letter-spacing:0.01em;padding:clamp(12px,1.1vw,16px) clamp(16px,1.6vw,24px);border-radius:12px;white-space:nowrap;flex:none;transition:background 200ms" style-hover="background:#DE8459;color:#FFFFFF">Request a quote <span style="font-size:17px">→</span></a>
+  </div>
+</header>
+
+<section id="hero" data-screen-label="01 Hero" style="position:relative;overflow:hidden;background:#F4F5FA;color:#2A3373;padding-top:88px;border-bottom:1px solid #E4E7EF">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+  <div style="position:absolute;right:-7.5vw;top:calc(388px - 29.5vw);width:59vw;aspect-ratio:1/1;border-radius:50%;border:6vw solid #ECEDF8"></div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(32px,4vw,56px) clamp(20px,4vw,72px) clamp(20px,2.4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(24px,2.5vw,40px);align-items:center;min-height:min(700px,calc(100vh - 88px))">
+    <div style="position:relative;z-index:2;container-type:inline-size;display:flex;flex-direction:column;gap:clamp(22px,2.2vw,32px)">
+      <div data-reveal="up" style="display:flex;align-items:center;gap:14px;font-size:clamp(13px,1.1vw,15.5px);font-weight:500;letter-spacing:0.06em;color:#E8966C">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>HEALTHCARE FURNITURE COMPONENTS FOR OEMs
+      </div>
+      <h1 data-stagger="120" style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E">
+        <span style="display:block;white-space:nowrap">Components Engineered</span>
+        <span style="display:block;white-space:nowrap">for Healthcare Furniture.</span>
+      </h1>
+      <p data-reveal="up" data-delay="300" style="margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#5B5F63;max-width:560px;text-wrap:pretty">Explore Furnastra’s range of healthcare furniture components, backed by 35+ years of manufacturing expertise and custom product development capabilities.</p>
+      <div data-reveal="up" data-delay="420" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(4px,1vw,14px)">
+        <a href="#products" style="display:flex;align-items:center;gap:14px;background:#E8966C;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#DE8459;color:#FFFFFF">Explore Products <span>→</span></a>
+        <a href="#oem" style="display:flex;align-items:center;gap:14px;background:transparent;color:#44499E;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2.4vw,40px);border:1.5px solid #44499E;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#FFFFFF;color:#44499E">Discuss Your Requirement <span>→</span></a>
+      </div>
+    </div>
+    <div style="position:relative">
+      <div data-depth="14" style="position:relative;width:92%;margin:clamp(64px,6.5vw,96px) 0 clamp(8px,1vw,16px) auto">
+        <div data-float="12" data-dur="5200" style="position:relative;width:100%;aspect-ratio:1252/1090">
+          <img src="assets/p6.png" alt="Hospital bed assembled from Furnastra components" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:{{ bedFilter }};transition:filter 450ms ease">
+          <img src="assets/p6.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;clip-path:{{ spotClip }};opacity:{{ spotOp }};transition:clip-path 500ms cubic-bezier(.2,.7,.2,1),opacity 350ms ease">
+          <sc-for list="{{ callouts }}" as="c" hint-placeholder-count="4">
+            <div onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" style="position:absolute;inset:0;pointer-events:none;opacity:{{ c.op }};transition:opacity 350ms ease;z-index:{{ c.z }}">
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible"><polyline points="{{ c.pts }}" fill="none" stroke="#E8966C" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg>
+              <span style="position:absolute;left:{{ c.dx }};top:{{ c.dy }};width:0;height:0;pointer-events:auto;cursor:pointer">
+                <span data-pulse="1" style="position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;background:rgba(232,150,108,0.4)"></span>
+                <span style="position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%"></span>
+                <span style="position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#E8966C;border:3px solid #FFFFFF;box-shadow:0 0 0 4px rgba(232,150,108,0.28)"></span>
+              </span>
+              <div style="position:absolute;left:{{ c.lx }};top:{{ c.ly }};transform:{{ c.ltf }};pointer-events:auto;cursor:pointer;white-space:nowrap;background:#FFFFFF;border:1px solid {{ c.bd }};border-left:3px solid #E8966C;box-shadow:{{ c.sh }};padding:9px clamp(16px,1.6vw,26px) 9px 14px;display:flex;flex-direction:column;gap:1px;transition:border-color 300ms,box-shadow 300ms">
+                <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.08em;color:#6B7280">{{ c.code }}</span>
+                <span style="font-size:clamp(15px,1.25vw,18px);font-weight:800;line-height:1.2;color:#1C2258">{{ c.name }}</span>
+                <span style="font-size:clamp(12.5px,1vw,14px);font-weight:500;color:#2A3373">{{ c.type }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px) clamp(48px,5vw,72px)">
+    <div data-stagger="110" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.2vw,18px)">
+      <sc-for list="{{ keyStats }}" as="k" hint-placeholder-count="4">
+        <div style="position:relative;overflow:hidden;display:flex;flex-direction:column;gap:clamp(16px,1.6vw,22px);padding:clamp(22px,2vw,30px) clamp(20px,1.8vw,28px) clamp(24px,2.2vw,32px);border-radius:18px;background:{{ k.bg }};border:1px solid {{ k.bd }};min-height:clamp(170px,14vw,200px)">
+          <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:{{ k.ring }};-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+          <span style="position:relative;display:flex;align-items:baseline;font-family:Raleway,system-ui,sans-serif;font-weight:500;font-size:clamp(40px,4vw,60px);line-height:1;letter-spacing:-0.02em;color:{{ k.num }}"><span data-count="{{ k.v }}" data-suffix="{{ k.suf }}">{{ k.v }}{{ k.suf }}</span><span style="font-size:0.42em;font-weight:600;letter-spacing:0;margin-left:8px">{{ k.unit }}</span></span>
+          <span style="position:relative;display:flex;gap:10px;align-items:flex-start;margin-top:auto">
+            <span style="width:8px;height:8px;border-radius:50%;background:{{ k.dot }};flex:none;margin-top:7px"></span>
+            <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:clamp(14px,1.1vw,16px);font-weight:600;line-height:1.35;color:{{ k.fg }}">{{ k.label }}</span><span style="font-size:12.5px;line-height:1.4;color:{{ k.sub }}">{{ k.note }}</span></span>
+          </span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="brand-story" data-screen-label="02 Brand Story" style="position:relative;background:#FFFFFF;overflow:hidden;scroll-margin-top:88px">
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(20px,4vw,72px) clamp(88px,9vw,136px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,5.5vw,96px);align-items:stretch">
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column">
+      <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C;margin-bottom:20px">OUR STORY</div>
+      <h2 data-reveal="up" style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E">The next era of<br>healthcare <span style="color:#E8966C">is here.</span></h2>
+      <div data-reveal="line" style="display:flex;align-items:center;gap:8px;margin:22px 0 clamp(26px,2.6vw,36px);transform-origin:left">
+        <span style="width:clamp(140px,14vw,200px);height:2px;background:#E8966C"></span>
+        <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>
+      </div>
+      <div style="--g:clamp(12px,1.3vw,18px);position:relative;display:flex;flex-direction:column;gap:var(--g);padding-bottom:30px">
+        <sc-for list="{{ milestones }}" as="ms" hint-placeholder-count="4">
+          <div onMouseEnter="{{ ms.enter }}" onMouseLeave="{{ ms.leave }}" data-reveal="up" style="position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);gap:clamp(20px,2vw,28px);align-items:start;cursor:pointer">
+            <span style="position:absolute;left:25px;top:52px;width:2px;height:calc(100% - 52px + var(--g) + {{ ms.tail }});background:#F3C9B3"></span>
+            <span style="position:absolute;left:25px;top:52px;width:2px;height:calc(100% - 52px + var(--g) + {{ ms.tail }});background:#E8966C;transform-origin:top;transform:scaleY({{ ms.seg }});transition:transform 600ms cubic-bezier(.2,.7,.2,1)"></span>
+            <span style="position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ ms.circle }};box-shadow:0 0 0 {{ ms.haloW }} rgba(232,150,108,0.22);color:#FFFFFF;font-size:{{ ms.yearSize }};font-weight:600;letter-spacing:0.01em;transition:background 400ms ease,box-shadow 400ms ease">{{ ms.badge }}</span>
+            <span style="display:flex;flex-direction:column;padding-top:13px">
+              <span style="font-size:clamp(16px,1.3vw,19px);font-weight:{{ ms.weight }};line-height:1.3;color:{{ ms.titleFg }};transition:color 300ms">{{ ms.title }}</span>
+              <span style="display:grid;grid-template-rows:{{ ms.rows }};opacity:{{ ms.descOp }};transition:grid-template-rows 550ms cubic-bezier(.2,.7,.2,1),opacity 450ms ease">
+                <span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:6px;font-size:14.5px;line-height:1.55;color:#5B5F63;max-width:400px">{{ ms.desc }}</span></span>
+              </span>
+            </span>
+          </div>
+        </sc-for>
+        <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true" style="position:absolute;left:19px;bottom:0"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>
+      </div>
+      <a href="#legacy" data-reveal="up" style="margin-top:clamp(28px,2.8vw,40px);align-self:flex-start;display:flex;align-items:center;gap:14px;background:#2A3373;color:#FFFFFF;font-weight:600;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;padding:16px 30px;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#44499E;color:#FFFFFF">Discover Our Story <span>→</span></a>
+    </div>
+    <div style="position:relative;display:flex;flex-direction:column;gap:clamp(24px,2.4vw,34px);padding-top:clamp(0px,3.4vw,50px)">
+      <div>
+      <p data-reveal="up" data-delay="80" style="margin:0 0 12px;font-size:clamp(18px,1.55vw,22px);font-weight:500;line-height:1.45;color:#2A3373;max-width:540px;text-wrap:balance">Fueled by 35+ years of world-class plastic manufacturing precision.</p>
+      <p data-reveal="up" data-delay="160" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#5B5F63;max-width:540px;text-wrap:pretty">Furnastra was born in 2024 from a legacy that Mitsu Chem Plast Limited has built over decades as a pioneer in plastic blow-moulded and injection-moulded manufacturing in India. Today, we stand as India’s leading hospital furniture components manufacturer, carrying forward a foundation of quality, innovation and trust into a brand built entirely for modern healthcare.</p>
+      </div>
+      <div style="position:relative;flex:1;min-height:clamp(240px,22vw,340px)">
+        <div data-reveal="scale" style="position:absolute;inset:0;border-top-left-radius:clamp(90px,9vw,140px);overflow:hidden;background:#2A3373;box-shadow:0 30px 60px rgba(42,51,115,0.18)">
+          <img src="assets/story-moulding.jpg" alt="Injection moulding machines on a factory floor" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 45%">
+          <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.5) 0%,rgba(28,34,88,0.05) 30%,rgba(28,34,88,0.2) 55%,rgba(28,34,88,0.92) 100%)"></span>
+          <span style="position:absolute;right:clamp(18px,2vw,26px);top:clamp(16px,1.8vw,24px);display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(28,34,88,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.14);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;color:#FFFFFF"><span style="width:6px;height:6px;border-radius:50%;background:#E8966C;flex:none"></span>{{ msCard.tag }}</span>
+          <span style="position:absolute;left:clamp(20px,2.2vw,30px);right:24px;bottom:clamp(20px,2.2vw,28px);display:flex;flex-direction:column;gap:6px;padding-left:clamp(44px,4vw,60px)">
+            <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3vw,46px);line-height:1;color:#FFFFFF">{{ msCard.year }}</span>
+            <span style="font-size:14px;line-height:1.45;color:#E4E8FF;max-width:420px">{{ msCard.title }}</span>
+          </span>
+        </div>
+      <div style="position:absolute;left:calc(-1 * clamp(50px,4.4vw,64px));bottom:clamp(28px,3vw,44px);width:clamp(100px,8.8vw,128px);aspect-ratio:1/1;border-radius:50%;background:#FFFFFF;box-shadow:0 18px 40px rgba(42,51,115,0.16);display:flex;align-items:center;justify-content:center;z-index:3">
+        <svg data-spin="28" viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;inset:6%;width:88%;height:88%"><defs><path id="isoRing" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text style="font:600 9.2px Raleway,sans-serif;letter-spacing:2.4px;fill:#44499E"><textPath href="#isoRing">ISO 13485 · ISO 9001 · ISO 45001 · </textPath></text></svg>
+        <span style="display:flex;flex-direction:column;align-items:center;line-height:1"><span style="font-weight:800;font-size:clamp(15px,1.3vw,18px);color:#E8966C">ISO</span><span style="font-size:9px;font-weight:600;letter-spacing:0.12em;color:#5B5F63;margin-top:3px">CERTIFIED</span></span>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hidden for now: remove "display:none;" to bring the Inside the Bed section back -->
+<section id="story" data-screen-label="03 Inside the Bed" style="display:none;position:relative;height:420vh;background:#F4F5FA">
+  <div style="position:sticky;top:0;height:100vh;min-height:620px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);max-width:1440px;margin:0 auto;padding:112px clamp(20px,4vw,72px) 40px;gap:40px;align-items:center">
+    <div style="position:absolute;right:-12vw;top:50%;width:70vw;max-width:980px;aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(40px,6vw,90px) solid #E9EBFA"></div>
+    <div style="position:relative;display:grid;grid-template-columns:28px minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center">
+      <div style="position:relative;height:300px;width:2px;background:#D7DEFF;justify-self:center">
+        <div data-story-bar="1" style="position:absolute;left:0;top:0;width:2px;height:100%;background:#E8966C;transform-origin:top;transform:scaleY(0)"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C">INSIDE A FURNASTRA-BUILT BED</div>
+        <div style="display:flex;align-items:baseline;gap:12px;font-family:Raleway,system-ui,sans-serif;color:#44499E">
+          <span style="font-size:clamp(64px,7vw,108px);font-weight:600;line-height:0.9;letter-spacing:-0.03em">{{ story.n }}</span>
+          <span style="font-size:clamp(18px,1.5vw,22px);font-weight:500;color:#6B7280">/ 04</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:clamp(13px,1.1vw,15px);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#E8966C">{{ story.type }}</span>
+          <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(40px,4.2vw,64px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">{{ story.name }}</span>
+        </div>
+        <p style="margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#5B5F63;max-width:460px;min-height:90px;text-wrap:pretty">{{ story.desc }}</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <sc-for list="{{ storyTabs }}" as="t" hint-placeholder-count="4">
+            <button onClick="{{ t.go }}" style="all:unset;cursor:pointer;font-size:15px;font-weight:500;letter-spacing:0.03em;padding:11px 22px;border-radius:12px;background:{{ t.bg }};color:{{ t.fg }};border:1.5px solid {{ t.bd }};transition:all 300ms">{{ t.name }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;height:100%;min-height:420px">
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.0.op }};transform:{{ storyImgs.0.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p49.png" alt="Raksha" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,51,115,0.22))"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.1.op }};transform:{{ storyImgs.1.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p14.png" alt="Sahara" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,51,115,0.22))"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.2.op }};transform:{{ storyImgs.2.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p25.png" alt="Setu" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,51,115,0.22))"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.3.op }};transform:{{ storyImgs.3.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p27.png" alt="Aakaar" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,51,115,0.22))"></div>
+      <div style="position:absolute;right:0;bottom:8px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#6B7280">SCROLL TO MOVE THROUGH THE BED ↓</div>
+    </div>
+  </div>
+</section>
+
+<section id="products" data-screen-label="04 Catalogue" style="background:#FFFFFF;scroll-margin-top:88px">
+  <div aria-hidden="true" style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px)"><div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:#E4E7EF"></span><svg width="14" height="14" viewBox="0 0 20 20" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg><span style="flex:1;height:1px;background:#E4E7EF"></span></div></div>
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(28px,4.5vh,56px) clamp(20px,4vw,72px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,2.6vw,36px);flex-wrap:wrap">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C">COMPONENT CATALOGUE</div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E">Seven families. One moulding partner.</h2>
+      </div>
+      <a data-reveal="up" href="#products" style="display:flex;align-items:center;gap:14px;color:#44499E;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #44499E;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#44499E;color:#FFFFFF">View All Products <span>→</span></a>
+    </div>
+    <div data-stagger="70" style="display:grid;grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,clamp(180px,calc((100vh - 88px - 212px) / 2),290px));gap:clamp(12px,1.2vw,16px)">
+      <a href="#products" data-tilt="1" style="grid-row:span 2;position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#2A3373;border-radius:18px;padding:clamp(22px,2.2vw,30px);overflow:hidden;color:#FFFFFF">
+        <div style="position:absolute;right:-30%;bottom:-25%;width:100%;aspect-ratio:1/1;border-radius:50%;border:48px solid rgba(215,222,255,0.06)"></div>
+        <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:12px"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Head / Foot Bows</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(36px,3.4vw,52px);line-height:1.05;letter-spacing:-0.015em">Raksha</span></span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:rgba(215,222,255,0.14);white-space:nowrap">11 variants</span></div>
+        <img data-tilt-img="1" src="assets/p49.png" alt="Raksha head and foot bows" style="position:relative;align-self:center;max-width:78%;max-height:58%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,0.35))">
+        <span style="position:relative;display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:500"><span style="color:#D7DEFF">Incl. Raksha 4 (M4) with integrated CPR board</span><span style="color:#E8966C">→</span></span>
+      </a>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#F4F5FA;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Side Railings</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">Sahara</span></span>
+        <img data-tilt-img="1" src="assets/p14.png" alt="Sahara side railings" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">9 variants</span>
+      </a>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#EEF0FB;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Bed Platforms</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">Setu</span></span>
+        <img data-tilt-img="1" src="assets/p25.png" alt="Setu bed platforms" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">2 variants</span>
+      </a>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#E8966C;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF">Buffer Wheels</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Aakaar</span></span>
+        <img data-tilt-img="1" src="assets/p27.png" alt="Aakaar buffer wheels" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:rgba(255,255,255,0.9);max-width:48%">1 variant</span>
+      </a>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#EEF0FB;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Over Bed Tables</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">Rahat</span></span>
+        <img data-tilt-img="1" src="assets/p29.png" alt="Rahat over bed table" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">2 variants</span>
+      </a>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#F4F5FA;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Bedside Lockers</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">Rudra</span></span>
+        <img data-tilt-img="1" src="assets/p32.png" alt="Rudra bedside locker components" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">Top · Door · Drawer · Handles</span>
+      </a>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#2A3373;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Spine Boards</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Jivan</span></span>
+        <img data-tilt-img="1" src="assets/p33.png" alt="Jivan spine board" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain;transform:rotate(-62deg);transform-origin:center;max-height:118%;max-width:26%;right:12%;bottom:-24%">
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#D7DEFF;max-width:48%">3 variants · incl. head immobilizer</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="talk" data-screen-label="04b Mid-Page CTA" style="background:#FFFFFF">
+  <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px) clamp(88px,9vw,136px)">
+    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:24px;background:#F4F5FA;border:1px solid #E4E7EF;padding:clamp(36px,4.4vw,64px) clamp(28px,4.4vw,64px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center">
+      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+      <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(36px,4vw,60px) solid #E9EBFA"></div>
+      <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%)"><div data-spin="90" style="position:absolute;inset:-5%;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#E8966C"></span></div></div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:clamp(16px,1.6vw,22px)">
+        <div style="display:flex;align-items:center;gap:12px;font-size:clamp(12.5px,1vw,14px);font-weight:500;letter-spacing:0.06em;color:#E8966C">
+          <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>GET IN TOUCH
+        </div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,46px);line-height:1.16;letter-spacing:-0.015em;color:#44499E;text-wrap:balance">Have a Hospital Furniture Requirement? <span style="color:#E8966C">Let’s Talk.</span></h2>
+        <p style="margin:0;font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:#5B5F63;max-width:520px">Share a drawing, part number or sample photo and our team will come back with a fitment and quotation.</p>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;justify-self:end">
+        <a href="#rfq" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#E8966C;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(16px,1.3vw,20px) clamp(22px,2vw,28px);border-radius:12px;white-space:nowrap;box-shadow:0 14px 30px rgba(232,150,108,0.28);transition:background 200ms" style-hover="background:#DE8459;color:#FFFFFF">Send Inquiry <span>→</span></a>
+        <!-- TODO: replace with Furnastra's WhatsApp number, e.g. https://wa.me/9198XXXXXXXX -->
+        <a href="https://wa.me/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#FFFFFF;color:#44499E;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(15px,1.25vw,19px) clamp(22px,2vw,28px);border:1.5px solid #44499E;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#44499E;color:#FFFFFF"><span style="display:flex;align-items:center;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 5.83 2.42 8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>WhatsApp Us</span><span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="manufacturing" data-screen-label="05 Manufacturing" style="position:relative;background:#F4F5FA;overflow:hidden;scroll-margin-top:88px">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+  <div aria-hidden="true" style="position:absolute;left:-10vw;top:-18vw;width:42vw;aspect-ratio:1/1;border-radius:50%;border:4.5vw solid #E9EBFA"></div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(20px,4vw,72px)">
+    <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(24px,3.2vh,40px)">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C">MANUFACTURING &amp; STRENGTHS</div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E;text-wrap:balance">Integrated Healthcare Manufacturing <span style="color:#E8966C">Excellence.</span></h2>
+      </div>
+      <div data-reveal="up" data-delay="120" style="display:flex;justify-content:flex-end">
+        <a href="#oem" style="display:flex;align-items:center;gap:14px;color:#44499E;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:14px 26px;border:1.5px solid #44499E;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#44499E;color:#FFFFFF">Know More <span>→</span></a>
+      </div>
+    </div>
+    <div data-stagger="90" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) minmax(0,2.1fr);grid-template-rows:repeat(2,clamp(180px,calc((100vh - 88px - 312px) / 2),270px));gap:clamp(12px,1.2vw,16px)">
+      <div style="position:relative;overflow:hidden;border-radius:18px;background:#FFFFFF;border:1px solid #E4E7EF;padding:clamp(20px,1.8vw,26px);display:flex;flex-direction:column;justify-content:space-between">
+        <span style="display:flex;flex-direction:column;gap:12px">
+          <span style="display:flex;align-items:center;gap:12px"><span style="width:40px;height:40px;flex:none;border-radius:11px;background:#FCEFE8;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8966C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;color:#44499E">Testing &amp; Quality</span></span>
+          <span style="font-size:14px;line-height:1.55;color:#5B5F63">Online testing, PDI and CAPA at every stage of production.</span>
+        </span>
+        <span style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#44499E;background:#EEF0FB;padding:5px 10px;border-radius:999px">Online testing</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#44499E;background:#EEF0FB;padding:5px 10px;border-radius:999px">PDI</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#44499E;background:#EEF0FB;padding:5px 10px;border-radius:999px">CAPA</span></span>
+      </div>
+      <div style="position:relative;overflow:hidden;border-radius:18px;background:#44499E;color:#FFFFFF;padding:clamp(20px,1.8vw,26px);display:flex;flex-direction:column;justify-content:space-between">
+        <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.08);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:12px">
+          <span style="display:flex;align-items:center;gap:12px"><span style="width:40px;height:40px;flex:none;border-radius:11px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="m9 13.8-1.5 7.2 4.5-2.4 4.5 2.4-1.5-7.2"/></svg></span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2">Certifications</span></span>
+        </span>
+        <span style="position:relative;display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 13485:2016</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 9001:2015</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 45001:2018</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:#E8966C;border:1px solid #E8966C;padding:6px 10px;border-radius:8px">CE</span></span>
+      </div>
+      <div style="grid-column:3;grid-row:1 / span 2;position:relative;overflow:hidden;border-radius:18px;border-top-right-radius:clamp(80px,8vw,120px);background:#2A3373;color:#FFFFFF;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(22px,2.2vw,32px)">
+        <img src="assets/mfg-floor.jpg" alt="Moulding machines on a factory floor" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">
+        <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.72) 0%,rgba(28,34,88,0.25) 38%,rgba(28,34,88,0.55) 62%,rgba(28,34,88,0.95) 100%)"></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:10px;max-width:420px">
+          <span style="width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l5 3V10l5 3V6l8 4v11Z"/><path d="M7 17h2M12 17h2M17 17h1"/></svg></span>
+          <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(22px,2vw,30px);line-height:1.2">Infrastructure</span>
+          <span style="font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88)">Moulding capacity at scale, across Mitsu Chem’s own plants.</span>
+        </span>
+        <span style="position:relative;display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.35fr);border-top:1px solid rgba(255,255,255,0.22);padding-top:clamp(14px,1.6vw,20px)">
+          <span style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span data-count="4" style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1">4</span><span style="font-size:12px;line-height:1.35;color:#D7DEFF">Plants</span></span>
+          <span style="display:flex;flex-direction:column;gap:4px;padding:0 12px;border-left:1px solid rgba(255,255,255,0.18)"><span data-count="22" style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1">22</span><span style="font-size:12px;line-height:1.35;color:#D7DEFF">Injection moulding machines</span></span>
+          <span style="display:flex;flex-direction:column;gap:4px;padding:0 12px;border-left:1px solid rgba(255,255,255,0.18)"><span data-count="57" style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1">57</span><span style="font-size:12px;line-height:1.35;color:#D7DEFF">Blow moulding machines</span></span>
+          <span style="display:flex;flex-direction:column;gap:4px;padding-left:12px;border-left:1px solid rgba(255,255,255,0.18)"><span data-count="36000" data-suffix="+" style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1;color:#F7B79C">36,000+</span><span style="font-size:12px;line-height:1.35;color:#D7DEFF">MT a year</span></span>
+        </span>
+      </div>
+      <div style="grid-column:1 / span 2;position:relative;overflow:hidden;border-radius:18px;background:#E8966C;color:#FFFFFF;padding:clamp(20px,1.8vw,26px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(14px,1.6vw,22px);align-items:start">
+        <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(140px,12vw,180px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.14);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+        <span style="position:relative;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v5.5L4.8 18a2 2 0 0 0 1.8 3h10.8a2 2 0 0 0 1.8-3L14 8.5V3"/><path d="M7.5 14h9"/></svg></span>
+        <span style="position:relative;display:flex;flex-direction:column;justify-content:space-between;height:100%;gap:14px">
+          <span style="display:flex;flex-direction:column;gap:10px">
+            <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(19px,1.6vw,23px);line-height:1.2">In-house R&amp;D</span>
+            <span style="font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.92);max-width:420px">Design, prototyping, and reverse engineering, developed under one roof.</span>
+          </span>
+          <span style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;background:rgba(255,255,255,0.18);padding:5px 10px;border-radius:999px">Design</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;background:rgba(255,255,255,0.18);padding:5px 10px;border-radius:999px">Prototyping</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;background:rgba(255,255,255,0.18);padding:5px 10px;border-radius:999px">Reverse engineering</span></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="applications" data-screen-label="05b Applications" style="background:#FFFFFF;scroll-margin-top:88px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,96px) clamp(20px,4vw,72px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.2vh,40px);flex-wrap:wrap">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C">APPLICATIONS BY HOSPITAL SETTING</div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E">The Right Component for<br>the Right Care <span style="color:#E8966C">Setting.</span></h2>
+      </div>
+      <p data-reveal="up" data-delay="120" style="margin:0;font-size:14px;line-height:1.6;color:#5B5F63;display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>Hover a setting to see where our parts fit</p>
+    </div>
+    <div data-reveal="up" data-delay="150" class="set-row">
+      <a href="#products" class="set-card">
+        <img src="assets/setting-icu.jpg" alt="ICU room with a hospital bed and monitor" style="object-position:50% 60%">
+        <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.35) 0%,rgba(28,34,88,0) 28%,rgba(28,34,88,0.2) 50%,rgba(28,34,88,0.94) 100%)"></span>
+        <span style="position:absolute;left:clamp(16px,1.6vw,22px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:999px;background:rgba(28,34,88,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.08em">01</span>
+        <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(18px,1.8vw,26px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column">
+          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">ICU / Critical Care</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E8966C;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
+          <span class="set-desc"><span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88);max-width:380px">Head and foot bows with integrated CPR board, side railings and platforms for high-acuity beds.</span></span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Raksha</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Sahara</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Setu</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Aakaar</span></span>
+        </span>
+      </a>
+      <a href="#products" class="set-card">
+        <img src="assets/setting-ward.jpg" alt="Doctor and nurse attending a patient in a hospital ward" style="object-position:40% 50%">
+        <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.35) 0%,rgba(28,34,88,0) 28%,rgba(28,34,88,0.2) 50%,rgba(28,34,88,0.94) 100%)"></span>
+        <span style="position:absolute;left:clamp(16px,1.6vw,22px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:999px;background:rgba(28,34,88,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.08em">02</span>
+        <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(18px,1.8vw,26px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column">
+          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">General Wards</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E8966C;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
+          <span class="set-desc"><span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88);max-width:380px">Durable railings, bed platforms, over-bed tables and lockers for high-turnover wards.</span></span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Sahara</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Setu</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Rahat</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Rudra</span></span>
+        </span>
+      </a>
+      <a href="#products" class="set-card">
+        <img src="assets/setting-ambulance.jpg" alt="Paramedics loading a stretcher into an ambulance" style="object-position:50% 55%">
+        <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.35) 0%,rgba(28,34,88,0) 28%,rgba(28,34,88,0.2) 50%,rgba(28,34,88,0.94) 100%)"></span>
+        <span style="position:absolute;left:clamp(16px,1.6vw,22px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:999px;background:rgba(28,34,88,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.08em">03</span>
+        <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(18px,1.8vw,26px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column">
+          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">Ambulance &amp; Rescue</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E8966C;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
+          <span class="set-desc"><span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88);max-width:380px">Spine boards with head immobilisers for safe patient transfer and rescue.</span></span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Jivan</span></span>
+        </span>
+      </a>
+      <a href="#products" class="set-card">
+        <img src="assets/setting-maternity.jpg" alt="Mother holding her newborn baby in a hospital bed" style="object-position:50% 40%">
+        <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.35) 0%,rgba(28,34,88,0) 28%,rgba(28,34,88,0.2) 50%,rgba(28,34,88,0.94) 100%)"></span>
+        <span style="position:absolute;left:clamp(16px,1.6vw,22px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:999px;background:rgba(28,34,88,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.08em">04</span>
+        <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(18px,1.8vw,26px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column">
+          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">Maternity / Labour Rooms</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E8966C;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
+          <span class="set-desc"><span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88);max-width:380px">Bows, railings and bedside furniture for labour, delivery and recovery rooms.</span></span></span>
+          <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Raksha</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Sahara</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Rahat</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Rudra</span></span>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="oem" data-screen-label="06 OEM Development" style="background:#FFFFFF;scroll-margin-top:88px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,128px) clamp(20px,3vw,48px)">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end;margin-bottom:56px">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">OEM / CUSTOM DEVELOPMENT</div>
+        <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(38px,4.4vw,64px);line-height:1;letter-spacing:-0.025em;color:#2A3373">Your requirement.<br>Our moulding floor.</h2>
+      </div>
+      <p data-reveal="up" data-delay="150" style="margin:0;font-size:17px;line-height:1.65;color:#5B5F63;max-width:520px">Bring a drawing, a sample or just a problem. We take custom components from first discussion through prototype mould, trials and approval into commercial production.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:stretch">
+      <div data-stagger="60" style="display:flex;flex-direction:column">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="7">
+          <button onClick="{{ st.select }}" style="all:unset;cursor:pointer;position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding:18px 4px 18px 0;border-bottom:1px solid #E4E7EF">
+            <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:{{ st.numColor }};padding-top:4px;transition:color 300ms">{{ st.num }}</span>
+            <span style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-family:Outfit,sans-serif;font-size:{{ st.size }};font-weight:700;line-height:1.15;color:{{ st.labelColor }};transition:all 400ms ease">{{ st.name }}</span>
+              <sc-if value="{{ st.active }}" hint-placeholder-val="{{ false }}"><span style="font-size:15px;line-height:1.55;color:#5B5F63;max-width:440px">{{ st.desc }}</span></sc-if>
+            </span>
+            <span style="position:absolute;left:0;bottom:-1px;height:2px;background:#F59067;width:{{ st.bar }};transition:{{ st.barT }}"></span>
+          </button>
+        </sc-for>
+        <a href="#rfq" style="margin-top:28px;align-self:flex-start;display:flex;align-items:center;gap:10px;background:#2A3373;color:#FFFFFF;font-weight:700;font-size:15px;padding:17px 28px;border-radius:999px" style-hover="background:#44499E;color:#FFFFFF">Discuss a Custom Requirement →</a>
+      </div>
+      <div data-reveal="scale" style="position:relative;background:#F4F5FA;border-radius:24px;overflow:hidden;min-height:560px;display:flex;align-items:center;justify-content:center">
+        <span style="position:absolute;left:28px;top:12px;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(140px,16vw,240px);line-height:1;letter-spacing:-0.05em;color:#E4E7F6">{{ step.num }}</span>
+        <div data-spin="160" style="position:absolute;width:76%;aspect-ratio:1/1;border-radius:50%;border:1px dashed #C9CFEF">
+          <span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#F59067"></span>
+        </div>
+        <img data-float="10" data-dur="4600" src="assets/p7.png" alt="Bed with components called out" style="position:relative;width:78%;max-width:640px;height:auto">
+        <div style="position:absolute;left:24px;right:24px;bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#FFFFFF;border-radius:14px;padding:16px 20px;box-shadow:0 10px 30px rgba(42,51,115,0.08)">
+          <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.1em;color:#959EA9">STAGE {{ step.num }} OF 07</span><span style="font-size:16px;font-weight:700;color:#2A3373">{{ step.name }}</span></span>
+          <span style="font-size:13px;font-weight:700;color:#44499E;white-space:nowrap">Concept → Consignment</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="legacy" data-screen-label="07 Legacy" style="background:#F4F5FA;overflow:hidden;scroll-margin-top:88px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,120px) clamp(20px,3vw,48px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:center">
+    <div data-reveal="scale" style="position:relative;aspect-ratio:1/1;max-width:500px;width:100%;display:flex;align-items:center;justify-content:center">
+      <div data-spin="60" style="position:absolute;inset:0;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-6px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#F59067"></span></div>
+      <div style="position:absolute;inset:14%;border-radius:50%;background:#FFFFFF;box-shadow:0 30px 60px rgba(42,51,115,0.1)"></div>
+      <img data-float="8" data-dur="5000" src="assets/f-mark.svg" alt="" style="position:relative;width:40%;height:auto">
+      <div style="position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);white-space:nowrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#959EA9">EST. 1990 · MITSU CHEM PLAST LTD.</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:26px">
+      <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">FURNASTRA + MITSU CHEM</div>
+      <h2 data-reveal="up" style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(34px,3.8vw,56px);line-height:1.04;letter-spacing:-0.025em;color:#2A3373;text-wrap:balance">A focused components brand, built on 35+ years of moulding.</h2>
+      <p data-reveal="up" data-delay="100" style="margin:0;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(22px,2vw,28px);line-height:1.4;color:#44499E;max-width:620px">Hospital furniture parts have been part of Mitsu Chem for years. Furnastra gives them their own name.</p>
+      <p data-reveal="up" data-delay="200" style="margin:0;font-size:16.5px;line-height:1.7;color:#5B5F63;max-width:620px">Mitsu Chem Plast has manufactured blow and injection moulded solutions since 1990 and is listed on the Bombay Stock Exchange. Furnastra is its dedicated healthcare furniture components business — same plants, same quality systems, with a team focused on what OEMs need from a component partner.</p>
+      <div data-reveal="up" data-delay="300" style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+        <a href="#legacy" style="display:flex;align-items:center;gap:10px;color:#2A3373;font-weight:700;font-size:15px;padding:15px 24px;border:1.5px solid #2A3373;border-radius:999px;white-space:nowrap" style-hover="background:#2A3373;color:#FFFFFF">About Furnastra →</a>
+        <sc-if value="{{ showFlags }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:#B8572F;border:1px dashed #F59067;padding:5px 8px;display:inline-block;line-height:1.4">[CONFIRM] BSE listing year — deck text says 2016, slide image says 2017</span></sc-if>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="08 Quality" style="background:#FFFFFF;overflow:hidden">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,128px) clamp(20px,3vw,48px) 56px">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end;margin-bottom:64px">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:16px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">QUALITY AT EVERY STAGE</div>
+        <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(38px,4.4vw,64px);line-height:1;letter-spacing:-0.025em;color:#2A3373">Checked at every stage — not just the last one.</h2>
+      </div>
+      <p data-reveal="up" data-delay="150" style="margin:0;font-size:17px;line-height:1.65;color:#5B5F63;max-width:520px">From raw material to the finished part, under an integrated management system.</p>
+    </div>
+    <div style="position:relative">
+      <div data-reveal="line" style="position:absolute;left:0;right:0;top:31px;height:2px;background:linear-gradient(90deg,#2A3373,#F59067);transform-origin:left"></div>
+      <div data-stagger="140" style="position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px">
+        <sc-for list="{{ quality }}" as="q" hint-placeholder-count="5">
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <span style="width:64px;height:64px;border-radius:50%;background:#FFFFFF;border:2px solid #2A3373;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:#2A3373">{{ q.num }}</span>
+            <span style="font-family:Outfit,sans-serif;font-size:22px;font-weight:700;color:#2A3373">{{ q.name }}</span>
+            <span style="font-size:14.5px;line-height:1.55;color:#5B5F63">{{ q.desc }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+  <div style="padding:24px 0 clamp(80px,9vw,120px);overflow:hidden">
+    <div data-marquee="34000" style="display:flex;width:max-content">
+      <sc-for list="{{ marqueeCerts }}" as="ce" hint-placeholder-count="10">
+        <span style="display:flex;flex-direction:column;gap:4px;margin-right:16px;border:1px solid #D7DEFF;background:#F7F8FF;border-radius:16px;padding:22px 30px;white-space:nowrap"><span style="font-family:Outfit,sans-serif;font-size:26px;font-weight:700;color:#2A3373">{{ ce.a }}</span><span style="font-size:13px;color:#5B5F63">{{ ce.b }}</span></span>
+      </sc-for>
+    </div>
+    <div style="max-width:1440px;margin:24px auto 0;padding:0 clamp(20px,3vw,48px);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center">
+      <span style="display:flex;align-items:center;gap:14px;font-size:15px;color:#2A3373"><span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#F59067">Recognition · 2022</span><strong>Fastest Product Development — Raksha 4 (M4) head &amp; foot bow</strong></span>
+      <sc-if value="{{ showFlags }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:#B8572F;border:1px dashed #F59067;padding:5px 8px;display:inline-block;line-height:1.4">[CONFIRM] certification scope applies to Furnastra parts &amp; plant</span></sc-if>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="09 Global Presence" style="background:#2A3373;color:#FFFFFF;position:relative;overflow:hidden">
+  <div style="position:absolute;right:-10%;top:-30%;width:70%;aspect-ratio:1/1;border-radius:50%;border:80px solid rgba(215,222,255,0.04)"></div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,128px) clamp(20px,3vw,48px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">GLOBAL PRESENCE</div>
+      <div data-reveal="up" style="display:flex;align-items:flex-end;gap:18px"><span data-count="11" style="font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(120px,14vw,220px);line-height:0.8;letter-spacing:-0.05em;color:#F59067">11</span><span style="font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(24px,2.4vw,36px);line-height:1.1;padding-bottom:8px">countries.<br>4 regions.</span></div>
+      <p data-reveal="up" data-delay="120" style="margin:0;font-size:16.5px;line-height:1.65;color:#D7DEFF;max-width:460px">Our healthcare furniture parts ship to OEMs across Europe, the Middle East, Asia-Pacific and North America — with the documentation and packaging export programmes require.</p>
+      <sc-if value="{{ showFlags }}" hint-placeholder-val="{{ true }}"><span style="align-self:flex-start;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:#F7B79C;border:1px dashed #F59067;padding:5px 8px;display:inline-block;line-height:1.4">[CLIENT APPROVAL REQUIRED] logo usage for 11 named customers</span></sc-if>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:28px">
+      <sc-for list="{{ regions }}" as="r" hint-placeholder-count="4">
+        <div data-reveal="up" style="display:flex;flex-direction:column;gap:12px;padding-bottom:24px;border-bottom:1px solid rgba(215,222,255,0.16)">
+          <span style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D7DEFF"><span>{{ r.name }}</span><span style="color:#F59067">{{ r.n }}</span></span>
+          <div data-stagger="70" style="display:flex;flex-wrap:wrap;gap:10px">
+            <sc-for list="{{ r.countries }}" as="ct" hint-placeholder-count="3">
+              <span style="font-family:Outfit,sans-serif;font-size:clamp(18px,1.6vw,24px);font-weight:600;color:#FFFFFF;padding:10px 20px;border-radius:999px;border:1px solid rgba(215,222,255,0.3);background:rgba(215,222,255,0.06)">{{ ct }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="resources" data-screen-label="10 Resources" style="background:#FFFFFF;scroll-margin-top:88px">
+  <div style="max-width:1440px;margin:0 auto;padding:80px clamp(20px,3vw,48px);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:48px">
+    <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">RESOURCES</div>
+      <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:34px;line-height:1.1;color:#2A3373">For your sourcing file.</h2>
+    </div>
+    <div data-stagger="90" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
+      <sc-for list="{{ resources }}" as="rs" hint-placeholder-count="4">
+        <a href="#resources" style="display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:18px;background:#F4F5FA;min-height:200px" style-hover="background:#E9EBFA">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#959EA9">{{ rs.kind }}</span>
+          <span style="font-size:18px;font-weight:700;color:#2A3373">{{ rs.name }}</span>
+          <span style="font-size:13.5px;line-height:1.5;color:#5B5F63;flex:1">{{ rs.desc }}</span>
+          <span style="font-size:13px;font-weight:700;color:#44499E">{{ rs.cta }} →</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="rfq" data-screen-label="11 RFQ" style="background:#1C2258;color:#FFFFFF;position:relative;overflow:hidden;scroll-margin-top:88px">
+  <div data-spin="140" style="position:absolute;right:-240px;top:-260px;width:820px;height:820px;border-radius:50%;border:1px dashed rgba(215,222,255,0.2)"><span style="position:absolute;left:50%;bottom:-6px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#F59067"></span></div>
+  <div style="position:absolute;right:-160px;top:-180px;width:660px;height:660px;border-radius:50%;border:60px solid rgba(215,222,255,0.04)"></div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,120px) clamp(20px,3vw,48px);display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:72px;align-items:center">
+    <div data-reveal="up" style="display:flex;flex-direction:column;gap:22px">
+      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">REQUEST A QUOTE</div>
+      <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(40px,4.6vw,68px);line-height:1;letter-spacing:-0.025em;text-wrap:balance">Building your next bed? <span style="color:#F59067">Let’s talk parts.</span></h2>
+      <p style="margin:0;font-size:17px;line-height:1.65;color:#D7DEFF;max-width:520px">Share a drawing, part number or sample photo and our team will come back with a fitment and quotation.</p>
+    </div>
+    <div data-reveal="scale" style="background:#FFFFFF;color:#2A3373;padding:36px;border-radius:24px;display:flex;flex-direction:column;gap:20px;box-shadow:0 40px 80px rgba(0,0,0,0.25)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;background:#F4F5FA;border-radius:999px;padding:4px">
+        <button onClick="{{ setQuote }}" style="all:unset;cursor:pointer;text-align:center;padding:12px;border-radius:999px;font-weight:700;font-size:14px;background:{{ tabQuoteBg }};color:{{ tabQuoteFg }};transition:all 250ms">Request a Quote</button>
+        <button onClick="{{ setCustom }}" style="all:unset;cursor:pointer;text-align:center;padding:12px;border-radius:999px;font-weight:700;font-size:14px;background:{{ tabCustomBg }};color:{{ tabCustomFg }};transition:all 250ms">Custom Manufacturing</button>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">Company<input placeholder="OEM / manufacturer name" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">Country<input placeholder="e.g. Germany" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">Work email<input placeholder="name@company.com" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">{{ fieldLabel }}<input placeholder="{{ fieldPh }}" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
+      </div>
+      <div style="border:1.5px dashed #C0C8D4;border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:#5B5F63"><span>Upload drawing or requirement (PDF, DWG, STEP)</span><span style="font-weight:700;color:#44499E">Browse</span></div>
+      <a href="#rfq" style="display:flex;justify-content:center;align-items:center;gap:10px;background:#F59067;color:#1C2258;font-weight:700;font-size:15px;padding:18px;border-radius:999px" style-hover="background:#F7A27F;color:#1C2258">{{ submitLabel }} →</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#151A47;color:#C0C8D4">
+  <div style="max-width:1440px;margin:0 auto;padding:56px clamp(20px,3vw,48px) 36px;display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr)) minmax(0,3fr);gap:40px">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <img src="assets/logo-white.svg" alt="Furnastra" style="height:28px;width:auto;align-self:flex-start">
+      <span style="font-size:13.5px;line-height:1.6;max-width:300px">Healthcare furniture components by Mitsu Chem Plast Ltd.</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#959EA9">Products</span><a href="#products" style="color:#D7DEFF">Raksha</a><a href="#products" style="color:#D7DEFF">Sahara</a><a href="#products" style="color:#D7DEFF">Setu</a><a href="#products" style="color:#D7DEFF">Aakaar</a></div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#959EA9">&nbsp;</span><a href="#products" style="color:#D7DEFF">Rahat</a><a href="#products" style="color:#D7DEFF">Rudra</a><a href="#products" style="color:#D7DEFF">Jivan</a></div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#959EA9">Company</span><a href="#oem" style="color:#D7DEFF">OEM Solutions</a><a href="#manufacturing" style="color:#D7DEFF">Manufacturing</a><a href="#legacy" style="color:#D7DEFF">About</a><a href="#resources" style="color:#D7DEFF">Resources</a></div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6"><span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#959EA9">Corporate office</span><span>329, Gala Complex, Din Dayal Upadhyay Road, Mulund (W), Mumbai 400 080, India</span><span>sales@mitsuchem.com</span><sc-if value="{{ showFlags }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;color:#F7B79C">[CONFIRM] Furnastra-specific enquiry email</span></sc-if></div>
+  </div>
+  <div style="max-width:1440px;margin:0 auto;padding:20px clamp(20px,3vw,48px) 28px;border-top:1px solid rgba(215,222,255,0.12);display:flex;justify-content:space-between;font-size:12.5px;color:#959EA9"><span>© 2026 Mitsu Chem Plast Ltd.</span><span>www.furnastra.com</span></div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;animate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;showFlags&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;}}">
+class Component extends DCLogic {
+  state = { step: 0, story: 0, mode: 'quote', scrolled: false };
+  anims = [];
+  mx = 0; my = 0;
+  motion() { return this.props.animate ?? true; }
+  componentDidMount() {
+    this.onScroll = () => this.handleScroll();
+    this.onMove = (e) => { this.mx = e.clientX / innerWidth - 0.5; this.my = e.clientY / innerHeight - 0.5; this.parallax(); };
+    addEventListener('scroll', this.onScroll, { passive: true });
+    addEventListener('mousemove', this.onMove);
+    this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { this.show(e.target); this.io.unobserve(e.target); } }), { threshold: 0.12 });
+    this.cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { this.count(e.target); this.cio.unobserve(e.target); } }), { threshold: 0.5 });
+    this.timer = setInterval(() => { if (!this.motion()) return; this.setState(s => ({ step: this.hold ? s.step : (s.step + 1) % 7, ms: this.msHold ? s.ms : ((s.ms ?? 0) + 1) % 4 })); }, 4200);
+    setTimeout(() => { this.scan(); this.handleScroll(); }, 60);
+  }
+  componentDidUpdate(pp) {
+    this.scan();
+    if ((pp.animate ?? true) !== this.motion()) this.anims.forEach(a => this.motion() ? a.play() : a.pause());
+  }
+  componentWillUnmount() {
+    removeEventListener('scroll', this.onScroll); removeEventListener('mousemove', this.onMove);
+    this.io.disconnect(); this.cio.disconnect(); clearInterval(this.timer); this.anims.forEach(a => a.cancel());
+  }
+  hide(el, type, d) {
+    el.style.opacity = '0';
+    el.style.transform = type === 'scale' ? 'scale(0.94)' : type === 'line' ? 'scaleX(0)' : 'translateY(44px)';
+    el.style.transition = `opacity 900ms cubic-bezier(.2,.7,.2,1) ${d}ms, transform ${type === 'line' ? 1600 : 1100}ms cubic-bezier(.2,.7,.2,1) ${d}ms`;
+    this.io.observe(el);
+  }
+  show(el) { el.style.opacity = '1'; el.style.transform = 'none'; }
+  scan() {
+    const m = this.motion();
+    document.querySelectorAll('[data-reveal]:not([data-rv])').forEach(el => {
+      el.dataset.rv = '1'; if (!m) return;
+      this.hide(el, el.dataset.reveal, +(el.dataset.delay || 0));
+    });
+    document.querySelectorAll('[data-stagger]:not([data-rv])').forEach(p => {
+      p.dataset.rv = '1'; if (!m) return;
+      const step = +p.dataset.stagger;
+      Array.from(p.children).forEach((c, i) => { if (c.dataset.rv) return; c.dataset.rv = '1'; this.hide(c, 'up', i * step); });
+    });
+    if (!m) return;
+    const loop = (el, kf, o) => { el.dataset.lp = '1'; this.anims.push(el.animate(kf, { iterations: Infinity, ...o })); };
+    document.querySelectorAll('[data-float]:not([data-lp])').forEach(el => loop(el, [{ transform: 'translateY(0)' }, { transform: `translateY(-${el.dataset.float}px)` }], { duration: +(el.dataset.dur || 5000), direction: 'alternate', easing: 'ease-in-out' }));
+    document.querySelectorAll('[data-spin]:not([data-lp])').forEach(el => { const s = +el.dataset.spin; loop(el, [{ transform: 'rotate(0deg)' }, { transform: `rotate(${s < 0 ? -360 : 360}deg)` }], { duration: Math.abs(s) * 1000, easing: 'linear' }); });
+    document.querySelectorAll('[data-marquee]:not([data-lp])').forEach(el => { const s = +el.dataset.marquee; loop(el, s < 0 ? [{ transform: 'translateX(-50%)' }, { transform: 'translateX(0)' }] : [{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: Math.abs(s), easing: 'linear' }); });
+    document.querySelectorAll('[data-pulse]:not([data-lp])').forEach((el, i) => loop(el, [{ transform: 'scale(0.6)', opacity: 0.9 }, { transform: 'scale(2.2)', opacity: 0 }], { duration: 2000, delay: i * 350, easing: 'ease-out' }));
+    document.querySelectorAll('[data-count]:not([data-cv])').forEach(el => {
+      el.dataset.cv = '1'; const r = el.getBoundingClientRect(); if (r.top < innerHeight) return;
+      el.textContent = '0' + (el.dataset.suffix || ''); this.cio.observe(el);
+    });
+    document.querySelectorAll('[data-tilt]:not([data-tv])').forEach(el => {
+      el.dataset.tv = '1'; el.style.transition = 'transform 500ms cubic-bezier(.2,.7,.2,1)';
+      const img = el.querySelector('[data-tilt-img]'); const base = img ? img.style.transform : '';
+      if (img) img.style.transition = 'transform 600ms cubic-bezier(.2,.7,.2,1)';
+      el.addEventListener('mousemove', e => { if (!this.motion()) return; const r = el.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; el.style.transform = `perspective(1000px) rotateX(${-y * 6}deg) rotateY(${x * 8}deg) translateY(-4px)`; if (img) img.style.transform = `${base} translate(${x * 18}px,${y * 14}px) scale(1.06)`; });
+      el.addEventListener('mouseleave', () => { el.style.transform = 'none'; if (img) img.style.transform = base; });
+    });
+  }
+  count(el) {
+    const v = +el.dataset.count, suf = el.dataset.suffix || '', t0 = performance.now();
+    const f = (t) => { const p = Math.min(1, (t - t0) / 1800), k = 1 - Math.pow(1 - p, 3), n = Math.round(v * k); el.textContent = (v >= 1000 ? n.toLocaleString('en-IN') : n) + suf; if (p < 1) requestAnimationFrame(f); };
+    requestAnimationFrame(f);
+  }
+  parallax() {
+    if (!this.motion()) return;
+    const sy = Math.min(scrollY, 1200);
+    document.querySelectorAll('[data-depth]').forEach(el => { const d = +el.dataset.depth; el.style.transform = `translate3d(${this.mx * d * 2}px,${this.my * d * 2 + sy * d * -0.012}px,0)`; });
+  }
+  handleScroll() {
+    const sc = scrollY > 40;
+    if (sc !== this.state.scrolled) this.setState({ scrolled: sc });
+    this.parallax();
+    const st = document.getElementById('story');
+    if (st && st.offsetHeight) {
+      const r = st.getBoundingClientRect(), tot = r.height - innerHeight;
+      const p = Math.max(0, Math.min(1, -r.top / tot));
+      const bar = st.querySelector('[data-story-bar]'); if (bar) bar.style.transform = `scaleY(${p})`;
+      const idx = Math.min(3, Math.floor(p * 4));
+      if (idx !== this.state.story) this.setState({ story: idx });
+    }
+  }
+  goStory(i) {
+    const st = document.getElementById('story'); if (!st) return;
+    const top = st.getBoundingClientRect().top + scrollY, tot = st.offsetHeight - innerHeight;
+    window.scrollTo({ top: top + tot * ((i + 0.5) / 4), behavior: 'smooth' });
+  }
+  renderVals() {
+    const s = this.state, flags = this.props.showFlags ?? true;
+    // Positions are % of the p6.png box. dot = part on the bed, path = leader line from dot to label,
+    // label = anchor point on the label edge the line meets (ltf shifts the box so that edge sits on it).
+    const callouts = [
+      { code: 'FAM-01', name: 'Raksha', type: 'Head Bow', dot: [16.6, 10.8], path: [[16.6, 1.3]], label: [13.6, 1.3], ltf: 'translateY(-100%)' },
+      { code: 'FAM-02', name: 'Sahara', type: 'Side Railing', dot: [53.8, 16.5], path: [[60.9, 9.7], [65.2, 9.7]], label: [65.2, 9.7], ltf: 'translateY(-50%)' },
+      { code: 'FAM-03', name: 'Setu', type: 'Bed Platform', dot: [38.1, 38.1], path: [[25.2, 46.4], [16.1, 46.4]], label: [16.1, 46.4], ltf: 'translate(-100%,-50%)' },
+      { code: 'FAM-04', name: 'Aakaar', type: 'Buffer Wheel', dot: [60.4, 87.2], path: [[71.2, 87.2]], label: [71.2, 87.2], ltf: 'translateY(-50%)' },
+    ].map((c, i) => ({ ...c,
+      dx: c.dot[0] + '%', dy: c.dot[1] + '%', lx: c.label[0] + '%', ly: c.label[1] + '%',
+      pts: [c.dot, ...c.path].map(p => p.join(',')).join(' '),
+      enter: () => this.setState({ hot: i }), leave: () => this.setState({ hot: null }),
+      op: s.hot == null || s.hot === i ? 1 : 0.3, z: s.hot === i ? 3 : 2,
+      bd: s.hot === i ? '#E8966C' : '#E4E7EF',
+      sh: s.hot === i ? '0 14px 34px rgba(42,51,115,0.16)' : '0 6px 18px rgba(42,51,115,0.06)' }));
+    const regions0 = [[22, 20, 16, 17], [50, 18, 12, 14], [49, 40, 25, 16], [60.4, 87.2, 5, 6]];
+    const hr = regions0[s.hot ?? 0];
+    const spotClip = `ellipse(${hr[2]}% ${hr[3]}% at ${hr[0]}% ${hr[1]}%)`;
+    const hotOn = s.hot != null;
+    const statTone = {
+      light: { bg: '#FFFFFF', bd: '#E4E7EF', ring: '#EEF0FB', num: '#44499E', fg: '#2A3373', sub: '#5B5F63', dot: '#E8966C' },
+      orange: { bg: '#E8966C', bd: '#E8966C', ring: 'rgba(255,255,255,0.14)', num: '#FFFFFF', fg: '#FFFFFF', sub: 'rgba(255,255,255,0.88)', dot: '#FFFFFF' },
+      indigo: { bg: '#44499E', bd: '#44499E', ring: 'rgba(255,255,255,0.08)', num: '#FFFFFF', fg: '#FFFFFF', sub: '#D7DEFF', dot: '#E8966C' },
+    };
+    const keyStats = [
+      { v: 35, suf: '+', unit: 'yrs', label: 'Years of manufacturing', note: 'Moulding expertise since 1990', tone: 'light' },
+      { v: 30, suf: '+', unit: 'SKUs', label: 'Product SKUs', note: 'Across 7 component families', tone: 'orange' },
+      { v: 11, suf: '', unit: '', label: 'Countries covered', note: 'Europe · Middle East · APAC · N. America', tone: 'light' },
+      { v: 3, suf: '', unit: 'ISO', label: 'Certifications held', note: '13485 · 9001 · 45001, plus CE', tone: 'indigo' },
+    ].map(k => ({ ...k, ...statTone[k.tone] }));
+    const msIdx = s.ms ?? 0;
+    const milestones = [
+      { year: '1990', badge: '1990', tag: 'FOUNDED · 1990', title: 'Manufacturing journey begins', desc: 'Mitsu Chem Plast starts blow and injection moulding — the base Furnastra is built on.' },
+      { year: '2016', badge: '2016', tag: 'LISTED · 2016', title: 'Listed on the Bombay Stock Exchange', desc: 'Mitsu Chem Plast becomes a publicly listed company.' },
+      { year: '2022', badge: '2022', tag: 'RECOGNISED · 2022', title: 'Fastest Product Development award', desc: 'For Raksha 4 (M4), a head & foot bow with an integrated CPR board.' },
+      { year: '2024', badge: '2024', tag: 'FURNASTRA · 2024', title: 'Furnastra is born', desc: 'A brand built entirely for modern healthcare — ISO 13485 certified and shipping to OEMs in 11 countries.' },
+    ].map((m, i, all) => { const a = i === msIdx, last = i === all.length - 1; return { ...m, active: a,
+      enter: () => { this.msHold = true; this.setState({ ms: i }); }, leave: () => { this.msHold = false; },
+      circle: a ? '#E8966C' : '#2A3373', haloW: a ? '8px' : '0px', yearSize: m.badge.length > 3 ? '14px' : '15px',
+      rows: a ? '1fr' : '0fr', descOp: a ? 1 : 0, weight: a ? 700 : 500, titleFg: a ? '#2A3373' : '#5B5F63',
+      tail: last ? 'calc(24px - var(--g))' : '0px', seg: (i < msIdx || (last && a)) ? 1 : 0 }; });
+    const msCard = milestones[msIdx];
+    const storyData = [
+      { name: 'Raksha', type: 'Head & foot bows', src: 'assets/p49.png', desc: 'Eleven bow variants, including Raksha 4 (M4) with an integrated CPR board — recognised in 2022 for fastest product development.' },
+      { name: 'Sahara', type: 'Side railings', src: 'assets/p14.png', desc: 'Nine railing variants, from standard rails to Sahara Nau — collapsible and glow-in-the-dark.' },
+      { name: 'Setu', type: 'Bed platforms & liners', src: 'assets/p25.png', desc: 'Moulded bed board planks and bed liners that form the patient platform.' },
+      { name: 'Aakaar', type: 'Buffer wheels', src: 'assets/p27.png', desc: 'Buffer wheels for bed corners, moulded to fit your frame.' },
+    ];
+    const story = { ...storyData[s.story], n: '0' + (s.story + 1) };
+    const storyImgs = storyData.map((d, i) => ({ ...d, op: i === s.story ? 1 : 0, tf: i === s.story ? 'scale(1) translateY(0)' : (i < s.story ? 'scale(0.9) translateY(-40px)' : 'scale(0.9) translateY(40px)') }));
+    const storyTabs = storyData.map((d, i) => ({ name: d.name, go: () => this.goStory(i), bg: i === s.story ? '#44499E' : 'transparent', fg: i === s.story ? '#FFFFFF' : '#44499E', bd: i === s.story ? '#44499E' : '#C9CFEF' }));
+    const capabilities = [
+      { name: 'Injection moulding', mat: 'PE · PP · FILLED PP', desc: 'Hospital bed parts, plus pharma, automotive and auto filter components.' },
+      { name: 'Blow moulding', mat: 'HDPE · PP · FILLED PP', desc: 'Healthcare furniture alongside pharma, chemical, food, agrochemical and automotive.' },
+      { name: 'Custom moulding', mat: 'HDPE · PP · FILLED PP', desc: 'Components developed to a customer’s own requirement and design.' },
+    ];
+    const mats = ['Injection moulding', 'Blow moulding', 'HDPE', 'PP', 'Filled PP', 'Khalapur', 'Tarapur'];
+    const stepData = [
+      ['Requirement', 'We start by understanding your requirement in detail — the product, the fitment, volumes and the market you’re building for.'],
+      ['Design & Engineering', 'Our team works through design, concept and technical aspects with yours, including value and reverse engineering where useful.'],
+      ['Prototype Mould', 'We design and make a prototype mould to prove out the part before committing to production tooling.'],
+      ['Sample Trials', 'Sample trials are run with the prototype mould so you can evaluate real parts.'],
+      ['Approval', 'You approve the finished product before anything moves to scale.'],
+      ['Commercial Production', 'Production starts in our moulding facilities, with online testing, PDI and CAPA in the loop.'],
+      ['Packaging & Delivery', 'Parts are packed and the consignment is delivered on the agreed timeline.'],
+    ];
+    const m = this.motion();
+    const steps = stepData.map(([n, d], i) => {
+      const a = i === s.step;
+      return { num: String(i + 1).padStart(2, '0'), name: n, desc: d, active: a,
+        select: () => { this.hold = true; clearTimeout(this.holdT); this.holdT = setTimeout(() => { this.hold = false; }, 8000); this.setState({ step: i }); },
+        numColor: a ? '#F59067' : '#959EA9', labelColor: a ? '#2A3373' : '#959EA9', size: a ? '28px' : '19px',
+        bar: a ? '100%' : '0%', barT: a && m ? 'width 4200ms linear' : 'none' };
+    });
+    const quality = [
+      { name: 'Material', desc: 'Manufactured with 100% virgin quality raw material.' },
+      { name: 'Process', desc: 'Integrated management system with 5-S on the shop floor.' },
+      { name: 'Testing', desc: 'Online testing during production runs.' },
+      { name: 'Inspection', desc: 'Pre-dispatch inspection (PDI) and CAPA in QC methodology.' },
+      { name: 'Release', desc: 'Inspected parts packed and released against your approved sample.' },
+    ].map((q, i) => ({ ...q, num: String(i + 1).padStart(2, '0') }));
+    const certs = [{ a: 'ISO 13485:2016', b: 'Medical devices QMS' }, { a: 'ISO 9001:2015', b: 'Quality management' }, { a: 'ISO 45001:2018', b: 'Occupational health & safety' }, { a: 'CE Certificate', b: 'As listed in company deck' }, { a: '21 CFR', b: 'Adherence per US FDA & EEC guidelines' }];
+    const regions = [
+      { name: 'Europe', countries: ['United Kingdom', 'Germany', 'France', 'Poland', 'Portugal'] },
+      { name: 'Middle East & Africa', countries: ['Saudi Arabia', 'Turkey', 'Egypt'] },
+      { name: 'Asia-Pacific', countries: ['Malaysia', 'Indonesia'] },
+      { name: 'North America', countries: ['Canada'] },
+    ].map(r => ({ ...r, n: String(r.countries.length).padStart(2, '0') }));
+    const resources = [
+      { kind: 'PDF · CATALOGUE', name: 'Product catalogue', desc: 'All seven component families in one document.', cta: 'Request' },
+      { kind: 'PDF · PER PRODUCT', name: 'Technical datasheets', desc: 'Dimensions and fitment, by component.', cta: 'Browse' },
+      { kind: 'ARTICLES', name: 'Insights', desc: 'Notes on component sourcing and moulding.', cta: 'Read' },
+      { kind: 'UPDATES', name: 'News & events', desc: 'Trade shows, launches and announcements.', cta: 'View' },
+    ];
+    const custom = s.mode === 'custom';
+    return {
+      showFlags: flags, keyStats, milestones, msCard, callouts, spotClip, spotOp: hotOn ? 1 : 0,
+      bedFilter: hotOn ? 'drop-shadow(0 30px 40px rgba(42,51,115,0.12)) grayscale(0.85) opacity(0.35)' : 'drop-shadow(0 30px 40px rgba(42,51,115,0.16))',
+      hdrShadow: s.scrolled ? '0 6px 24px rgba(42,51,115,0.08)' : 'none',
+      marqueeMats: [...mats, ...mats], marqueeCerts: [...certs, ...certs],
+      story, storyImgs, storyTabs, capabilities, steps, step: steps[s.step], quality, regions, resources,
+      setQuote: () => this.setState({ mode: 'quote' }), setCustom: () => this.setState({ mode: 'custom' }),
+      tabQuoteBg: custom ? 'transparent' : '#2A3373', tabQuoteFg: custom ? '#2A3373' : '#FFFFFF',
+      tabCustomBg: custom ? '#2A3373' : 'transparent', tabCustomFg: custom ? '#FFFFFF' : '#2A3373',
+      fieldLabel: custom ? 'Component to develop' : 'Component & quantity',
+      fieldPh: custom ? 'e.g. moulded footboard for new bed' : 'e.g. Raksha 4 · 2,000 sets / yr',
+      submitLabel: custom ? 'Start a Custom Discussion' : 'Send Request for Quote',
+    };
+  }
+}
+</script>
+</body>
+</html>
