@@ -123,14 +123,22 @@ Add these attributes to elements. They are handled in `scan()` and respect the `
 
 | Attribute | Effect |
 |---|---|
-| `data-reveal="up|scale|line"` + `data-delay="ms"` | fade/slide in on scroll |
-| `data-stagger="ms"` | reveal the children one after another |
+| `data-reveal="up|scale|line"` + `data-delay="ms"` | fade/slide in on scroll (56px / 1.4s soft ease-out). The element's own inline `transition` is restored afterwards |
+| `data-stagger` | card grids/lists: the children rise in one after another (56px rise, 1.4s soft ease-out, 130ms apart). It's CSS-driven: an observer sets `data-in` on the container, then `data-done` once finished so the cards' own hover transitions apply again. The attribute value is ignored. Works for up to 12 children. Add `data-rise="sm"` for an 18px lift on small text such as footer links |
 | `data-float="px" data-dur="ms"` | gentle vertical float |
 | `data-spin="seconds"` (negative = reverse) | continuous rotation |
 | `data-count="N" data-suffix="+"` | count-up when visible (numbers ≥1000 use `en-IN` grouping) |
 | `data-tilt` + `data-tilt-img` | 3D tilt card on hover |
 | `data-pulse` | pulsing halo (hero dots) |
 | `data-depth="N"` | mouse parallax |
+| `data-count-now` + `data-count-delay="ms"` | with `data-count`: count up even when on screen at load, starting after a delay |
+| `data-drive` | loop an element left→right across its parent (the Why Furnastra truck) |
+
+**Items inside `<sc-for>` that are on screen at load:** `data-reveal`/`data-stagger` can miss them (the list renders after the first `scan()`). Use CSS keyframes with `animation-play-state:paused` and start them with an IntersectionObserver instead, as in the hero key-stats strip (`.st-grid`).
+
+**"Writing" text reveal (hero):** put `class="hw-w"` with `style="--d:<delay>ms;--t:<duration>ms"` on a block of text inside a `.hw` container. A `260%`-wide gradient mask slides from right to left, so the text appears left→right with a soft edge. **Section headings use the same effect, scroll-triggered:** give every section's **eyebrow** `class="wr" style="--d:0ms;…"` and its **H2** `class="wr" style="--d:220ms;…"`. They stay paused until 60% visible (an IntersectionObserver sets `data-in`). Don't also put `data-reveal` on the header wrapper. Keep it to eyebrows + headings; body text, cards and buttons keep the normal `data-reveal`/`data-stagger` fade so the page doesn't feel over-animated.
+
+`.hw`, `.st-grid` and `.wr` all get `data-static` when the `animate` prop is off.
 
 Height changes must animate smoothly. Use the `display:grid;grid-template-rows:0fr→1fr` + `opacity` pattern (see the Brand Story timeline and the `.set-card .set-desc` CSS). **Never** toggle content with `sc-if`, because it makes the layout jump.
 

@@ -31,12 +31,28 @@ html{scroll-behavior:smooth}
 .set-row{display:flex;gap:clamp(12px,1.2vw,16px);height:clamp(360px,calc(100vh - 88px - 260px),560px)}
 .set-card{position:relative;flex:1 1 0;min-width:0;border-radius:20px;overflow:hidden;background:#2A3373;color:#FFFFFF;transition:flex 650ms cubic-bezier(.2,.7,.2,1)}
 a.set-card,a.set-card:hover{color:#FFFFFF}
-.why-card{position:relative;display:grid;gap:16px;align-items:start;background:#FFFFFF;border:1px solid #E4E7EF;border-radius:18px;padding:clamp(12px,1.9vh,22px) clamp(18px,1.7vw,24px);transition:transform 350ms cubic-bezier(.2,.7,.2,1),box-shadow 350ms ease,border-color 350ms ease}
-.why-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(42,51,115,0.10);border-color:rgba(245,144,103,0.55)}
-.why-card .why-ic{width:44px;height:44px;border-radius:12px;background:#FEF1EB;display:flex;align-items:center;justify-content:center;transition:background 350ms ease}
-.why-card:hover .why-ic{background:#F59067}
-.why-card .why-ic svg{stroke:#F59067;transition:stroke 350ms ease}
-.why-card:hover .why-ic svg{stroke:#FFFFFF}
+.why-tile{position:relative;overflow:hidden;border-radius:18px;padding:clamp(14px,2.4vh,26px) clamp(16px,1.7vw,26px);display:flex;flex-direction:column;min-height:0;transition:transform 350ms cubic-bezier(.2,.7,.2,1),box-shadow 350ms ease}
+.why-tile:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(42,51,115,0.12)}
+.st-grid:not([data-static]) .st-c{animation:stIn 1000ms cubic-bezier(.2,.7,.2,1) var(--d,0ms) both paused}
+.st-grid:not([data-static]) .st-l{animation:stLine 800ms cubic-bezier(.2,.7,.2,1) var(--d,0ms) both paused}
+.st-grid:not([data-static]) .st-m{animation:stMark 1300ms cubic-bezier(.2,.7,.2,1) var(--d,0ms) both paused}
+.st-grid[data-in] .st-c,.st-grid[data-in] .st-l,.st-grid[data-in] .st-m{animation-play-state:running}
+@keyframes stIn{from{opacity:0;transform:translateY(40px) scale(0.97)}to{opacity:1;transform:none}}
+@keyframes stLine{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes stMark{from{opacity:0;transform:translate(24px,24px) scale(0.85)}to{opacity:1;transform:none}}
+.hw:not([data-static]) .hw-w{-webkit-mask-image:linear-gradient(90deg,#000 40%,transparent 60%);mask-image:linear-gradient(90deg,#000 40%,transparent 60%);-webkit-mask-size:260% 100%;mask-size:260% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:hwWrite var(--t,1500ms) cubic-bezier(.45,.05,.25,1) var(--d,0ms) both}
+.hw:not([data-static]) .hw-spark{animation:hwSpark 900ms cubic-bezier(.2,.7,.2,1) var(--d,0ms) both}
+.hw:not([data-static]) .hw-up{animation:hwUp 1000ms cubic-bezier(.2,.7,.2,1) var(--d,0ms) both}
+@keyframes hwWrite{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0 0;mask-position:0 0}}
+@keyframes hwSpark{from{opacity:0;transform:scale(0) rotate(-120deg)}to{opacity:1;transform:none}}
+@keyframes hwUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.wr:not([data-static]){-webkit-mask-image:linear-gradient(90deg,#000 40%,transparent 60%);mask-image:linear-gradient(90deg,#000 40%,transparent 60%);-webkit-mask-size:260% 100%;mask-size:260% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;animation:hwWrite var(--t,1300ms) cubic-bezier(.45,.05,.25,1) var(--d,0ms) both paused}
+.wr[data-in]{animation-play-state:running}
+.wr{width:fit-content;max-width:100%}
+[data-stagger]:not([data-static]):not([data-done])>*{opacity:0;transform:translateY(56px);transition:opacity 1100ms cubic-bezier(.33,1,.68,1) calc(var(--i,0) * 130ms),transform 1400ms cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 130ms)}
+[data-stagger][data-in]:not([data-done])>*{opacity:1;transform:none}
+[data-stagger][data-rise="sm"]:not([data-static]):not([data-in])>*{transform:translateY(18px)}
+[data-stagger]>:nth-child(2){--i:1}[data-stagger]>:nth-child(3){--i:2}[data-stagger]>:nth-child(4){--i:3}[data-stagger]>:nth-child(5){--i:4}[data-stagger]>:nth-child(6){--i:5}[data-stagger]>:nth-child(7){--i:6}[data-stagger]>:nth-child(8){--i:7}[data-stagger]>:nth-child(9){--i:8}[data-stagger]>:nth-child(10){--i:9}[data-stagger]>:nth-child(11){--i:10}[data-stagger]>:nth-child(12){--i:11}
 .news-go{position:absolute;right:clamp(14px,1.4vw,18px);bottom:clamp(14px,1.4vw,18px);z-index:2;width:38px;height:38px;border-radius:50%;background:#F59067;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 8px 18px rgba(245,144,103,0.35);transition:transform 300ms cubic-bezier(.2,.7,.2,1),background 300ms}
 .news-card{position:relative;overflow:hidden;border-radius:18px;transition:transform 350ms cubic-bezier(.2,.7,.2,1),box-shadow 350ms ease}
 .news-card:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(42,51,115,0.12)}
@@ -44,6 +60,29 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
 a.news-card,a.news-card:hover{color:inherit}
 .li-scroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#C9CFEF transparent}
 .li-scroll::-webkit-scrollbar{width:6px}.li-scroll::-webkit-scrollbar-thumb{background:#C9CFEF;border-radius:6px}
+.faq-item{background:#FFFFFF;border:1px solid #E4E7EF;border-radius:16px;transition:border-color 350ms ease,box-shadow 350ms ease}
+.faq-item:hover{border-color:rgba(245,144,103,0.55)}
+.faq-q{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:clamp(13px,2vh,19px) clamp(18px,1.6vw,24px);font-family:Raleway,system-ui,sans-serif;font-size:clamp(15.5px,1.25vw,18px);font-weight:600;line-height:1.35}
+.faq-q:focus-visible{outline:2px solid #F59067;outline-offset:-2px;border-radius:16px}
+.faq-q span:first-child{transition:color 300ms}
+.faq-ic{position:relative;flex:none;width:34px;height:34px;border-radius:10px;border:1px solid;transition:background 350ms ease,border-color 350ms ease}
+.faq-ic span{position:absolute;left:50%;top:50%;width:12px;height:1.8px;margin:-0.9px 0 0 -6px;border-radius:2px;transition:transform 400ms cubic-bezier(.2,.7,.2,1),background 350ms ease}
+.faq-item:hover .faq-ic{border-color:#F59067}
+.cw-dot{all:unset;box-sizing:border-box;cursor:pointer;width:clamp(26px,2.2vw,32px);height:clamp(26px,2.2vw,32px);border-radius:50%;transition:box-shadow 300ms ease,transform 300ms cubic-bezier(.2,.7,.2,1)}
+.cw-dot:hover{transform:scale(1.12)}
+.cw-dot:focus-visible{outline:2px solid #F59067;outline-offset:6px}
+.ft-link{display:flex;align-items:baseline;gap:8px;padding:5px 0;font-size:15px;font-weight:500;color:#FFFFFF;transition:color 200ms}
+.ft-link span{font-size:12.5px;font-weight:500;color:rgba(215,222,255,0.6)}
+.ft-link:hover{color:#F7B79C}
+.ft-chip{font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#FFFFFF;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);padding:5px 10px;border-radius:999px}
+.ft-ic{width:34px;height:34px;flex:none;border-radius:10px;background:rgba(245,144,103,0.14);display:flex;align-items:center;justify-content:center}
+.to-top{position:fixed;right:clamp(16px,2.2vw,32px);bottom:clamp(16px,2.6vh,32px);z-index:70;width:56px;height:56px;border-radius:50%;background:#FFFFFF;color:#4D4D9F;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(42,51,115,0.16);opacity:0;visibility:hidden;transform:translateY(12px) scale(0.9);transition:opacity 350ms ease,transform 350ms cubic-bezier(.2,.7,.2,1),visibility 350ms,background 250ms,color 250ms}
+.to-top.on{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:#4D4D9F;color:#FFFFFF}
+.to-top:focus-visible{outline:2px solid #F59067;outline-offset:3px}
+.to-top svg.ring{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);pointer-events:none}
+.to-top .arr{transition:transform 300ms cubic-bezier(.2,.7,.2,1)}
+.to-top:hover .arr{transform:translateY(-2px)}
 .set-row:hover .set-card{flex:0.85 1 0}
 .set-row .set-card:hover{flex:1.9 1 0}
 .set-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 900ms cubic-bezier(.2,.7,.2,1)}
@@ -93,16 +132,16 @@ a.news-card,a.news-card:hover{color:inherit}
   <div style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
   <div style="position:absolute;right:-7.5vw;top:calc(388px - 29.5vw);width:59vw;aspect-ratio:1/1;border-radius:50%;border:6vw solid #ECEDF8"></div>
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(32px,4vw,56px) clamp(20px,4vw,72px) clamp(20px,2.4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(24px,2.5vw,40px);align-items:center;min-height:min(700px,calc(100vh - 88px))">
-    <div style="position:relative;z-index:2;container-type:inline-size;display:flex;flex-direction:column;gap:clamp(22px,2.2vw,32px)">
-      <div data-reveal="up" style="display:flex;align-items:center;gap:14px;font-size:clamp(13px,1.1vw,15.5px);font-weight:500;letter-spacing:0.06em;color:#F59067">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>HEALTHCARE FURNITURE COMPONENTS FOR OEMs
+    <div class="hw" style="position:relative;z-index:2;container-type:inline-size;display:flex;flex-direction:column;gap:clamp(22px,2.2vw,32px)">
+      <div style="display:flex;align-items:center;gap:14px;font-size:clamp(13px,1.1vw,15.5px);font-weight:500;letter-spacing:0.06em;color:#F59067">
+        <svg class="hw-spark" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="--d:150ms;flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg><span class="hw-w" style="--d:350ms;--t:1300ms">HEALTHCARE FURNITURE COMPONENTS FOR OEMs</span>
       </div>
-      <h1 data-stagger="120" style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">
-        <span style="display:block;white-space:nowrap">Components Engineered</span>
-        <span style="display:block;white-space:nowrap">for Healthcare Furniture.</span>
+      <h1 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">
+        <span class="hw-w" style="--d:750ms;display:block;white-space:nowrap">Components Engineered</span>
+        <span class="hw-w" style="--d:1350ms;display:block;white-space:nowrap">for Healthcare Furniture.</span>
       </h1>
-      <p data-reveal="up" data-delay="300" style="margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#5B5F63;max-width:560px;text-wrap:pretty">Explore Furnastra’s range of healthcare furniture components, backed by 35+ years of manufacturing expertise and custom product development capabilities.</p>
-      <div data-reveal="up" data-delay="420" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(4px,1vw,14px)">
+      <p class="hw-w" style="--d:1950ms;--t:1700ms;margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#5B5F63;max-width:560px;text-wrap:pretty">Explore Furnastra’s range of healthcare furniture components, backed by 35+ years of manufacturing expertise and custom product development capabilities.</p>
+      <div class="hw-up" style="--d:2700ms;display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(4px,1vw,14px)">
         <a href="#products" style="display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Explore Products <span>→</span></a>
         <a href="#oem" style="display:flex;align-items:center;gap:14px;background:transparent;color:#4D4D9F;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2.4vw,40px);border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#FFFFFF;color:#4D4D9F">Discuss Your Requirement <span>→</span></a>
       </div>
@@ -132,14 +171,14 @@ a.news-card,a.news-card:hover{color:inherit}
     </div>
   </div>
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px) clamp(48px,5vw,72px)">
-    <div data-stagger="110" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.2vw,18px)">
+    <div class="st-grid" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.2vw,18px)">
       <sc-for list="{{ keyStats }}" as="k" hint-placeholder-count="4">
-        <div style="position:relative;overflow:hidden;display:flex;flex-direction:column;gap:clamp(16px,1.6vw,22px);padding:clamp(22px,2vw,30px) clamp(20px,1.8vw,28px) clamp(24px,2.2vw,32px);border-radius:18px;background:{{ k.bg }};border:1px solid {{ k.bd }};min-height:clamp(170px,14vw,200px)">
-          <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:{{ k.ring }};-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
-          <span style="position:relative;display:flex;align-items:baseline;font-family:Raleway,system-ui,sans-serif;font-weight:500;font-size:clamp(40px,4vw,60px);line-height:1;letter-spacing:-0.02em;color:{{ k.num }}"><span data-count="{{ k.v }}" data-suffix="{{ k.suf }}">{{ k.v }}{{ k.suf }}</span><span style="font-size:0.42em;font-weight:600;letter-spacing:0;margin-left:8px">{{ k.unit }}</span></span>
+        <div class="st-c" style="--d:{{ k.dCard }}ms;position:relative;overflow:hidden;display:flex;flex-direction:column;gap:clamp(16px,1.6vw,22px);padding:clamp(22px,2vw,30px) clamp(20px,1.8vw,28px) clamp(24px,2.2vw,32px);border-radius:18px;background:{{ k.bg }};border:1px solid {{ k.bd }};min-height:clamp(170px,14vw,200px)">
+          <span aria-hidden="true" class="st-m" style="--d:{{ k.dMark }}ms;position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:{{ k.ring }};-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+          <span style="position:relative;display:flex;align-items:baseline;font-family:Raleway,system-ui,sans-serif;font-weight:500;font-size:clamp(40px,4vw,60px);line-height:1;letter-spacing:-0.02em;color:{{ k.num }}"><span class="st-l" style="--d:{{ k.dNum }}ms"><span data-count="{{ k.v }}" data-suffix="{{ k.suf }}" data-count-now="1" data-count-delay="{{ k.dNum }}">{{ k.v }}{{ k.suf }}</span></span><span class="st-l" style="--d:{{ k.dUnit }}ms;font-size:0.42em;font-weight:600;letter-spacing:0;margin-left:8px">{{ k.unit }}</span></span>
           <span style="position:relative;display:flex;gap:10px;align-items:flex-start;margin-top:auto">
-            <span style="width:8px;height:8px;border-radius:50%;background:{{ k.dot }};flex:none;margin-top:7px"></span>
-            <span style="display:flex;flex-direction:column;gap:4px"><span style="font-size:clamp(14px,1.1vw,16px);font-weight:600;line-height:1.35;color:{{ k.fg }}">{{ k.label }}</span><span style="font-size:12.5px;line-height:1.4;color:{{ k.sub }}">{{ k.note }}</span></span>
+            <span class="st-l" style="--d:{{ k.dDot }}ms;width:8px;height:8px;border-radius:50%;background:{{ k.dot }};flex:none;margin-top:7px"></span>
+            <span style="display:flex;flex-direction:column;gap:4px"><span class="st-l" style="--d:{{ k.dLabel }}ms;font-size:clamp(14px,1.1vw,16px);font-weight:600;line-height:1.35;color:{{ k.fg }}">{{ k.label }}</span><span class="st-l" style="--d:{{ k.dNote }}ms;font-size:12.5px;line-height:1.4;color:{{ k.sub }}">{{ k.note }}</span></span>
           </span>
         </div>
       </sc-for>
@@ -150,8 +189,8 @@ a.news-card,a.news-card:hover{color:inherit}
 <section id="brand-story" data-screen-label="02 Brand Story" style="position:relative;background:#FFFFFF;overflow:hidden;scroll-margin-top:88px">
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(20px,4vw,72px) clamp(88px,9vw,136px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,5.5vw,96px);align-items:stretch">
     <div style="position:relative;z-index:2;display:flex;flex-direction:column">
-      <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067;margin-bottom:20px">OUR STORY</div>
-      <h2 data-reveal="up" style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">The next era of<br>healthcare <span style="color:#F59067">is here.</span></h2>
+      <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067;margin-bottom:20px">OUR STORY</div>
+      <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">The next era of<br>healthcare <span style="color:#F59067">is here.</span></h2>
       <div data-reveal="line" style="display:flex;align-items:center;gap:8px;margin:22px 0 clamp(26px,2.6vw,36px);transform-origin:left">
         <span style="width:clamp(140px,14vw,200px);height:2px;background:#F59067"></span>
         <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>
@@ -238,9 +277,9 @@ a.news-card,a.news-card:hover{color:inherit}
   <div aria-hidden="true" style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px)"><div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:#E4E7EF"></span><svg width="14" height="14" viewBox="0 0 20 20" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg><span style="flex:1;height:1px;background:#E4E7EF"></span></div></div>
   <div style="max-width:1440px;margin:0 auto;padding:clamp(28px,4.5vh,56px) clamp(20px,4vw,72px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,2.6vw,36px);flex-wrap:wrap">
-      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">COMPONENT CATALOGUE</div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Seven families. One moulding partner.</h2>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">COMPONENT CATALOGUE</div>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Seven families. One moulding partner.</h2>
       </div>
       <a data-reveal="up" href="#products" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View All Products <span>→</span></a>
     </div>
@@ -292,10 +331,10 @@ a.news-card,a.news-card:hover{color:inherit}
       <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(36px,4vw,60px) solid #E9EBFA"></div>
       <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%)"><div data-spin="90" style="position:absolute;inset:-5%;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#F59067"></span></div></div>
       <div style="position:relative;display:flex;flex-direction:column;gap:clamp(16px,1.6vw,22px)">
-        <div style="display:flex;align-items:center;gap:12px;font-size:clamp(12.5px,1vw,14px);font-weight:500;letter-spacing:0.06em;color:#F59067">
+        <div class="wr" style="--d:0ms;display:flex;align-items:center;gap:12px;font-size:clamp(12.5px,1vw,14px);font-weight:500;letter-spacing:0.06em;color:#F59067">
           <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>GET IN TOUCH
         </div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,46px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Have a Hospital Furniture Requirement? <span style="color:#F59067">Let’s Talk.</span></h2>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,46px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Have a Hospital Furniture Requirement? <span style="color:#F59067">Let’s Talk.</span></h2>
         <p style="margin:0;font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:#5B5F63;max-width:520px">Share a drawing, part number or sample photo and our team will come back with a fitment and quotation.</p>
       </div>
       <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;justify-self:end">
@@ -312,9 +351,9 @@ a.news-card,a.news-card:hover{color:inherit}
   <div aria-hidden="true" style="position:absolute;left:-10vw;top:-18vw;width:42vw;aspect-ratio:1/1;border-radius:50%;border:4.5vw solid #E9EBFA"></div>
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(20px,4vw,72px)">
     <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(24px,3.2vh,40px)">
-      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">MANUFACTURING &amp; STRENGTHS</div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Integrated Healthcare Manufacturing <span style="color:#F59067">Excellence.</span></h2>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">MANUFACTURING &amp; STRENGTHS</div>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Integrated Healthcare Manufacturing <span style="color:#F59067">Excellence.</span></h2>
       </div>
       <div data-reveal="up" data-delay="120" style="display:flex;justify-content:flex-end">
         <a href="#oem" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:14px 26px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">Know More <span>→</span></a>
@@ -368,9 +407,9 @@ a.news-card,a.news-card:hover{color:inherit}
 <section id="applications" data-screen-label="05b Applications" style="background:#FFFFFF;scroll-margin-top:88px">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,96px) clamp(20px,4vw,72px) clamp(72px,10vh,128px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.2vh,40px);flex-wrap:wrap">
-      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">APPLICATIONS BY HOSPITAL SETTING</div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">The Right Component for<br>the Right Care <span style="color:#F59067">Setting.</span></h2>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">APPLICATIONS BY HOSPITAL SETTING</div>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">The Right Component for<br>the Right Care <span style="color:#F59067">Setting.</span></h2>
       </div>
       <p data-reveal="up" data-delay="120" style="margin:0;font-size:14px;line-height:1.6;color:#5B5F63;display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>Hover a setting to see where our parts fit</p>
     </div>
@@ -423,33 +462,82 @@ a.news-card,a.news-card:hover{color:inherit}
   <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(32px,5.5vh,96px) clamp(20px,4vw,72px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.4vh,44px);flex-wrap:wrap">
-      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">WHY FURNASTRA</div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Where Healthcare Meets<br>Innovative <span style="color:#F59067">Expertise.</span></h2>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">WHY FURNASTRA</div>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Where Healthcare Meets<br>Innovative <span style="color:#F59067">Expertise.</span></h2>
       </div>
-      <a data-reveal="up" data-delay="120" href="#legacy" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">Learn More <span>→</span></a>
+      <a data-reveal="up" data-delay="120" href="#brand-story" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">Learn More <span>→</span></a>
     </div>
-    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.82fr) minmax(0,1fr);gap:clamp(16px,2vw,32px);align-items:center">
-      <div data-stagger="110" style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-        <div class="why-card" style="grid-template-columns:minmax(0,1fr) 44px;text-align:right"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">100% in-house manufacturing</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Full control over production, quality and supply timelines. No third-party dependency.</span></span><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l5 3V10l5 3V6l8 4v11Z"/><path d="M7 17h2M12 17h2M17 17h1"/></svg></span></div>
-        <div class="why-card" style="grid-template-columns:minmax(0,1fr) 44px;text-align:right"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Advanced quality assurance &amp; testing</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Documented testing protocols, applied before every dispatch.</span></span><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.8 13 2.2 2.2 4.2-4.4"/></svg></span></div>
-        <div class="why-card" style="grid-template-columns:minmax(0,1fr) 44px;text-align:right"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Hospital-grade compliance</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Manufactured to meet applicable healthcare furniture standards.</span></span><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span></div>
+    <div data-stagger="80" style="display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,clamp(170px,calc((100vh - 88px - 262px) / 2),270px));gap:clamp(12px,1.2vw,16px)">
+      <div class="why-tile" style="grid-row:span 2;background:#2A3373;color:#FFFFFF;justify-content:space-between">
+        <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.08);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">In-house manufacturing</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#FFFFFF">100% in-house, under one roof.</span></span>
+        <div style="position:relative;align-self:center;width:clamp(140px,calc((100vh - 88px - 290px) * 0.5),210px);aspect-ratio:1/1">
+          <div data-spin="60" style="position:absolute;inset:-9%;border-radius:50%;border:1px dashed rgba(215,222,255,0.35)"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#F59067"></span></div>
+          <svg viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg)"><circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="9"/><circle cx="60" cy="60" r="52" fill="none" stroke="#F59067" stroke-width="9" stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="{{ ringOff }}" style="transition:stroke-dashoffset 1800ms cubic-bezier(.2,.7,.2,1)"/></svg>
+          <span style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(32px,3vw,44px);line-height:1;letter-spacing:-0.02em"><span data-count="100" data-suffix="%">100%</span></span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.14em;color:#F7B79C">SINCE 1990</span></span>
+        </div>
+        <span style="position:relative;display:flex;flex-direction:column;gap:12px">
+          <span style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Design</span><span style="color:#F59067;font-size:12px">→</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Tooling</span><span style="color:#F59067;font-size:12px">→</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Moulding</span><span style="color:#F59067;font-size:12px">→</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">QC</span></span>
+          <span style="font-size:13.5px;line-height:1.5;color:#D7DEFF">Full control over production, quality and timelines. No third-party dependency.</span>
+        </span>
       </div>
-      <div data-reveal="scale" style="position:relative;justify-self:center;width:min(100%,clamp(300px,calc(100vh - 88px - 300px),440px));aspect-ratio:1/1">
-        <div data-spin="70" style="position:absolute;inset:0;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-6px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#F59067;box-shadow:0 0 0 6px rgba(245,144,103,0.18)"></span></div>
-        <div data-spin="-110" style="position:absolute;inset:7%;border-radius:50%"><span style="position:absolute;left:-5px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#4D4D9F"></span></div>
-        <div style="position:absolute;inset:7%;border-radius:50%;border:clamp(22px,2.6vw,36px) solid #E9EBFA"></div>
-        <div style="position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle at 30% 25%,#4D4D9F 0%,#2A3373 70%);box-shadow:0 30px 60px rgba(42,51,115,0.28),inset 0 0 0 6px rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#FFFFFF;text-align:center;overflow:hidden">
-          <span aria-hidden="true" style="position:absolute;right:-12%;bottom:-14%;height:62%;aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.07);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
-          <span style="position:relative;display:flex;align-items:center;gap:6px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.14em;color:#F7B79C"><svg width="11" height="11" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>SINCE 1990</span>
-          <span style="position:relative;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(40px,4.2vw,64px);line-height:1;letter-spacing:-0.02em">100%</span>
-          <span style="position:relative;font-size:clamp(12.5px,1vw,14px);line-height:1.35;color:#D7DEFF;max-width:70%">in-house manufacturing</span>
+      <div class="why-tile" style="grid-column:span 2;background:#FFFFFF;border:1px solid #E4E7EF;justify-content:space-between">
+        <span style="position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+          <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">OEM experience</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#4D4D9F">Decades of OEM experience</span></span>
+          <span style="display:flex;align-items:baseline;gap:6px;font-family:Raleway,system-ui,sans-serif;color:#4D4D9F;line-height:1"><span data-count="35" data-suffix="+" style="font-weight:600;font-size:clamp(40px,3.8vw,58px);letter-spacing:-0.02em">35+</span><span style="font-weight:600;font-size:clamp(15px,1.3vw,19px);color:#F59067">yrs</span></span>
+        </span>
+        <div style="position:relative;margin:0 8px clamp(56px,7.6vh,66px) 7px">
+          <span style="position:absolute;left:0;right:0;top:0;height:2px;background:#F3C9B3"></span>
+          <span data-reveal="line" style="position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,#F59067,#E97F52);transform-origin:left"></span>
+            <span style="position:absolute;left:0%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#FFFFFF;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
+            <span style="position:absolute;left:0%;top:16px;transform:translateX(0);display:flex;flex-direction:column;gap:1px;white-space:nowrap;margin-left:-7px;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#2A3373">1990</span><span style="font-size:11.5px;color:#6B7280">Moulding begins</span></span>
+            <span style="position:absolute;left:72.2%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#FFFFFF;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
+            <span style="position:absolute;left:72.2%;top:16px;transform:translateX(-50%);display:flex;flex-direction:column;gap:1px;white-space:nowrap;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#2A3373">2016</span><span style="font-size:11.5px;color:#6B7280">BSE listed</span></span>
+            <span style="position:absolute;left:94.4%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#FFFFFF;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
+            <span style="position:absolute;left:94.4%;top:16px;transform:translateX(-85%);display:flex;flex-direction:column;gap:1px;white-space:nowrap;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#2A3373">2024</span><span style="font-size:11.5px;color:#6B7280">Furnastra</span></span>
+            <span style="position:absolute;right:-8px;top:-7px"><svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg></span>
         </div>
       </div>
-      <div data-stagger="110" style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
-        <div class="why-card" style="grid-template-columns:44px minmax(0,1fr)"><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M3 13h18"/></svg></span><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Decades of OEM experience</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">35+ years of partnerships supplying parts to hospital bed manufacturers, OEMs and medical furniture manufacturers across India.</span></span></div>
-        <div class="why-card" style="grid-template-columns:44px minmax(0,1fr)"><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Standardized customization</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Colour, finish and specification options for facility-wide consistency, without added lead time.</span></span></div>
-        <div class="why-card" style="grid-template-columns:44px minmax(0,1fr)"><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></span><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Pan-India delivery</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Distribution built for single-site and multi-facility rollouts.</span></span></div>
+      <div class="why-tile" style="background:#F59067;color:#FFFFFF;justify-content:space-between">
+        <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.14);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF">Customisation</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#FFFFFF">Standardised customisation</span></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:12px">
+          <span style="display:flex;align-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#0A98D6;border:3px solid #FFFFFF;margin-left:0;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:5"></span><span style="width:34px;height:34px;border-radius:50%;background:#15988A;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:4"></span><span style="width:34px;height:34px;border-radius:50%;background:#4D4D9F;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:3"></span><span style="width:34px;height:34px;border-radius:50%;background:#2A3373;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:2"></span><span style="width:34px;height:34px;border-radius:50%;background:#9B4F96;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:1"></span></span>
+          <span style="display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Colour</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Finish</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Spec</span></span>
+        </span>
+      </div>
+      <div class="why-tile" style="background:#FFFFFF;border:1px solid #E4E7EF;justify-content:space-between">
+        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Compliance</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#4D4D9F">Hospital-grade compliance</span></span>
+        <span style="display:flex;align-items:center"><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#2A3373;border:1.5px solid #2A3373;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:0;box-shadow:0 8px 18px rgba(42,51,115,0.10)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">13485</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#FFFFFF;border:1.5px solid #C9CFEF;color:#4D4D9F;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(42,51,115,0.10)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">9001</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#FFFFFF;border:1.5px solid #C9CFEF;color:#4D4D9F;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(42,51,115,0.10)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">45001</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#F59067;border:1.5px solid #F59067;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(42,51,115,0.10)"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:18px;margin-top:0">CE</span></span></span>
+      </div>
+      <div class="why-tile" style="background:#EEF0FB;justify-content:space-between">
+        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Quality assurance</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#4D4D9F">Tested before every dispatch</span></span>
+        <span style="position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))">
+          <span style="position:absolute;left:12.5%;right:12.5%;top:13px;height:2px;background:#C9CFEF"></span>
+          <span style="position:absolute;left:12.5%;top:13px;height:2px;width:{{ qaLine }};background:#F59067;transition:width 600ms cubic-bezier(.2,.7,.2,1)"></span>
+          <sc-for list="{{ qaSteps }}" as="q" hint-placeholder-count="4">
+            <span style="position:relative;display:flex;flex-direction:column;align-items:center;gap:7px">
+              <span style="width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ q.bg }};border:1.5px solid {{ q.bd }};transition:background 400ms ease,border-color 400ms ease"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="opacity:{{ q.op }};transition:opacity 300ms"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+              <span style="font-size:11.5px;font-weight:600;color:{{ q.fg }};white-space:nowrap;transition:color 300ms">{{ q.name }}</span>
+            </span>
+          </sc-for>
+        </span>
+      </div>
+      <div class="why-tile" style="background:#4D4D9F;color:#FFFFFF;justify-content:space-between">
+        <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.08);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F7B79C">Delivery</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#FFFFFF">Pan-India delivery</span></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:10px">
+          <span style="display:flex;align-items:center;gap:8px">
+            <span style="width:34px;height:34px;flex:none;border-radius:10px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l5 3V10l5 3V6l8 4v11Z"/><path d="M3 21h18"/></svg></span>
+            <span style="position:relative;flex:1;height:30px">
+              <span style="position:absolute;left:0;right:0;top:50%;border-top:2px dashed rgba(255,255,255,0.35)"></span>
+              <span data-drive="1" style="position:absolute;left:0;top:50%;margin-top:-13px;width:30px;height:26px;border-radius:8px;background:#F59067;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(28,34,88,0.3)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></span>
+            </span>
+            <span style="width:34px;height:34px;flex:none;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+          </span>
+          <span style="display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Single-site</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Multi-facility rollouts</span></span>
+        </span>
       </div>
     </div>
   </div>
@@ -458,9 +546,9 @@ a.news-card,a.news-card:hover{color:inherit}
 <section id="news" data-screen-label="05d Latest" style="background:#FFFFFF;scroll-margin-top:88px">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,96px) clamp(20px,4vw,72px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.2vh,40px);flex-wrap:wrap">
-      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">BLOG &amp; NEWS</div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Latest at <span style="color:#F59067">Furnastra.</span></h2>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">BLOG &amp; NEWS</div>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Latest at <span style="color:#F59067">Furnastra.</span></h2>
       </div>
       <a data-reveal="up" data-delay="120" href="#resources" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View All Blogs <span>→</span></a>
     </div>
@@ -533,117 +621,36 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="oem" data-screen-label="06 OEM Development" style="background:#FFFFFF;scroll-margin-top:88px">
-  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,128px) clamp(20px,3vw,48px)">
-    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end;margin-bottom:56px">
-      <div data-reveal="up" style="display:flex;flex-direction:column;gap:16px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">OEM / CUSTOM DEVELOPMENT</div>
-        <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(38px,4.4vw,64px);line-height:1;letter-spacing:-0.025em;color:#2A3373">Your requirement.<br>Our moulding floor.</h2>
+<section id="faq" data-screen-label="05e FAQ" style="position:relative;background:#F4F5FA;overflow:hidden;scroll-margin-top:88px">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+  <div aria-hidden="true" style="position:absolute;left:-14vw;bottom:-22vw;width:44vw;aspect-ratio:1/1;border-radius:50%;border:4.5vw solid #E9EBFA"></div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(36px,6vh,96px) clamp(20px,4vw,72px);display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,88px);align-items:stretch">
+    <div style="display:flex;flex-direction:column;gap:clamp(18px,2.6vh,28px)">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Frequently Asked<br><span style="color:#F59067">Questions.</span></h2>
       </div>
-      <p data-reveal="up" data-delay="150" style="margin:0;font-size:17px;line-height:1.65;color:#5B5F63;max-width:520px">Bring a drawing, a sample or just a problem. We take custom components from first discussion through prototype mould, trials and approval into commercial production.</p>
+      <p data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#5B5F63;max-width:440px;text-wrap:pretty">Materials, compliance, customisation and supply: the questions OEMs and hospital buyers ask us most.</p>
+      <div data-reveal="scale" data-delay="160" style="position:relative;overflow:hidden;border-radius:20px;background:#2A3373;color:#FFFFFF;padding:clamp(22px,2.2vw,32px);display:flex;flex-direction:column;gap:clamp(14px,2vh,20px);max-width:460px;margin-top:auto">
+        <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.08);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.2">Still have a question?</span>
+          <span style="font-size:14.5px;line-height:1.6;color:#D7DEFF;max-width:340px">Share your requirement and our team will get back to you with answers, the catalogue or a quote.</span>
+        </span>
+        <span style="position:relative;display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+          <a href="#rfq" style="display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.1vw,16px) clamp(22px,2vw,28px);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Contact Us <span>→</span></a>
+          <a href="mailto:sales@mitsuchem.com" style="font-size:14.5px;font-weight:500;color:#F7B79C;white-space:nowrap" style-hover="color:#FFFFFF">sales@mitsuchem.com</a>
+        </span>
+      </div>
     </div>
-    <div style="display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:24px;align-items:stretch">
-      <div data-stagger="60" style="display:flex;flex-direction:column">
-        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="7">
-          <button onClick="{{ st.select }}" style="all:unset;cursor:pointer;position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);gap:16px;padding:18px 4px 18px 0;border-bottom:1px solid #E4E7EF">
-            <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:13px;color:{{ st.numColor }};padding-top:4px;transition:color 300ms">{{ st.num }}</span>
-            <span style="display:flex;flex-direction:column;gap:8px">
-              <span style="font-family:Outfit,sans-serif;font-size:{{ st.size }};font-weight:700;line-height:1.15;color:{{ st.labelColor }};transition:all 400ms ease">{{ st.name }}</span>
-              <sc-if value="{{ st.active }}" hint-placeholder-val="{{ false }}"><span style="font-size:15px;line-height:1.55;color:#5B5F63;max-width:440px">{{ st.desc }}</span></sc-if>
-            </span>
-            <span style="position:absolute;left:0;bottom:-1px;height:2px;background:#F59067;width:{{ st.bar }};transition:{{ st.barT }}"></span>
+    <div data-stagger="60" style="display:flex;flex-direction:column;gap:clamp(8px,1.1vh,12px)">
+      <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="7">
+        <div class="faq-item" style="border-color:{{ f.bd }};box-shadow:{{ f.sh }}">
+          <button onClick="{{ f.toggle }}" aria-expanded="{{ f.open }}" class="faq-q">
+            <span style="color:{{ f.qFg }}">{{ f.q }}</span>
+            <span class="faq-ic" style="background:{{ f.icBg }};border-color:{{ f.icBd }}"><span style="background:{{ f.icFg }}"></span><span style="background:{{ f.icFg }};transform:rotate({{ f.rot }})"></span></span>
           </button>
-        </sc-for>
-        <a href="#rfq" style="margin-top:28px;align-self:flex-start;display:flex;align-items:center;gap:10px;background:#2A3373;color:#FFFFFF;font-weight:700;font-size:15px;padding:17px 28px;border-radius:999px" style-hover="background:#4D4D9F;color:#FFFFFF">Discuss a Custom Requirement →</a>
-      </div>
-      <div data-reveal="scale" style="position:relative;background:#F4F5FA;border-radius:24px;overflow:hidden;min-height:560px;display:flex;align-items:center;justify-content:center">
-        <span style="position:absolute;left:28px;top:12px;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(140px,16vw,240px);line-height:1;letter-spacing:-0.05em;color:#E4E7F6">{{ step.num }}</span>
-        <div data-spin="160" style="position:absolute;width:76%;aspect-ratio:1/1;border-radius:50%;border:1px dashed #C9CFEF">
-          <span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#F59067"></span>
-        </div>
-        <img data-float="10" data-dur="4600" src="assets/p7.png" alt="Bed with components called out" style="position:relative;width:78%;max-width:640px;height:auto">
-        <div style="position:absolute;left:24px;right:24px;bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#FFFFFF;border-radius:14px;padding:16px 20px;box-shadow:0 10px 30px rgba(42,51,115,0.08)">
-          <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.1em;color:#959EA9">STAGE {{ step.num }} OF 07</span><span style="font-size:16px;font-weight:700;color:#2A3373">{{ step.name }}</span></span>
-          <span style="font-size:13px;font-weight:700;color:#4D4D9F;white-space:nowrap">Concept → Consignment</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="legacy" data-screen-label="07 Legacy" style="background:#F4F5FA;overflow:hidden;scroll-margin-top:88px">
-  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,120px) clamp(20px,3vw,48px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:80px;align-items:center">
-    <div data-reveal="scale" style="position:relative;aspect-ratio:1/1;max-width:500px;width:100%;display:flex;align-items:center;justify-content:center">
-      <div data-spin="60" style="position:absolute;inset:0;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-6px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#F59067"></span></div>
-      <div style="position:absolute;inset:14%;border-radius:50%;background:#FFFFFF;box-shadow:0 30px 60px rgba(42,51,115,0.1)"></div>
-      <img data-float="8" data-dur="5000" src="assets/f-mark.svg" alt="" style="position:relative;width:40%;height:auto">
-      <div style="position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);white-space:nowrap;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#959EA9">EST. 1990 · MITSU CHEM PLAST LTD.</div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:26px">
-      <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">FURNASTRA + MITSU CHEM</div>
-      <h2 data-reveal="up" style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(34px,3.8vw,56px);line-height:1.04;letter-spacing:-0.025em;color:#2A3373;text-wrap:balance">A focused components brand, built on 35+ years of moulding.</h2>
-      <p data-reveal="up" data-delay="100" style="margin:0;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(22px,2vw,28px);line-height:1.4;color:#4D4D9F;max-width:620px">Hospital furniture parts have been part of Mitsu Chem for years. Furnastra gives them their own name.</p>
-      <p data-reveal="up" data-delay="200" style="margin:0;font-size:16.5px;line-height:1.7;color:#5B5F63;max-width:620px">Mitsu Chem Plast has manufactured blow and injection moulded solutions since 1990 and is listed on the Bombay Stock Exchange. Furnastra is its dedicated healthcare furniture components business — same plants, same quality systems, with a team focused on what OEMs need from a component partner.</p>
-      <div data-reveal="up" data-delay="300" style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
-        <a href="#legacy" style="display:flex;align-items:center;gap:10px;color:#2A3373;font-weight:700;font-size:15px;padding:15px 24px;border:1.5px solid #2A3373;border-radius:999px;white-space:nowrap" style-hover="background:#2A3373;color:#FFFFFF">About Furnastra →</a>
-        <sc-if value="{{ showFlags }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:#B8572F;border:1px dashed #F59067;padding:5px 8px;display:inline-block;line-height:1.4">[CONFIRM] BSE listing year — deck text says 2016, slide image says 2017</span></sc-if>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-screen-label="08 Quality" style="background:#FFFFFF;overflow:hidden">
-  <div style="max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,128px) clamp(20px,3vw,48px) 56px">
-    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:end;margin-bottom:64px">
-      <div data-reveal="up" style="display:flex;flex-direction:column;gap:16px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">QUALITY AT EVERY STAGE</div>
-        <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(38px,4.4vw,64px);line-height:1;letter-spacing:-0.025em;color:#2A3373">Checked at every stage — not just the last one.</h2>
-      </div>
-      <p data-reveal="up" data-delay="150" style="margin:0;font-size:17px;line-height:1.65;color:#5B5F63;max-width:520px">From raw material to the finished part, under an integrated management system.</p>
-    </div>
-    <div style="position:relative">
-      <div data-reveal="line" style="position:absolute;left:0;right:0;top:31px;height:2px;background:linear-gradient(90deg,#2A3373,#F59067);transform-origin:left"></div>
-      <div data-stagger="140" style="position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px">
-        <sc-for list="{{ quality }}" as="q" hint-placeholder-count="5">
-          <div style="display:flex;flex-direction:column;gap:16px">
-            <span style="width:64px;height:64px;border-radius:50%;background:#FFFFFF;border:2px solid #2A3373;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:14px;color:#2A3373">{{ q.num }}</span>
-            <span style="font-family:Outfit,sans-serif;font-size:22px;font-weight:700;color:#2A3373">{{ q.name }}</span>
-            <span style="font-size:14.5px;line-height:1.55;color:#5B5F63">{{ q.desc }}</span>
-          </div>
-        </sc-for>
-      </div>
-    </div>
-  </div>
-  <div style="padding:24px 0 clamp(80px,9vw,120px);overflow:hidden">
-    <div data-marquee="34000" style="display:flex;width:max-content">
-      <sc-for list="{{ marqueeCerts }}" as="ce" hint-placeholder-count="10">
-        <span style="display:flex;flex-direction:column;gap:4px;margin-right:16px;border:1px solid #D7DEFF;background:#F7F8FF;border-radius:16px;padding:22px 30px;white-space:nowrap"><span style="font-family:Outfit,sans-serif;font-size:26px;font-weight:700;color:#2A3373">{{ ce.a }}</span><span style="font-size:13px;color:#5B5F63">{{ ce.b }}</span></span>
-      </sc-for>
-    </div>
-    <div style="max-width:1440px;margin:24px auto 0;padding:0 clamp(20px,3vw,48px);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center">
-      <span style="display:flex;align-items:center;gap:14px;font-size:15px;color:#2A3373"><span style="font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#F59067">Recognition · 2022</span><strong>Fastest Product Development — Raksha 4 (M4) head &amp; foot bow</strong></span>
-      <sc-if value="{{ showFlags }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:#B8572F;border:1px dashed #F59067;padding:5px 8px;display:inline-block;line-height:1.4">[CONFIRM] certification scope applies to Furnastra parts &amp; plant</span></sc-if>
-    </div>
-  </div>
-</section>
-
-<section data-screen-label="09 Global Presence" style="background:#2A3373;color:#FFFFFF;position:relative;overflow:hidden">
-  <div style="position:absolute;right:-10%;top:-30%;width:70%;aspect-ratio:1/1;border-radius:50%;border:80px solid rgba(215,222,255,0.04)"></div>
-  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,128px) clamp(20px,3vw,48px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:center">
-    <div style="display:flex;flex-direction:column;gap:22px">
-      <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">GLOBAL PRESENCE</div>
-      <div data-reveal="up" style="display:flex;align-items:flex-end;gap:18px"><span data-count="11" style="font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(120px,14vw,220px);line-height:0.8;letter-spacing:-0.05em;color:#F59067">11</span><span style="font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(24px,2.4vw,36px);line-height:1.1;padding-bottom:8px">countries.<br>4 regions.</span></div>
-      <p data-reveal="up" data-delay="120" style="margin:0;font-size:16.5px;line-height:1.65;color:#D7DEFF;max-width:460px">Our healthcare furniture parts ship to OEMs across Europe, the Middle East, Asia-Pacific and North America — with the documentation and packaging export programmes require.</p>
-      <sc-if value="{{ showFlags }}" hint-placeholder-val="{{ true }}"><span style="align-self:flex-start;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;color:#F7B79C;border:1px dashed #F59067;padding:5px 8px;display:inline-block;line-height:1.4">[CLIENT APPROVAL REQUIRED] logo usage for 11 named customers</span></sc-if>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:28px">
-      <sc-for list="{{ regions }}" as="r" hint-placeholder-count="4">
-        <div data-reveal="up" style="display:flex;flex-direction:column;gap:12px;padding-bottom:24px;border-bottom:1px solid rgba(215,222,255,0.16)">
-          <span style="display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#D7DEFF"><span>{{ r.name }}</span><span style="color:#F59067">{{ r.n }}</span></span>
-          <div data-stagger="70" style="display:flex;flex-wrap:wrap;gap:10px">
-            <sc-for list="{{ r.countries }}" as="ct" hint-placeholder-count="3">
-              <span style="font-family:Outfit,sans-serif;font-size:clamp(18px,1.6vw,24px);font-weight:600;color:#FFFFFF;padding:10px 20px;border-radius:999px;border:1px solid rgba(215,222,255,0.3);background:rgba(215,222,255,0.06)">{{ ct }}</span>
-            </sc-for>
+          <div style="display:grid;grid-template-rows:{{ f.rows }};opacity:{{ f.op }};transition:grid-template-rows 500ms cubic-bezier(.2,.7,.2,1),opacity 400ms ease">
+            <div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 clamp(60px,5vw,76px) clamp(14px,2vh,20px) clamp(18px,1.6vw,24px);font-size:clamp(14.5px,1.1vw,16px);line-height:1.65;color:#5B5F63">{{ f.a }}</p></div>
           </div>
         </div>
       </sc-for>
@@ -651,68 +658,141 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="resources" data-screen-label="10 Resources" style="background:#FFFFFF;scroll-margin-top:88px">
-  <div style="max-width:1440px;margin:0 auto;padding:80px clamp(20px,3vw,48px);display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:48px">
-    <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">RESOURCES</div>
-      <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:34px;line-height:1.1;color:#2A3373">For your sourcing file.</h2>
+<section id="colours" data-screen-label="05f Colour Customisation" style="position:relative;background:#FFFFFF;overflow:hidden;scroll-margin-top:88px">
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(36px,6vh,96px) clamp(20px,4vw,72px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4.5vw,72px);align-items:stretch">
+    <div style="display:flex;flex-direction:column;justify-content:center;gap:clamp(14px,2.2vh,26px)">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">COLOUR CUSTOMISATION</div>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Furniture that matches your space, <span style="color:#F59067">not just any space.</span></h2>
+      </div>
+      <p data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#5B5F63;max-width:540px;text-wrap:pretty">Furnastra offers colour and finish customisation so manufacturers can standardise across product lines, with no variance in material quality or performance.</p>
+      <div data-stagger="90" style="display:flex;flex-direction:column;border-top:1px solid #E4E7EF;max-width:540px">
+        <sc-for list="{{ colourPoints }}" as="cp" hint-placeholder-count="3">
+          <div style="display:flex;align-items:center;gap:16px;padding:clamp(8px,1.2vh,13px) 0;border-bottom:1px solid #E4E7EF">
+            <span style="width:36px;height:36px;flex:none;border-radius:11px;background:#FCEFE8;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ cp.icon }}"/></svg></span>
+            <span style="font-size:clamp(16px,1.3vw,19px);font-weight:600;line-height:1.3;color:#2A3373">{{ cp.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div data-reveal="up" data-delay="200" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(0px,0.6vh,8px)">
+        <a href="#rfq" style="display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Discuss Your Requirement <span>→</span></a>
+        <a href="#products" style="display:flex;align-items:center;gap:14px;background:transparent;color:#4D4D9F;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2vw,30px);border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View Product Range <span>→</span></a>
+      </div>
     </div>
-    <div data-stagger="90" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px">
-      <sc-for list="{{ resources }}" as="rs" hint-placeholder-count="4">
-        <a href="#resources" style="display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:18px;background:#F4F5FA;min-height:200px" style-hover="background:#E9EBFA">
-          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#959EA9">{{ rs.kind }}</span>
-          <span style="font-size:18px;font-weight:700;color:#2A3373">{{ rs.name }}</span>
-          <span style="font-size:13.5px;line-height:1.5;color:#5B5F63;flex:1">{{ rs.desc }}</span>
-          <span style="font-size:13px;font-weight:700;color:#4D4D9F">{{ rs.cta }} →</span>
-        </a>
-      </sc-for>
+    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:20px;border-top-right-radius:clamp(90px,9vw,140px);background:#F4F5FA;border:1px solid #E4E7EF;min-height:clamp(400px,calc(100vh - 88px - 12vh),620px)">
+      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+      <div aria-hidden="true" style="position:absolute;left:50%;top:46%;width:78%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:{{ colourGlow }};opacity:0.16;filter:blur(60px);transition:background 700ms ease"></div>
+      <div aria-hidden="true" style="position:absolute;left:50%;top:46%;width:82%;aspect-ratio:1/1;transform:translate(-50%,-50%)"><div data-spin="90" style="position:absolute;inset:0;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:{{ colourGlow }};transition:background 700ms ease"></span></div></div>
+      <span style="position:absolute;left:clamp(18px,2vw,26px);top:clamp(16px,1.8vw,24px);z-index:2;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E7EF;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;color:#2A3373"><span style="width:8px;height:8px;border-radius:50%;background:{{ colourGlow }};flex:none;transition:background 700ms ease"></span>{{ colourTag }}</span>
+      <div data-float="10" data-dur="5600" style="position:absolute;left:8%;right:8%;top:9%;bottom:24%">
+        <sc-for list="{{ colourways }}" as="cw" hint-placeholder-count="5">
+          <img src="{{ cw.src }}" alt="{{ cw.alt }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:{{ cw.filter }} drop-shadow(0 30px 40px rgba(42,51,115,0.16));opacity:{{ cw.op }};transform:{{ cw.tf }};transition:opacity 650ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)">
+        </sc-for>
+      </div>
+      <div style="position:absolute;left:clamp(16px,1.8vw,24px);right:clamp(16px,1.8vw,24px);bottom:clamp(16px,1.8vw,24px);z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(12px,1.2vw,16px) clamp(16px,1.6vw,22px);background:rgba(255,255,255,0.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #E4E7EF;border-radius:16px;box-shadow:0 14px 30px rgba(42,51,115,0.08)">
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.12em;color:#6B7280">SELECT A FINISH</span>
+          <span style="font-size:clamp(16px,1.3vw,19px);font-weight:600;color:#2A3373;white-space:nowrap">{{ colourName }}</span>
+        </span>
+        <span role="radiogroup" aria-label="Panel colour" style="display:flex;gap:clamp(8px,0.9vw,12px)">
+          <sc-for list="{{ colourways }}" as="cw" hint-placeholder-count="5">
+            <button onClick="{{ cw.pick }}" role="radio" aria-checked="{{ cw.on }}" aria-label="{{ cw.name }}" class="cw-dot" style="background:{{ cw.hex }};box-shadow:0 0 0 {{ cw.ring }} #FFFFFF,0 0 0 {{ cw.ring2 }} {{ cw.hex }}"></button>
+          </sc-for>
+        </span>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="rfq" data-screen-label="11 RFQ" style="background:#1C2258;color:#FFFFFF;position:relative;overflow:hidden;scroll-margin-top:88px">
-  <div data-spin="140" style="position:absolute;right:-240px;top:-260px;width:820px;height:820px;border-radius:50%;border:1px dashed rgba(215,222,255,0.2)"><span style="position:absolute;left:50%;bottom:-6px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#F59067"></span></div>
-  <div style="position:absolute;right:-160px;top:-180px;width:660px;height:660px;border-radius:50%;border:60px solid rgba(215,222,255,0.04)"></div>
-  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(80px,9vw,120px) clamp(20px,3vw,48px);display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:72px;align-items:center">
-    <div data-reveal="up" style="display:flex;flex-direction:column;gap:22px">
-      <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">REQUEST A QUOTE</div>
-      <h2 style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(40px,4.6vw,68px);line-height:1;letter-spacing:-0.025em;text-wrap:balance">Building your next bed? <span style="color:#F59067">Let’s talk parts.</span></h2>
-      <p style="margin:0;font-size:17px;line-height:1.65;color:#D7DEFF;max-width:520px">Share a drawing, part number or sample photo and our team will come back with a fitment and quotation.</p>
-    </div>
-    <div data-reveal="scale" style="background:#FFFFFF;color:#2A3373;padding:36px;border-radius:24px;display:flex;flex-direction:column;gap:20px;box-shadow:0 40px 80px rgba(0,0,0,0.25)">
-      <div style="display:grid;grid-template-columns:1fr 1fr;background:#F4F5FA;border-radius:999px;padding:4px">
-        <button onClick="{{ setQuote }}" style="all:unset;cursor:pointer;text-align:center;padding:12px;border-radius:999px;font-weight:700;font-size:14px;background:{{ tabQuoteBg }};color:{{ tabQuoteFg }};transition:all 250ms">Request a Quote</button>
-        <button onClick="{{ setCustom }}" style="all:unset;cursor:pointer;text-align:center;padding:12px;border-radius:999px;font-weight:700;font-size:14px;background:{{ tabCustomBg }};color:{{ tabCustomFg }};transition:all 250ms">Custom Manufacturing</button>
+<section id="final-cta" data-screen-label="05g Final CTA" style="background:#FFFFFF;scroll-margin-top:88px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(8px,2vh,24px) clamp(20px,4vw,72px) clamp(56px,9vh,120px)">
+    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:24px;border-top-left-radius:clamp(90px,9vw,140px);background:#1C2258;color:#FFFFFF;min-height:clamp(420px,calc(100vh - 88px - 18vh),600px);display:flex;align-items:center;box-shadow:0 30px 60px rgba(42,51,115,0.18)">
+      <img src="assets/mfg-floor.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%;filter:saturate(0.6) brightness(0.8)">
+      <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,34,88,0.97) 0%,rgba(28,34,88,0.9) 38%,rgba(28,34,88,0.55) 70%,rgba(28,34,88,0.35) 100%),linear-gradient(180deg,rgba(28,34,88,0) 55%,rgba(28,34,88,0.6) 100%)"></span>
+      <div aria-hidden="true" style="position:absolute;right:-6%;top:50%;width:min(620px,46vw);aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(36px,4vw,60px) solid rgba(215,222,255,0.07)"></div>
+      <div aria-hidden="true" style="position:absolute;right:-6%;top:50%;width:min(620px,46vw);aspect-ratio:1/1;transform:translateY(-50%)"><div data-spin="90" style="position:absolute;inset:-6%;border-radius:50%;border:1px dashed rgba(215,222,255,0.3)"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#F59067"></span></div></div>
+      <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(160px,14vw,220px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.08);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+      <div style="position:relative;display:flex;flex-direction:column;gap:clamp(18px,2.8vh,28px);padding:clamp(36px,6vh,72px) clamp(28px,5vw,88px);max-width:820px">
+        <div class="wr" style="--d:0ms;display:flex;align-items:center;gap:12px;font-size:clamp(12.5px,1vw,14px);font-weight:500;letter-spacing:0.06em;color:#F7B79C">
+          <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>START YOUR PROJECT
+        </div>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF">Built for OEMs.<br><span style="color:#F7B79C">Engineered for Healthcare.</span></h2>
+        <p data-reveal="up" data-delay="160" style="margin:0;font-size:clamp(18px,1.55vw,22px);font-weight:500;line-height:1.45;color:#D7DEFF">Developing a new product or expanding your range?</p>
+        <div data-reveal="up" data-delay="240" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(2px,0.8vh,10px)">
+          <a href="#rfq" style="display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;box-shadow:0 14px 30px rgba(245,144,103,0.3);transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Contact Us <span>→</span></a>
+          <!-- TODO: point to the catalogue PDF once the client supplies it -->
+          <a href="#resources" style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.06);color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2vw,30px);border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#FFFFFF;color:#2A3373">Download Catalogue <span>↓</span></a>
+        </div>
+        <div data-stagger="80" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(6px,2vh,22px)">
+          <span style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);font-size:13px;font-weight:600;letter-spacing:0.02em"><span style="width:6px;height:6px;border-radius:50%;background:#F59067;flex:none"></span>35+ years of moulding</span>
+          <span style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);font-size:13px;font-weight:600;letter-spacing:0.02em"><span style="width:6px;height:6px;border-radius:50%;background:#F59067;flex:none"></span>ISO 13485 certified</span>
+          <span style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);font-size:13px;font-weight:600;letter-spacing:0.02em"><span style="width:6px;height:6px;border-radius:50%;background:#F59067;flex:none"></span>Supplying OEMs in 11 countries</span>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">Company<input placeholder="OEM / manufacturer name" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">Country<input placeholder="e.g. Germany" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">Work email<input placeholder="name@company.com" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">{{ fieldLabel }}<input placeholder="{{ fieldPh }}" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
-      </div>
-      <div style="border:1.5px dashed #C0C8D4;border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:#5B5F63"><span>Upload drawing or requirement (PDF, DWG, STEP)</span><span style="font-weight:700;color:#4D4D9F">Browse</span></div>
-      <a href="#rfq" style="display:flex;justify-content:center;align-items:center;gap:10px;background:#F59067;color:#1C2258;font-weight:700;font-size:15px;padding:18px;border-radius:999px" style-hover="background:#F7A27F;color:#1C2258">{{ submitLabel }} →</a>
     </div>
   </div>
 </section>
 
-<footer style="background:#151A47;color:#C0C8D4">
-  <div style="max-width:1440px;margin:0 auto;padding:56px clamp(20px,3vw,48px) 36px;display:grid;grid-template-columns:minmax(0,4fr) repeat(3,minmax(0,2fr)) minmax(0,3fr);gap:40px">
-    <div style="display:flex;flex-direction:column;gap:18px">
-      <img src="assets/logo-white.svg" alt="Furnastra" style="height:28px;width:auto;align-self:flex-start">
-      <span style="font-size:13.5px;line-height:1.6;max-width:300px">Healthcare furniture components by Mitsu Chem Plast Ltd.</span>
+<footer style="position:relative;overflow:hidden;background:#1C2258;color:#FFFFFF;border-top:2px solid #F59067">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(215,222,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(215,222,255,0.05) 1px,transparent 1px);background-size:56px 56px"></div>
+  <div aria-hidden="true" style="position:absolute;right:-12vw;top:-16vw;width:40vw;aspect-ratio:1/1;border-radius:50%;border:4.5vw solid rgba(215,222,255,0.05)"></div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(56px,8vh,96px) clamp(20px,4vw,72px) clamp(28px,4vh,44px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1.25fr) minmax(0,0.8fr) minmax(0,1.15fr);gap:clamp(28px,4vw,64px)">
+    <div data-stagger data-rise="sm" style="display:flex;flex-direction:column;gap:20px">
+      <a href="#hero" style="display:flex;align-items:flex-start;gap:2px;align-self:flex-start"><img src="assets/logo-white.svg" alt="Furnastra" style="height:clamp(30px,2.6vw,36px);width:auto"><span style="font-size:8px;font-weight:600;color:#FFFFFF;line-height:1">™</span></a>
+      <p style="margin:0;font-size:15px;line-height:1.65;color:#D7DEFF;max-width:320px">Healthcare furniture components engineered for OEMs, backed by 35+ years of moulding expertise.</p>
+      <span style="display:flex;flex-wrap:wrap;gap:6px"><span class="ft-chip">ISO 13485</span><span class="ft-chip">ISO 9001</span><span class="ft-chip">ISO 45001</span><span class="ft-chip">CE</span></span>
+      <span style="font-size:13px;line-height:1.5;color:rgba(215,222,255,0.75)">A brand of <strong style="font-weight:600;color:#FFFFFF">Mitsu Chem Plast Ltd.</strong></span>
     </div>
-    <div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#959EA9">Products</span><a href="#products" style="color:#D7DEFF">Raksha</a><a href="#products" style="color:#D7DEFF">Sahara</a><a href="#products" style="color:#D7DEFF">Setu</a><a href="#products" style="color:#D7DEFF">Aakaar</a></div>
-    <div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#959EA9">&nbsp;</span><a href="#products" style="color:#D7DEFF">Rahat</a><a href="#products" style="color:#D7DEFF">Rudra</a><a href="#products" style="color:#D7DEFF">Jivan</a></div>
-    <div style="display:flex;flex-direction:column;gap:10px;font-size:14px"><span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#959EA9">Company</span><a href="#oem" style="color:#D7DEFF">OEM Solutions</a><a href="#manufacturing" style="color:#D7DEFF">Manufacturing</a><a href="#legacy" style="color:#D7DEFF">About</a><a href="#resources" style="color:#D7DEFF">Resources</a></div>
-    <div style="display:flex;flex-direction:column;gap:10px;font-size:13.5px;line-height:1.6"><span style="font-size:11.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#959EA9">Corporate office</span><span>329, Gala Complex, Din Dayal Upadhyay Road, Mulund (W), Mumbai 400 080, India</span><span>sales@mitsuchem.com</span><sc-if value="{{ showFlags }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;color:#F7B79C">[CONFIRM] Furnastra-specific enquiry email</span></sc-if></div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">PRODUCTS</div>
+      <div data-stagger data-rise="sm" style="display:flex;flex-direction:column;gap:2px">
+          <a href="#products" class="ft-link">Raksha <span>Head &amp; foot bows</span></a>
+          <a href="#products" class="ft-link">Sahara <span>Side railings</span></a>
+          <a href="#products" class="ft-link">Setu <span>Bed platforms</span></a>
+          <a href="#products" class="ft-link">Aakaar <span>Buffer wheels</span></a>
+          <a href="#products" class="ft-link">Rahat <span>Over bed tables</span></a>
+          <a href="#products" class="ft-link">Rudra <span>Bedside lockers</span></a>
+          <a href="#products" class="ft-link">Jivan <span>Spine boards</span></a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="wr" style="--d:120ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">COMPANY</div>
+      <div data-stagger data-rise="sm" style="display:flex;flex-direction:column;gap:4px">
+          <a href="#brand-story" class="ft-link">Our Story</a>
+          <a href="#manufacturing" class="ft-link">Manufacturing</a>
+          <a href="#applications" class="ft-link">Applications</a>
+          <a href="#why" class="ft-link">Why Furnastra</a>
+          <a href="#news" class="ft-link">News &amp; Updates</a>
+          <a href="#faq" class="ft-link">FAQ</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="wr" style="--d:240ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">CORPORATE OFFICE</div>
+      <div data-stagger data-rise="sm" style="display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;gap:12px;align-items:flex-start"><span class="ft-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span style="font-size:14.5px;line-height:1.6;color:#D7DEFF">329, Gala Complex, Din Dayal Upadhyay Road, Mulund (W), Mumbai 400 080, India</span></div>
+      <a href="mailto:sales@mitsuchem.com" style="display:flex;gap:12px;align-items:center;font-size:14.5px;font-weight:500;color:#FFFFFF" style-hover="color:#F7B79C"><span class="ft-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg></span>sales@mitsuchem.com</a>
+      <a href="#final-cta" style="margin-top:6px;align-self:flex-start;display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,16px);letter-spacing:0.03em;padding:14px 24px;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Request a quote <span>→</span></a>
+      </div>
+    </div>
   </div>
-  <div style="max-width:1440px;margin:0 auto;padding:20px clamp(20px,3vw,48px) 28px;border-top:1px solid rgba(215,222,255,0.12);display:flex;justify-content:space-between;font-size:12.5px;color:#959EA9"><span>© 2026 Mitsu Chem Plast Ltd.</span><span>www.furnastra.com</span></div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px)">
+    <div data-stagger data-rise="sm" style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:20px clamp(76px,6vw,96px) clamp(24px,3.4vh,32px) 0;border-top:1px solid rgba(215,222,255,0.12);font-size:13px;color:rgba(215,222,255,0.7)">
+      <span>© 2026 Mitsu Chem Plast Ltd. All rights reserved.</span>
+      <span style="display:flex;align-items:center;gap:20px">
+        <span style="display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:#D7DEFF"><svg width="12" height="12" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>WWW.FURNASTRA.COM</span>
+      </span>
+    </div>
+  </div>
 </footer>
+
+<a href="#hero" class="to-top" data-to-top="1" aria-label="Back to top">
+  <svg class="ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="none" stroke="#E4E7EF" stroke-width="2.5"/><circle data-to-top-ring="1" cx="28" cy="28" r="26" fill="none" stroke="#F59067" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="163.36"/></svg>
+  <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
+</a>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;animate&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;showFlags&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Review&quot;}}">
 class Component extends DCLogic {
-  state = { step: 0, story: 0, mode: 'quote', scrolled: false };
+  state = { step: 0, story: 0, mode: 'quote', scrolled: false, faq: 0 };
   anims = [];
   mx = 0; my = 0;
   motion() { return this.props.animate ?? true; }
@@ -723,57 +803,78 @@ class Component extends DCLogic {
     addEventListener('mousemove', this.onMove);
     this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { this.show(e.target); this.io.unobserve(e.target); } }), { threshold: 0.12 });
     this.cio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { this.count(e.target); this.cio.unobserve(e.target); } }), { threshold: 0.5 });
-    this.timer = setInterval(() => { if (!this.motion()) return; this.setState(s => ({ step: this.hold ? s.step : (s.step + 1) % 7, ms: this.msHold ? s.ms : ((s.ms ?? 0) + 1) % 4 })); }, 4200);
+    this.timer = setInterval(() => { if (!this.motion()) return; this.setState(s => ({ step: this.hold ? s.step : (s.step + 1) % 5, ms: this.msHold ? s.ms : ((s.ms ?? 0) + 1) % 4, cw: this.cwHold ? s.cw : ((s.cw ?? 0) + 1) % 5 })); }, 4200);
+    // Key stats strip: cards, then each line inside them, enter once the strip is on screen (CSS keyframes, paused until then).
+    const sg = document.querySelector('.st-grid'), hw = document.querySelector('.hw');
+    if (hw && !this.motion()) hw.dataset.static = '1';
+    // Section eyebrows + headings (.wr) write in left→right once they scroll into view.
+    if (!this.motion()) document.querySelectorAll('.wr').forEach(el => { el.dataset.static = '1'; });
+    else { this.wrio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.dataset.in = '1'; this.wrio.unobserve(e.target); } }), { threshold: 0.6 }); document.querySelectorAll('.wr').forEach(el => this.wrio.observe(el)); }
+    if (sg && !this.motion()) sg.dataset.static = '1';
+    else if (sg) { this.sio = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { sg.dataset.in = '1'; this.sio.disconnect(); } }, { threshold: 0.2 }); this.sio.observe(sg); }
     setTimeout(() => { this.scan(); this.handleScroll(); }, 60);
   }
   componentDidUpdate(pp) {
     this.scan();
+    if (!this.motion()) document.querySelectorAll('.st-grid,.hw,.wr,[data-stagger]').forEach(el => { el.dataset.static = '1'; });
     if ((pp.animate ?? true) !== this.motion()) this.anims.forEach(a => this.motion() ? a.play() : a.pause());
   }
   componentWillUnmount() {
     removeEventListener('scroll', this.onScroll); removeEventListener('mousemove', this.onMove);
-    this.io.disconnect(); this.cio.disconnect(); clearInterval(this.timer); this.anims.forEach(a => a.cancel());
+    this.io.disconnect(); this.cio.disconnect(); if (this.wio) this.wio.disconnect(); if (this.sio) this.sio.disconnect(); if (this.wrio) this.wrio.disconnect(); if (this.sgio) this.sgio.disconnect(); clearInterval(this.timer); this.anims.forEach(a => a.cancel());
   }
   hide(el, type, d) {
+    // Slow, soft rise: long ease-out so elements glide into place. The element's own inline transition is put back afterwards (see show()).
+    const dur = type === 'line' ? 1600 : 1400;
+    el.dataset.rvTr = el.style.transition || ''; el.dataset.rvEnd = d + dur;
     el.style.opacity = '0';
-    el.style.transform = type === 'scale' ? 'scale(0.94)' : type === 'line' ? 'scaleX(0)' : 'translateY(44px)';
-    el.style.transition = `opacity 900ms cubic-bezier(.2,.7,.2,1) ${d}ms, transform ${type === 'line' ? 1600 : 1100}ms cubic-bezier(.2,.7,.2,1) ${d}ms`;
+    el.style.transform = type === 'scale' ? 'scale(0.95) translateY(16px)' : type === 'line' ? 'scaleX(0)' : 'translateY(56px)';
+    el.style.transition = `opacity 1100ms cubic-bezier(.33,1,.68,1) ${d}ms, transform ${dur}ms cubic-bezier(.16,1,.3,1) ${d}ms`;
     this.io.observe(el);
   }
-  show(el) { el.style.opacity = '1'; el.style.transform = 'none'; }
+  show(el) {
+    el.style.opacity = '1'; el.style.transform = 'none';
+    setTimeout(() => { if (el.style.opacity === '1') el.style.transition = el.dataset.rvTr || ''; }, +(el.dataset.rvEnd || 0) + 80);
+  }
   scan() {
     const m = this.motion();
     document.querySelectorAll('[data-reveal]:not([data-rv])').forEach(el => {
       el.dataset.rv = '1'; if (!m) return;
       this.hide(el, el.dataset.reveal, +(el.dataset.delay || 0));
     });
+    // Card grids: children rise one by one via CSS ([data-stagger][data-in]); attributes survive re-renders, inline styles don't.
     document.querySelectorAll('[data-stagger]:not([data-rv])').forEach(p => {
-      p.dataset.rv = '1'; if (!m) return;
-      const step = +p.dataset.stagger;
-      Array.from(p.children).forEach((c, i) => { if (c.dataset.rv) return; c.dataset.rv = '1'; this.hide(c, 'up', i * step); });
+      p.dataset.rv = '1'; if (!m) { p.dataset.static = '1'; return; }
+      this.sgio = this.sgio || new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; const g = e.target; this.sgio.unobserve(g);
+        g.dataset.in = '1'; setTimeout(() => { g.dataset.done = '1'; }, g.children.length * 130 + 1500); }), { threshold: 0.12 });
+      this.sgio.observe(p);
     });
     if (!m) return;
     const loop = (el, kf, o) => { el.dataset.lp = '1'; this.anims.push(el.animate(kf, { iterations: Infinity, ...o })); };
     document.querySelectorAll('[data-float]:not([data-lp])').forEach(el => loop(el, [{ transform: 'translateY(0)' }, { transform: `translateY(-${el.dataset.float}px)` }], { duration: +(el.dataset.dur || 5000), direction: 'alternate', easing: 'ease-in-out' }));
     document.querySelectorAll('[data-spin]:not([data-lp])').forEach(el => { const s = +el.dataset.spin; loop(el, [{ transform: 'rotate(0deg)' }, { transform: `rotate(${s < 0 ? -360 : 360}deg)` }], { duration: Math.abs(s) * 1000, easing: 'linear' }); });
     document.querySelectorAll('[data-marquee]:not([data-lp])').forEach(el => { const s = +el.dataset.marquee; loop(el, s < 0 ? [{ transform: 'translateX(-50%)' }, { transform: 'translateX(0)' }] : [{ transform: 'translateX(0)' }, { transform: 'translateX(-50%)' }], { duration: Math.abs(s), easing: 'linear' }); });
+    document.querySelectorAll('[data-drive]:not([data-lp])').forEach(el => loop(el, [{ left: '0%', opacity: 0 }, { left: '8%', opacity: 1, offset: 0.12 }, { left: 'calc(92% - 30px)', opacity: 1, offset: 0.88 }, { left: 'calc(100% - 30px)', opacity: 0 }], { duration: 4200, easing: 'ease-in-out' }));
+    if (!this.state.ringOn) { const why = document.getElementById('why'); if (why && !this.wio) { this.wio = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { this.setState({ ringOn: true }); this.wio.disconnect(); } }, { threshold: 0.3 }); this.wio.observe(why); } }
     document.querySelectorAll('[data-pulse]:not([data-lp])').forEach((el, i) => loop(el, [{ transform: 'scale(0.6)', opacity: 0.9 }, { transform: 'scale(2.2)', opacity: 0 }], { duration: 2000, delay: i * 350, easing: 'ease-out' }));
     document.querySelectorAll('[data-count]:not([data-cv])').forEach(el => {
-      el.dataset.cv = '1'; const r = el.getBoundingClientRect(); if (r.top < innerHeight) return;
+      el.dataset.cv = '1'; const r = el.getBoundingClientRect(); if (r.top < innerHeight && !el.dataset.countNow) return;
       el.textContent = '0' + (el.dataset.suffix || ''); this.cio.observe(el);
     });
     document.querySelectorAll('[data-tilt]:not([data-tv])').forEach(el => {
-      el.dataset.tv = '1'; el.style.transition = 'transform 500ms cubic-bezier(.2,.7,.2,1)';
+      el.dataset.tv = '1'; const tiltTr = () => { if (el.style.opacity !== '0') el.style.transition = 'transform 500ms cubic-bezier(.2,.7,.2,1)'; };
       const img = el.querySelector('[data-tilt-img]'); const base = img ? img.style.transform : '';
       if (img) img.style.transition = 'transform 600ms cubic-bezier(.2,.7,.2,1)';
-      el.addEventListener('mousemove', e => { if (!this.motion()) return; const r = el.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; el.style.transform = `perspective(1000px) rotateX(${-y * 6}deg) rotateY(${x * 8}deg) translateY(-4px)`; if (img) img.style.transform = `${base} translate(${x * 18}px,${y * 14}px) scale(1.06)`; });
-      el.addEventListener('mouseleave', () => { el.style.transform = 'none'; if (img) img.style.transform = base; });
+      el.addEventListener('mousemove', e => { if (!this.motion()) return; tiltTr(); const r = el.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5; el.style.transform = `perspective(1000px) rotateX(${-y * 6}deg) rotateY(${x * 8}deg) translateY(-4px)`; if (img) img.style.transform = `${base} translate(${x * 18}px,${y * 14}px) scale(1.06)`; });
+      el.addEventListener('mouseleave', () => { tiltTr(); el.style.transform = 'none'; if (img) img.style.transform = base; });
     });
   }
   count(el) {
-    const v = +el.dataset.count, suf = el.dataset.suffix || '', t0 = performance.now();
-    const f = (t) => { const p = Math.min(1, (t - t0) / 1800), k = 1 - Math.pow(1 - p, 3), n = Math.round(v * k); el.textContent = (v >= 1000 ? n.toLocaleString('en-IN') : n) + suf; if (p < 1) requestAnimationFrame(f); };
-    requestAnimationFrame(f);
+    const v = +el.dataset.count, suf = el.dataset.suffix || '';
+    const go = () => { let t0 = null;
+      const f = (t) => { if (t0 === null) t0 = t; const p = Math.max(0, Math.min(1, (t - t0) / 1800)), k = 1 - Math.pow(1 - p, 3), n = Math.round(v * k); el.textContent = (v >= 1000 ? n.toLocaleString('en-IN') : n) + suf; if (p < 1) requestAnimationFrame(f); };
+      requestAnimationFrame(f); };
+    const d = +(el.dataset.countDelay || 0); d ? setTimeout(go, d) : go();
   }
   parallax() {
     if (!this.motion()) return;
@@ -784,6 +885,13 @@ class Component extends DCLogic {
     const sc = scrollY > 40;
     if (sc !== this.state.scrolled) this.setState({ scrolled: sc });
     this.parallax();
+    // Back-to-top button: show after the hero, fill the ring with page progress (direct DOM, no re-render).
+    const tt = document.querySelector('[data-to-top]');
+    if (tt) {
+      const max = document.documentElement.scrollHeight - innerHeight, p = max > 0 ? Math.min(1, scrollY / max) : 0;
+      tt.classList.toggle('on', scrollY > innerHeight * 0.6);
+      const ring = tt.querySelector('[data-to-top-ring]'); if (ring) ring.style.strokeDashoffset = String(163.36 * (1 - p));
+    }
     const st = document.getElementById('story');
     if (st && st.offsetHeight) {
       const r = st.getBoundingClientRect(), tot = r.height - innerHeight;
@@ -828,7 +936,8 @@ class Component extends DCLogic {
       { v: 30, suf: '+', unit: 'SKUs', label: 'Product SKUs', note: 'Across 7 component families', tone: 'orange' },
       { v: 11, suf: '', unit: '', label: 'Countries covered', note: 'Europe · Middle East · APAC · N. America', tone: 'light' },
       { v: 3, suf: '', unit: 'ISO', label: 'Certifications held', note: '13485 · 9001 · 45001, plus CE', tone: 'indigo' },
-    ].map(k => ({ ...k, ...statTone[k.tone] }));
+    ].map((k, i) => { const b = i * 160; return { ...k, ...statTone[k.tone],
+      dCard: b, dMark: b + 350, dNum: b + 280, dUnit: b + 420, dDot: b + 500, dLabel: b + 540, dNote: b + 660 }; });
     const msIdx = s.ms ?? 0;
     const milestones = [
       { year: '1990', badge: '1990', tag: 'FOUNDED · 1990', title: 'Manufacturing journey begins', desc: 'Mitsu Chem Plast starts blow and injection moulding — the base Furnastra is built on.' },
@@ -893,9 +1002,44 @@ class Component extends DCLogic {
       { kind: 'ARTICLES', name: 'Insights', desc: 'Notes on component sourcing and moulding.', cta: 'Read' },
       { kind: 'UPDATES', name: 'News & events', desc: 'Trade shows, launches and announcements.', cta: 'View' },
     ];
+    const faqs = [
+      { q: 'What materials are used in Furnastra products?', a: 'Primarily high-density, virgin-grade plastics, including ABS.' },
+      { q: 'Are your products compliant with hospital safety standards?', a: 'Yes. We are ISO 13485, ISO 9001 and ISO 45001 certified, and our products carry CE certification.' },
+      { q: 'Can products be customised in colour or size?', a: 'Yes. Colours can be customised. Size options depend on the product.' },
+      { q: 'Do you supply pan-India, and what are typical lead times?', a: 'Yes, we supply across India.' },
+      { q: 'How do I request a product catalogue, datasheet or quote?', a: 'Contact us directly and our team will share the catalogue.' },
+      { q: 'Do you support OEM or private-label supply?', a: 'Yes. Connect with us to discuss your requirements.' },
+      { q: 'Are you a hospital furniture supplier for bulk orders?', a: 'Yes. Furnastra supplies at scale to OEMs and institutional buyers.' },
+    ].map((f, i) => { const o = i === s.faq; return { ...f, open: o ? 'true' : 'false',
+      toggle: () => this.setState({ faq: o ? null : i }),
+      rows: o ? '1fr' : '0fr', op: o ? 1 : 0, rot: o ? '0deg' : '90deg',
+      qFg: o ? '#2A3373' : '#4D4D9F', bd: o ? 'rgba(245,144,103,0.55)' : '#E4E7EF', sh: o ? '0 16px 34px rgba(42,51,115,0.08)' : 'none',
+      icBg: o ? '#F59067' : '#FFFFFF', icBd: o ? '#F59067' : '#E4E7EF', icFg: o ? '#FFFFFF' : '#F59067' }; });
+    // Sky Blue and Teal Green are real renders (p12 / p10); the others hue-shift p12's blue panels.
+    const cwIdx = s.cw ?? 0;
+    const colourways = [
+      { name: 'Sky Blue', hex: '#0A98D6', src: 'assets/p12.png', filter: '' },
+      { name: 'Teal Green', hex: '#15988A', src: 'assets/p10.png', filter: '' },
+      { name: 'Indigo', hex: '#4D4D9F', src: 'assets/p12.png', filter: 'hue-rotate(42deg) saturate(0.75) brightness(0.92)' },
+      { name: 'Coral', hex: '#F59067', src: 'assets/p12.png', filter: 'hue-rotate(178deg) saturate(0.72) brightness(1.06)' },
+      { name: 'Plum', hex: '#9B4F96', src: 'assets/p12.png', filter: 'hue-rotate(102deg) saturate(0.5) brightness(0.9)' },
+    ].map((c, i) => { const on = i === cwIdx; return { ...c, alt: on ? 'Hospital bed with ' + c.name.toLowerCase() + ' panels' : '',
+      on: on ? 'true' : 'false', op: on ? 1 : 0, tf: on ? 'scale(1)' : 'scale(0.97)',
+      ring: on ? '3px' : '0px', ring2: on ? '5px' : '0px',
+      pick: () => { this.cwHold = true; this.setState({ cw: i }); } }; });
+    const colourPoints = [
+      { name: 'Matched to your specification', icon: 'M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.7 1.8-1.7H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3Z M7.5 11.5h.01 M10.5 7.5h.01 M15.5 8.5h.01' },
+      { name: 'Department-level differentiation', icon: 'M3 21h18 M5 21V7l7-4 7 4v14 M9 21v-5h6v5 M9 10h.01 M15 10h.01' },
+      { name: 'No compromise on material', icon: 'M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z m-3.2 9.2 2.2 2.2 4.4-4.6' },
+    ];
+    const qaN = this.motion() ? s.step % 5 : 4;
+    const qaSteps = ['Material', 'Moulding', 'Testing', 'PDI'].map((name, i) => { const d = i < qaN; return { name,
+      bg: d ? '#F59067' : '#FFFFFF', bd: d ? '#F59067' : '#C9CFEF', op: d ? 1 : 0, fg: d ? '#2A3373' : '#6B7280' }; });
     const custom = s.mode === 'custom';
     return {
-      showFlags: flags, keyStats, milestones, msCard, callouts, spotClip, spotOp: hotOn ? 1 : 0,
+      qaSteps, qaLine: `calc(75% * ${Math.max(0, qaN - 1) / 3})`, ringOff: s.ringOn || !this.motion() ? 0 : 326.7,
+      showFlags: flags, keyStats, faqs, colourways, colourPoints,
+      colourName: colourways[cwIdx].name, colourGlow: colourways[cwIdx].hex, colourTag: 'SHOWN · ' + colourways[cwIdx].name.toUpperCase(), milestones, msCard, callouts, spotClip, spotOp: hotOn ? 1 : 0,
       bedFilter: hotOn ? 'drop-shadow(0 30px 40px rgba(42,51,115,0.12)) grayscale(0.85) opacity(0.35)' : 'drop-shadow(0 30px 40px rgba(42,51,115,0.16))',
       hdrShadow: s.scrolled ? '0 6px 24px rgba(42,51,115,0.08)' : 'none',
       marqueeMats: [...mats, ...mats], marqueeCerts: [...certs, ...certs],
