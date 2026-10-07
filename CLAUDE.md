@@ -13,10 +13,10 @@ Before you design or edit anything, read:
 
 - Use the **light theme** of the top sections (header → Applications). The dark sections
   below are legacy, so don't copy their style.
-- Headings: Raleway **600**, `clamp(30px,3.6vw,52px)`, `#44499E`, with an orange (`#E8966C`)
+- Headings: Raleway **600**, `clamp(30px,3.6vw,52px)`, `#4D4D9F`, with an orange (`#F59067`)
   accent on the last word. Eyebrows: JetBrains Mono 11.5px, orange, **no numbering**.
 - Buttons: `border-radius:12px`, weight 500. Primary is orange with white text;
-  secondary is outlined in `#44499E`.
+  secondary is outlined in `#4D4D9F`.
 - Container `max-width:1440px`, side padding `clamp(20px,4vw,72px)`, fixed header **88px**.
 - **Every section must fit one screen** (check at 1440×900 and 1504×731).
 - Prefer visual, premium layouts, and use full-bleed photos (never transparent PNGs) in photo frames.

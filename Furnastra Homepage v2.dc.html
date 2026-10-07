@@ -13,11 +13,11 @@
 <style>
 body{margin:0;background:#F4F5FA;font-variant-numeric:lining-nums;color:#2A3373;font-family:Raleway,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 *{box-sizing:border-box}
-a{color:#44499E;text-decoration:none}
+a{color:#4D4D9F;text-decoration:none}
 a:hover{color:#2A3373}
 img{display:block}
 html{scroll-behavior:smooth}
-.nav-link{display:flex;align-items:center;gap:8px;color:#44499E;padding:8px 0;transition:color 200ms}
+.nav-link{display:flex;align-items:center;gap:8px;color:#4D4D9F;padding:8px 0;transition:color 200ms}
 .nav-link:hover{color:#2A3373}
 .nav-dd{position:relative}
 .dd-chev{transition:transform 250ms ease}
@@ -31,6 +31,19 @@ html{scroll-behavior:smooth}
 .set-row{display:flex;gap:clamp(12px,1.2vw,16px);height:clamp(360px,calc(100vh - 88px - 260px),560px)}
 .set-card{position:relative;flex:1 1 0;min-width:0;border-radius:20px;overflow:hidden;background:#2A3373;color:#FFFFFF;transition:flex 650ms cubic-bezier(.2,.7,.2,1)}
 a.set-card,a.set-card:hover{color:#FFFFFF}
+.why-card{position:relative;display:grid;gap:16px;align-items:start;background:#FFFFFF;border:1px solid #E4E7EF;border-radius:18px;padding:clamp(12px,1.9vh,22px) clamp(18px,1.7vw,24px);transition:transform 350ms cubic-bezier(.2,.7,.2,1),box-shadow 350ms ease,border-color 350ms ease}
+.why-card:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(42,51,115,0.10);border-color:rgba(245,144,103,0.55)}
+.why-card .why-ic{width:44px;height:44px;border-radius:12px;background:#FEF1EB;display:flex;align-items:center;justify-content:center;transition:background 350ms ease}
+.why-card:hover .why-ic{background:#F59067}
+.why-card .why-ic svg{stroke:#F59067;transition:stroke 350ms ease}
+.why-card:hover .why-ic svg{stroke:#FFFFFF}
+.news-go{position:absolute;right:clamp(14px,1.4vw,18px);bottom:clamp(14px,1.4vw,18px);z-index:2;width:38px;height:38px;border-radius:50%;background:#F59067;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 8px 18px rgba(245,144,103,0.35);transition:transform 300ms cubic-bezier(.2,.7,.2,1),background 300ms}
+.news-card{position:relative;overflow:hidden;border-radius:18px;transition:transform 350ms cubic-bezier(.2,.7,.2,1),box-shadow 350ms ease}
+.news-card:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(42,51,115,0.12)}
+.news-card:hover .news-go{transform:translateX(3px);background:#E97F52}
+a.news-card,a.news-card:hover{color:inherit}
+.li-scroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#C9CFEF transparent}
+.li-scroll::-webkit-scrollbar{width:6px}.li-scroll::-webkit-scrollbar-thumb{background:#C9CFEF;border-radius:6px}
 .set-row:hover .set-card{flex:0.85 1 0}
 .set-row .set-card:hover{flex:1.9 1 0}
 .set-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 900ms cubic-bezier(.2,.7,.2,1)}
@@ -44,7 +57,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
 
 <header style="position:fixed;top:0;left:0;right:0;z-index:60;background:#FFFFFF;border-bottom:2px solid #F59067;box-shadow:{{ hdrShadow }};transition:box-shadow 400ms ease">
   <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px);height:86px;display:flex;align-items:center;gap:clamp(16px,2.4vw,40px)">
-    <a href="#hero" style="display:flex;align-items:flex-start;gap:2px;flex:none"><img src="assets/logo-color.svg" alt="Furnastra" style="height:clamp(26px,2.6vw,34px);width:auto"><span style="font-size:8px;font-weight:600;color:#44499E;line-height:1">™</span></a>
+    <a href="#hero" style="display:flex;align-items:flex-start;gap:2px;flex:none"><img src="assets/logo-color.svg" alt="Furnastra" style="height:clamp(26px,2.6vw,34px);width:auto"><span style="font-size:8px;font-weight:600;color:#4D4D9F;line-height:1">™</span></a>
     <nav style="display:flex;justify-content:center;align-items:center;gap:clamp(14px,2.4vw,36px);font-size:clamp(13.5px,1.15vw,16px);font-weight:500;letter-spacing:0.01em;flex:1;min-width:0;white-space:nowrap">
       <div class="nav-dd">
         <a href="#products" class="nav-link">Product <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -72,7 +85,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
       </div>
       <a href="#rfq" class="nav-link">Contact</a>
     </nav>
-    <a href="#rfq" style="display:flex;align-items:center;gap:12px;background:#E8966C;color:#FFFFFF;font-weight:500;font-size:clamp(14px,1.15vw,16px);letter-spacing:0.01em;padding:clamp(12px,1.1vw,16px) clamp(16px,1.6vw,24px);border-radius:12px;white-space:nowrap;flex:none;transition:background 200ms" style-hover="background:#DE8459;color:#FFFFFF">Request a quote <span style="font-size:17px">→</span></a>
+    <a href="#rfq" style="display:flex;align-items:center;gap:12px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(14px,1.15vw,16px);letter-spacing:0.01em;padding:clamp(12px,1.1vw,16px) clamp(16px,1.6vw,24px);border-radius:12px;white-space:nowrap;flex:none;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Request a quote <span style="font-size:17px">→</span></a>
   </div>
 </header>
 
@@ -81,17 +94,17 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
   <div style="position:absolute;right:-7.5vw;top:calc(388px - 29.5vw);width:59vw;aspect-ratio:1/1;border-radius:50%;border:6vw solid #ECEDF8"></div>
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(32px,4vw,56px) clamp(20px,4vw,72px) clamp(20px,2.4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(24px,2.5vw,40px);align-items:center;min-height:min(700px,calc(100vh - 88px))">
     <div style="position:relative;z-index:2;container-type:inline-size;display:flex;flex-direction:column;gap:clamp(22px,2.2vw,32px)">
-      <div data-reveal="up" style="display:flex;align-items:center;gap:14px;font-size:clamp(13px,1.1vw,15.5px);font-weight:500;letter-spacing:0.06em;color:#E8966C">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>HEALTHCARE FURNITURE COMPONENTS FOR OEMs
+      <div data-reveal="up" style="display:flex;align-items:center;gap:14px;font-size:clamp(13px,1.1vw,15.5px);font-weight:500;letter-spacing:0.06em;color:#F59067">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>HEALTHCARE FURNITURE COMPONENTS FOR OEMs
       </div>
-      <h1 data-stagger="120" style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E">
+      <h1 data-stagger="120" style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">
         <span style="display:block;white-space:nowrap">Components Engineered</span>
         <span style="display:block;white-space:nowrap">for Healthcare Furniture.</span>
       </h1>
       <p data-reveal="up" data-delay="300" style="margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#5B5F63;max-width:560px;text-wrap:pretty">Explore Furnastra’s range of healthcare furniture components, backed by 35+ years of manufacturing expertise and custom product development capabilities.</p>
       <div data-reveal="up" data-delay="420" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(4px,1vw,14px)">
-        <a href="#products" style="display:flex;align-items:center;gap:14px;background:#E8966C;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#DE8459;color:#FFFFFF">Explore Products <span>→</span></a>
-        <a href="#oem" style="display:flex;align-items:center;gap:14px;background:transparent;color:#44499E;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2.4vw,40px);border:1.5px solid #44499E;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#FFFFFF;color:#44499E">Discuss Your Requirement <span>→</span></a>
+        <a href="#products" style="display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Explore Products <span>→</span></a>
+        <a href="#oem" style="display:flex;align-items:center;gap:14px;background:transparent;color:#4D4D9F;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2.4vw,40px);border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#FFFFFF;color:#4D4D9F">Discuss Your Requirement <span>→</span></a>
       </div>
     </div>
     <div style="position:relative">
@@ -101,13 +114,13 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
           <img src="assets/p6.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;clip-path:{{ spotClip }};opacity:{{ spotOp }};transition:clip-path 500ms cubic-bezier(.2,.7,.2,1),opacity 350ms ease">
           <sc-for list="{{ callouts }}" as="c" hint-placeholder-count="4">
             <div onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" style="position:absolute;inset:0;pointer-events:none;opacity:{{ c.op }};transition:opacity 350ms ease;z-index:{{ c.z }}">
-              <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible"><polyline points="{{ c.pts }}" fill="none" stroke="#E8966C" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg>
+              <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible"><polyline points="{{ c.pts }}" fill="none" stroke="#F59067" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg>
               <span style="position:absolute;left:{{ c.dx }};top:{{ c.dy }};width:0;height:0;pointer-events:auto;cursor:pointer">
-                <span data-pulse="1" style="position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;background:rgba(232,150,108,0.4)"></span>
+                <span data-pulse="1" style="position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;background:rgba(245,144,103,0.4)"></span>
                 <span style="position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%"></span>
-                <span style="position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#E8966C;border:3px solid #FFFFFF;box-shadow:0 0 0 4px rgba(232,150,108,0.28)"></span>
+                <span style="position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#F59067;border:3px solid #FFFFFF;box-shadow:0 0 0 4px rgba(245,144,103,0.28)"></span>
               </span>
-              <div style="position:absolute;left:{{ c.lx }};top:{{ c.ly }};transform:{{ c.ltf }};pointer-events:auto;cursor:pointer;white-space:nowrap;background:#FFFFFF;border:1px solid {{ c.bd }};border-left:3px solid #E8966C;box-shadow:{{ c.sh }};padding:9px clamp(16px,1.6vw,26px) 9px 14px;display:flex;flex-direction:column;gap:1px;transition:border-color 300ms,box-shadow 300ms">
+              <div style="position:absolute;left:{{ c.lx }};top:{{ c.ly }};transform:{{ c.ltf }};pointer-events:auto;cursor:pointer;white-space:nowrap;background:#FFFFFF;border:1px solid {{ c.bd }};border-left:3px solid #F59067;box-shadow:{{ c.sh }};padding:9px clamp(16px,1.6vw,26px) 9px 14px;display:flex;flex-direction:column;gap:1px;transition:border-color 300ms,box-shadow 300ms">
                 <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.08em;color:#6B7280">{{ c.code }}</span>
                 <span style="font-size:clamp(15px,1.25vw,18px);font-weight:800;line-height:1.2;color:#1C2258">{{ c.name }}</span>
                 <span style="font-size:clamp(12.5px,1vw,14px);font-weight:500;color:#2A3373">{{ c.type }}</span>
@@ -137,18 +150,18 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
 <section id="brand-story" data-screen-label="02 Brand Story" style="position:relative;background:#FFFFFF;overflow:hidden;scroll-margin-top:88px">
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(20px,4vw,72px) clamp(88px,9vw,136px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,5.5vw,96px);align-items:stretch">
     <div style="position:relative;z-index:2;display:flex;flex-direction:column">
-      <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C;margin-bottom:20px">OUR STORY</div>
-      <h2 data-reveal="up" style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E">The next era of<br>healthcare <span style="color:#E8966C">is here.</span></h2>
+      <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067;margin-bottom:20px">OUR STORY</div>
+      <h2 data-reveal="up" style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">The next era of<br>healthcare <span style="color:#F59067">is here.</span></h2>
       <div data-reveal="line" style="display:flex;align-items:center;gap:8px;margin:22px 0 clamp(26px,2.6vw,36px);transform-origin:left">
-        <span style="width:clamp(140px,14vw,200px);height:2px;background:#E8966C"></span>
-        <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>
+        <span style="width:clamp(140px,14vw,200px);height:2px;background:#F59067"></span>
+        <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>
       </div>
       <div style="--g:clamp(12px,1.3vw,18px);position:relative;display:flex;flex-direction:column;gap:var(--g);padding-bottom:30px">
         <sc-for list="{{ milestones }}" as="ms" hint-placeholder-count="4">
           <div onMouseEnter="{{ ms.enter }}" onMouseLeave="{{ ms.leave }}" data-reveal="up" style="position:relative;display:grid;grid-template-columns:52px minmax(0,1fr);gap:clamp(20px,2vw,28px);align-items:start;cursor:pointer">
             <span style="position:absolute;left:25px;top:52px;width:2px;height:calc(100% - 52px + var(--g) + {{ ms.tail }});background:#F3C9B3"></span>
-            <span style="position:absolute;left:25px;top:52px;width:2px;height:calc(100% - 52px + var(--g) + {{ ms.tail }});background:#E8966C;transform-origin:top;transform:scaleY({{ ms.seg }});transition:transform 600ms cubic-bezier(.2,.7,.2,1)"></span>
-            <span style="position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ ms.circle }};box-shadow:0 0 0 {{ ms.haloW }} rgba(232,150,108,0.22);color:#FFFFFF;font-size:{{ ms.yearSize }};font-weight:600;letter-spacing:0.01em;transition:background 400ms ease,box-shadow 400ms ease">{{ ms.badge }}</span>
+            <span style="position:absolute;left:25px;top:52px;width:2px;height:calc(100% - 52px + var(--g) + {{ ms.tail }});background:#F59067;transform-origin:top;transform:scaleY({{ ms.seg }});transition:transform 600ms cubic-bezier(.2,.7,.2,1)"></span>
+            <span style="position:relative;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ ms.circle }};box-shadow:0 0 0 {{ ms.haloW }} rgba(245,144,103,0.22);color:#FFFFFF;font-size:{{ ms.yearSize }};font-weight:600;letter-spacing:0.01em;transition:background 400ms ease,box-shadow 400ms ease">{{ ms.badge }}</span>
             <span style="display:flex;flex-direction:column;padding-top:13px">
               <span style="font-size:clamp(16px,1.3vw,19px);font-weight:{{ ms.weight }};line-height:1.3;color:{{ ms.titleFg }};transition:color 300ms">{{ ms.title }}</span>
               <span style="display:grid;grid-template-rows:{{ ms.rows }};opacity:{{ ms.descOp }};transition:grid-template-rows 550ms cubic-bezier(.2,.7,.2,1),opacity 450ms ease">
@@ -157,9 +170,9 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
             </span>
           </div>
         </sc-for>
-        <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true" style="position:absolute;left:19px;bottom:0"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>
+        <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true" style="position:absolute;left:19px;bottom:0"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>
       </div>
-      <a href="#legacy" data-reveal="up" style="margin-top:clamp(28px,2.8vw,40px);align-self:flex-start;display:flex;align-items:center;gap:14px;background:#2A3373;color:#FFFFFF;font-weight:600;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;padding:16px 30px;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#44499E;color:#FFFFFF">Discover Our Story <span>→</span></a>
+      <a href="#legacy" data-reveal="up" style="margin-top:clamp(28px,2.8vw,40px);align-self:flex-start;display:flex;align-items:center;gap:14px;background:#2A3373;color:#FFFFFF;font-weight:600;font-size:16px;letter-spacing:0.06em;text-transform:uppercase;padding:16px 30px;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">Discover Our Story <span>→</span></a>
     </div>
     <div style="position:relative;display:flex;flex-direction:column;gap:clamp(24px,2.4vw,34px);padding-top:clamp(0px,3.4vw,50px)">
       <div>
@@ -170,15 +183,15 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
         <div data-reveal="scale" style="position:absolute;inset:0;border-top-left-radius:clamp(90px,9vw,140px);overflow:hidden;background:#2A3373;box-shadow:0 30px 60px rgba(42,51,115,0.18)">
           <img src="assets/story-moulding.jpg" alt="Injection moulding machines on a factory floor" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 45%">
           <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.5) 0%,rgba(28,34,88,0.05) 30%,rgba(28,34,88,0.2) 55%,rgba(28,34,88,0.92) 100%)"></span>
-          <span style="position:absolute;right:clamp(18px,2vw,26px);top:clamp(16px,1.8vw,24px);display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(28,34,88,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.14);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;color:#FFFFFF"><span style="width:6px;height:6px;border-radius:50%;background:#E8966C;flex:none"></span>{{ msCard.tag }}</span>
+          <span style="position:absolute;right:clamp(18px,2vw,26px);top:clamp(16px,1.8vw,24px);display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(28,34,88,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.14);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;color:#FFFFFF"><span style="width:6px;height:6px;border-radius:50%;background:#F59067;flex:none"></span>{{ msCard.tag }}</span>
           <span style="position:absolute;left:clamp(20px,2.2vw,30px);right:24px;bottom:clamp(20px,2.2vw,28px);display:flex;flex-direction:column;gap:6px;padding-left:clamp(44px,4vw,60px)">
             <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3vw,46px);line-height:1;color:#FFFFFF">{{ msCard.year }}</span>
             <span style="font-size:14px;line-height:1.45;color:#E4E8FF;max-width:420px">{{ msCard.title }}</span>
           </span>
         </div>
       <div style="position:absolute;left:calc(-1 * clamp(50px,4.4vw,64px));bottom:clamp(28px,3vw,44px);width:clamp(100px,8.8vw,128px);aspect-ratio:1/1;border-radius:50%;background:#FFFFFF;box-shadow:0 18px 40px rgba(42,51,115,0.16);display:flex;align-items:center;justify-content:center;z-index:3">
-        <svg data-spin="28" viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;inset:6%;width:88%;height:88%"><defs><path id="isoRing" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text style="font:600 9.2px Raleway,sans-serif;letter-spacing:2.4px;fill:#44499E"><textPath href="#isoRing">ISO 13485 · ISO 9001 · ISO 45001 · </textPath></text></svg>
-        <span style="display:flex;flex-direction:column;align-items:center;line-height:1"><span style="font-weight:800;font-size:clamp(15px,1.3vw,18px);color:#E8966C">ISO</span><span style="font-size:9px;font-weight:600;letter-spacing:0.12em;color:#5B5F63;margin-top:3px">CERTIFIED</span></span>
+        <svg data-spin="28" viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;inset:6%;width:88%;height:88%"><defs><path id="isoRing" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text style="font:600 9.2px Raleway,sans-serif;letter-spacing:2.4px;fill:#4D4D9F"><textPath href="#isoRing">ISO 13485 · ISO 9001 · ISO 45001 · </textPath></text></svg>
+        <span style="display:flex;flex-direction:column;align-items:center;line-height:1"><span style="font-weight:800;font-size:clamp(15px,1.3vw,18px);color:#F59067">ISO</span><span style="font-size:9px;font-weight:600;letter-spacing:0.12em;color:#5B5F63;margin-top:3px">CERTIFIED</span></span>
       </div>
       </div>
     </div>
@@ -191,17 +204,17 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
     <div style="position:absolute;right:-12vw;top:50%;width:70vw;max-width:980px;aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(40px,6vw,90px) solid #E9EBFA"></div>
     <div style="position:relative;display:grid;grid-template-columns:28px minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center">
       <div style="position:relative;height:300px;width:2px;background:#D7DEFF;justify-self:center">
-        <div data-story-bar="1" style="position:absolute;left:0;top:0;width:2px;height:100%;background:#E8966C;transform-origin:top;transform:scaleY(0)"></div>
+        <div data-story-bar="1" style="position:absolute;left:0;top:0;width:2px;height:100%;background:#F59067;transform-origin:top;transform:scaleY(0)"></div>
       </div>
       <div style="display:flex;flex-direction:column;gap:22px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C">INSIDE A FURNASTRA-BUILT BED</div>
-        <div style="display:flex;align-items:baseline;gap:12px;font-family:Raleway,system-ui,sans-serif;color:#44499E">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">INSIDE A FURNASTRA-BUILT BED</div>
+        <div style="display:flex;align-items:baseline;gap:12px;font-family:Raleway,system-ui,sans-serif;color:#4D4D9F">
           <span style="font-size:clamp(64px,7vw,108px);font-weight:600;line-height:0.9;letter-spacing:-0.03em">{{ story.n }}</span>
           <span style="font-size:clamp(18px,1.5vw,22px);font-weight:500;color:#6B7280">/ 04</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px">
-          <span style="font-size:clamp(13px,1.1vw,15px);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#E8966C">{{ story.type }}</span>
-          <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(40px,4.2vw,64px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">{{ story.name }}</span>
+          <span style="font-size:clamp(13px,1.1vw,15px);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#F59067">{{ story.type }}</span>
+          <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(40px,4.2vw,64px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">{{ story.name }}</span>
         </div>
         <p style="margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#5B5F63;max-width:460px;min-height:90px;text-wrap:pretty">{{ story.desc }}</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -222,49 +235,49 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
 </section>
 
 <section id="products" data-screen-label="04 Catalogue" style="background:#FFFFFF;scroll-margin-top:88px">
-  <div aria-hidden="true" style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px)"><div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:#E4E7EF"></span><svg width="14" height="14" viewBox="0 0 20 20" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg><span style="flex:1;height:1px;background:#E4E7EF"></span></div></div>
+  <div aria-hidden="true" style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px)"><div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:#E4E7EF"></span><svg width="14" height="14" viewBox="0 0 20 20" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg><span style="flex:1;height:1px;background:#E4E7EF"></span></div></div>
   <div style="max-width:1440px;margin:0 auto;padding:clamp(28px,4.5vh,56px) clamp(20px,4vw,72px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,2.6vw,36px);flex-wrap:wrap">
       <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C">COMPONENT CATALOGUE</div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E">Seven families. One moulding partner.</h2>
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">COMPONENT CATALOGUE</div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Seven families. One moulding partner.</h2>
       </div>
-      <a data-reveal="up" href="#products" style="display:flex;align-items:center;gap:14px;color:#44499E;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #44499E;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#44499E;color:#FFFFFF">View All Products <span>→</span></a>
+      <a data-reveal="up" href="#products" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View All Products <span>→</span></a>
     </div>
     <div data-stagger="70" style="display:grid;grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,clamp(180px,calc((100vh - 88px - 212px) / 2),290px));gap:clamp(12px,1.2vw,16px)">
       <a href="#products" data-tilt="1" style="grid-row:span 2;position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#2A3373;border-radius:18px;padding:clamp(22px,2.2vw,30px);overflow:hidden;color:#FFFFFF">
         <div style="position:absolute;right:-30%;bottom:-25%;width:100%;aspect-ratio:1/1;border-radius:50%;border:48px solid rgba(215,222,255,0.06)"></div>
-        <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:12px"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Head / Foot Bows</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(36px,3.4vw,52px);line-height:1.05;letter-spacing:-0.015em">Raksha</span></span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:rgba(215,222,255,0.14);white-space:nowrap">11 variants</span></div>
+        <div style="position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:12px"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Head / Foot Bows</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(36px,3.4vw,52px);line-height:1.05;letter-spacing:-0.015em">Raksha</span></span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:7px 11px;border-radius:999px;background:rgba(215,222,255,0.14);white-space:nowrap">11 variants</span></div>
         <img data-tilt-img="1" src="assets/p49.png" alt="Raksha head and foot bows" style="position:relative;align-self:center;max-width:78%;max-height:58%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,0.35))">
-        <span style="position:relative;display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:500"><span style="color:#D7DEFF">Incl. Raksha 4 (M4) with integrated CPR board</span><span style="color:#E8966C">→</span></span>
+        <span style="position:relative;display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:500"><span style="color:#D7DEFF">Incl. Raksha 4 (M4) with integrated CPR board</span><span style="color:#F59067">→</span></span>
       </a>
       <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#F4F5FA;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Side Railings</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">Sahara</span></span>
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Side Railings</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">Sahara</span></span>
         <img data-tilt-img="1" src="assets/p14.png" alt="Sahara side railings" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
         <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">9 variants</span>
       </a>
       <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#EEF0FB;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Bed Platforms</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">Setu</span></span>
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Bed Platforms</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">Setu</span></span>
         <img data-tilt-img="1" src="assets/p25.png" alt="Setu bed platforms" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
         <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">2 variants</span>
       </a>
-      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#E8966C;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#F59067;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
         <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF">Buffer Wheels</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Aakaar</span></span>
         <img data-tilt-img="1" src="assets/p27.png" alt="Aakaar buffer wheels" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
         <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:rgba(255,255,255,0.9);max-width:48%">1 variant</span>
       </a>
       <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#EEF0FB;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Over Bed Tables</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">Rahat</span></span>
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Over Bed Tables</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">Rahat</span></span>
         <img data-tilt-img="1" src="assets/p29.png" alt="Rahat over bed table" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
         <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">2 variants</span>
       </a>
       <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#F4F5FA;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Bedside Lockers</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#44499E">Rudra</span></span>
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Bedside Lockers</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">Rudra</span></span>
         <img data-tilt-img="1" src="assets/p32.png" alt="Rudra bedside locker components" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain">
         <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">Top · Door · Drawer · Handles</span>
       </a>
       <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#2A3373;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#E8966C">Spine Boards</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Jivan</span></span>
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Spine Boards</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Jivan</span></span>
         <img data-tilt-img="1" src="assets/p33.png" alt="Jivan spine board" style="position:absolute;right:clamp(10px,1.2vw,18px);bottom:clamp(10px,1.2vw,18px);max-width:66%;max-height:68%;width:auto;height:auto;object-fit:contain;transform:rotate(-62deg);transform-origin:center;max-height:118%;max-width:26%;right:12%;bottom:-24%">
         <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#D7DEFF;max-width:48%">3 variants · incl. head immobilizer</span>
       </a>
@@ -277,18 +290,18 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
     <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:24px;background:#F4F5FA;border:1px solid #E4E7EF;padding:clamp(36px,4.4vw,64px) clamp(28px,4.4vw,64px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center">
       <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
       <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(36px,4vw,60px) solid #E9EBFA"></div>
-      <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%)"><div data-spin="90" style="position:absolute;inset:-5%;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#E8966C"></span></div></div>
+      <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%)"><div data-spin="90" style="position:absolute;inset:-5%;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#F59067"></span></div></div>
       <div style="position:relative;display:flex;flex-direction:column;gap:clamp(16px,1.6vw,22px)">
-        <div style="display:flex;align-items:center;gap:12px;font-size:clamp(12.5px,1vw,14px);font-weight:500;letter-spacing:0.06em;color:#E8966C">
-          <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>GET IN TOUCH
+        <div style="display:flex;align-items:center;gap:12px;font-size:clamp(12.5px,1vw,14px);font-weight:500;letter-spacing:0.06em;color:#F59067">
+          <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>GET IN TOUCH
         </div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,46px);line-height:1.16;letter-spacing:-0.015em;color:#44499E;text-wrap:balance">Have a Hospital Furniture Requirement? <span style="color:#E8966C">Let’s Talk.</span></h2>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,46px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Have a Hospital Furniture Requirement? <span style="color:#F59067">Let’s Talk.</span></h2>
         <p style="margin:0;font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:#5B5F63;max-width:520px">Share a drawing, part number or sample photo and our team will come back with a fitment and quotation.</p>
       </div>
       <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;justify-self:end">
-        <a href="#rfq" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#E8966C;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(16px,1.3vw,20px) clamp(22px,2vw,28px);border-radius:12px;white-space:nowrap;box-shadow:0 14px 30px rgba(232,150,108,0.28);transition:background 200ms" style-hover="background:#DE8459;color:#FFFFFF">Send Inquiry <span>→</span></a>
+        <a href="#rfq" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(16px,1.3vw,20px) clamp(22px,2vw,28px);border-radius:12px;white-space:nowrap;box-shadow:0 14px 30px rgba(245,144,103,0.28);transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Send Inquiry <span>→</span></a>
         <!-- TODO: replace with Furnastra's WhatsApp number, e.g. https://wa.me/9198XXXXXXXX -->
-        <a href="https://wa.me/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#FFFFFF;color:#44499E;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(15px,1.25vw,19px) clamp(22px,2vw,28px);border:1.5px solid #44499E;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#44499E;color:#FFFFFF"><span style="display:flex;align-items:center;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 5.83 2.42 8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>WhatsApp Us</span><span>→</span></a>
+        <a href="https://wa.me/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#FFFFFF;color:#4D4D9F;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(15px,1.25vw,19px) clamp(22px,2vw,28px);border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF"><span style="display:flex;align-items:center;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 5.83 2.42 8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>WhatsApp Us</span><span>→</span></a>
       </div>
     </div>
   </div>
@@ -300,44 +313,44 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,72px) clamp(20px,4vw,72px)">
     <div style="display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(24px,3.2vh,40px)">
       <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C">MANUFACTURING &amp; STRENGTHS</div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E;text-wrap:balance">Integrated Healthcare Manufacturing <span style="color:#E8966C">Excellence.</span></h2>
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">MANUFACTURING &amp; STRENGTHS</div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Integrated Healthcare Manufacturing <span style="color:#F59067">Excellence.</span></h2>
       </div>
       <div data-reveal="up" data-delay="120" style="display:flex;justify-content:flex-end">
-        <a href="#oem" style="display:flex;align-items:center;gap:14px;color:#44499E;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:14px 26px;border:1.5px solid #44499E;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#44499E;color:#FFFFFF">Know More <span>→</span></a>
+        <a href="#oem" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:14px 26px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">Know More <span>→</span></a>
       </div>
     </div>
     <div data-stagger="90" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr)) minmax(0,2.1fr);grid-template-rows:repeat(2,clamp(180px,calc((100vh - 88px - 312px) / 2),270px));gap:clamp(12px,1.2vw,16px)">
       <div style="position:relative;overflow:hidden;border-radius:18px;background:#FFFFFF;border:1px solid #E4E7EF;padding:clamp(20px,1.8vw,26px);display:flex;flex-direction:column;justify-content:space-between">
         <span style="display:flex;flex-direction:column;gap:12px">
-          <span style="display:flex;align-items:center;gap:12px"><span style="width:40px;height:40px;flex:none;border-radius:11px;background:#FCEFE8;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E8966C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;color:#44499E">Testing &amp; Quality</span></span>
+          <span style="display:flex;align-items:center;gap:12px"><span style="width:40px;height:40px;flex:none;border-radius:11px;background:#FCEFE8;display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;color:#4D4D9F">Testing &amp; Quality</span></span>
           <span style="font-size:14px;line-height:1.55;color:#5B5F63">Online testing, PDI and CAPA at every stage of production.</span>
         </span>
-        <span style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#44499E;background:#EEF0FB;padding:5px 10px;border-radius:999px">Online testing</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#44499E;background:#EEF0FB;padding:5px 10px;border-radius:999px">PDI</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#44499E;background:#EEF0FB;padding:5px 10px;border-radius:999px">CAPA</span></span>
+        <span style="display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#4D4D9F;background:#EEF0FB;padding:5px 10px;border-radius:999px">Online testing</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#4D4D9F;background:#EEF0FB;padding:5px 10px;border-radius:999px">PDI</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#4D4D9F;background:#EEF0FB;padding:5px 10px;border-radius:999px">CAPA</span></span>
       </div>
-      <div style="position:relative;overflow:hidden;border-radius:18px;background:#44499E;color:#FFFFFF;padding:clamp(20px,1.8vw,26px);display:flex;flex-direction:column;justify-content:space-between">
+      <div style="position:relative;overflow:hidden;border-radius:18px;background:#4D4D9F;color:#FFFFFF;padding:clamp(20px,1.8vw,26px);display:flex;flex-direction:column;justify-content:space-between">
         <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.08);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
         <span style="position:relative;display:flex;flex-direction:column;gap:12px">
           <span style="display:flex;align-items:center;gap:12px"><span style="width:40px;height:40px;flex:none;border-radius:11px;background:rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="m9 13.8-1.5 7.2 4.5-2.4 4.5 2.4-1.5-7.2"/></svg></span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2">Certifications</span></span>
         </span>
-        <span style="position:relative;display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 13485:2016</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 9001:2015</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 45001:2018</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:#E8966C;border:1px solid #E8966C;padding:6px 10px;border-radius:8px">CE</span></span>
+        <span style="position:relative;display:flex;flex-wrap:wrap;gap:6px"><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 13485:2016</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 9001:2015</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.18);padding:6px 10px;border-radius:8px">ISO 45001:2018</span><span style="font-size:12px;font-weight:600;letter-spacing:0.02em;background:#F59067;border:1px solid #F59067;padding:6px 10px;border-radius:8px">CE</span></span>
       </div>
       <div style="grid-column:3;grid-row:1 / span 2;position:relative;overflow:hidden;border-radius:18px;border-top-right-radius:clamp(80px,8vw,120px);background:#2A3373;color:#FFFFFF;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(22px,2.2vw,32px)">
-        <img src="assets/mfg-floor.jpg" alt="Moulding machines on a factory floor" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%">
-        <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.72) 0%,rgba(28,34,88,0.25) 38%,rgba(28,34,88,0.55) 62%,rgba(28,34,88,0.95) 100%)"></span>
-        <span style="position:relative;display:flex;flex-direction:column;gap:10px;max-width:420px">
+        <img src="assets/mfg-floor.jpg" alt="Moulding machines on a factory floor" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%;filter:saturate(0.7) brightness(0.85)">
+        <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,34,88,0.6) 0%,rgba(28,34,88,0) 65%),linear-gradient(180deg,rgba(28,34,88,0.9) 0%,rgba(28,34,88,0.55) 34%,rgba(28,34,88,0.45) 55%,rgba(28,34,88,0.96) 100%)"></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:10px;max-width:420px;text-shadow:0 2px 18px rgba(10,14,50,0.55)">
           <span style="width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l5 3V10l5 3V6l8 4v11Z"/><path d="M7 17h2M12 17h2M17 17h1"/></svg></span>
           <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(22px,2vw,30px);line-height:1.2">Infrastructure</span>
-          <span style="font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88)">Moulding capacity at scale, across Mitsu Chem’s own plants.</span>
+          <span style="font-size:14.5px;line-height:1.55;color:#FFFFFF">Moulding capacity at scale, across Mitsu Chem’s own plants.</span>
         </span>
-        <span style="position:relative;display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.35fr);border-top:1px solid rgba(255,255,255,0.22);padding-top:clamp(14px,1.6vw,20px)">
+        <span style="position:relative;text-shadow:0 2px 18px rgba(10,14,50,0.55);display:grid;grid-template-columns:minmax(0,0.7fr) minmax(0,1fr) minmax(0,1fr) minmax(0,1.35fr);border-top:1px solid rgba(255,255,255,0.22);padding-top:clamp(14px,1.6vw,20px)">
           <span style="display:flex;flex-direction:column;gap:4px;padding-right:12px"><span data-count="4" style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1">4</span><span style="font-size:12px;line-height:1.35;color:#D7DEFF">Plants</span></span>
           <span style="display:flex;flex-direction:column;gap:4px;padding:0 12px;border-left:1px solid rgba(255,255,255,0.18)"><span data-count="22" style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1">22</span><span style="font-size:12px;line-height:1.35;color:#D7DEFF">Injection moulding machines</span></span>
           <span style="display:flex;flex-direction:column;gap:4px;padding:0 12px;border-left:1px solid rgba(255,255,255,0.18)"><span data-count="57" style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1">57</span><span style="font-size:12px;line-height:1.35;color:#D7DEFF">Blow moulding machines</span></span>
           <span style="display:flex;flex-direction:column;gap:4px;padding-left:12px;border-left:1px solid rgba(255,255,255,0.18)"><span data-count="36000" data-suffix="+" style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1;color:#F7B79C">36,000+</span><span style="font-size:12px;line-height:1.35;color:#D7DEFF">MT a year</span></span>
         </span>
       </div>
-      <div style="grid-column:1 / span 2;position:relative;overflow:hidden;border-radius:18px;background:#E8966C;color:#FFFFFF;padding:clamp(20px,1.8vw,26px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(14px,1.6vw,22px);align-items:start">
+      <div style="grid-column:1 / span 2;position:relative;overflow:hidden;border-radius:18px;background:#F59067;color:#FFFFFF;padding:clamp(20px,1.8vw,26px);display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(14px,1.6vw,22px);align-items:start">
         <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(140px,12vw,180px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.14);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
         <span style="position:relative;width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"/><path d="M10 3v5.5L4.8 18a2 2 0 0 0 1.8 3h10.8a2 2 0 0 0 1.8-3L14 8.5V3"/><path d="M7.5 14h9"/></svg></span>
         <span style="position:relative;display:flex;flex-direction:column;justify-content:space-between;height:100%;gap:14px">
@@ -353,13 +366,13 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
 </section>
 
 <section id="applications" data-screen-label="05b Applications" style="background:#FFFFFF;scroll-margin-top:88px">
-  <div style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,96px) clamp(20px,4vw,72px)">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,96px) clamp(20px,4vw,72px) clamp(72px,10vh,128px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.2vh,40px);flex-wrap:wrap">
       <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
-        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#E8966C">APPLICATIONS BY HOSPITAL SETTING</div>
-        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#44499E">The Right Component for<br>the Right Care <span style="color:#E8966C">Setting.</span></h2>
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">APPLICATIONS BY HOSPITAL SETTING</div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">The Right Component for<br>the Right Care <span style="color:#F59067">Setting.</span></h2>
       </div>
-      <p data-reveal="up" data-delay="120" style="margin:0;font-size:14px;line-height:1.6;color:#5B5F63;display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>Hover a setting to see where our parts fit</p>
+      <p data-reveal="up" data-delay="120" style="margin:0;font-size:14px;line-height:1.6;color:#5B5F63;display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>Hover a setting to see where our parts fit</p>
     </div>
     <div data-reveal="up" data-delay="150" class="set-row">
       <a href="#products" class="set-card">
@@ -367,7 +380,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
         <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.35) 0%,rgba(28,34,88,0) 28%,rgba(28,34,88,0.2) 50%,rgba(28,34,88,0.94) 100%)"></span>
         <span style="position:absolute;left:clamp(16px,1.6vw,22px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:999px;background:rgba(28,34,88,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.08em">01</span>
         <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(18px,1.8vw,26px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column">
-          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">ICU / Critical Care</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E8966C;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
+          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">ICU / Critical Care</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#F59067;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
           <span class="set-desc"><span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88);max-width:380px">Head and foot bows with integrated CPR board, side railings and platforms for high-acuity beds.</span></span></span>
           <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Raksha</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Sahara</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Setu</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Aakaar</span></span>
         </span>
@@ -377,7 +390,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
         <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.35) 0%,rgba(28,34,88,0) 28%,rgba(28,34,88,0.2) 50%,rgba(28,34,88,0.94) 100%)"></span>
         <span style="position:absolute;left:clamp(16px,1.6vw,22px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:999px;background:rgba(28,34,88,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.08em">02</span>
         <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(18px,1.8vw,26px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column">
-          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">General Wards</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E8966C;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
+          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">General Wards</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#F59067;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
           <span class="set-desc"><span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88);max-width:380px">Durable railings, bed platforms, over-bed tables and lockers for high-turnover wards.</span></span></span>
           <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Sahara</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Setu</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Rahat</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Rudra</span></span>
         </span>
@@ -387,7 +400,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
         <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.35) 0%,rgba(28,34,88,0) 28%,rgba(28,34,88,0.2) 50%,rgba(28,34,88,0.94) 100%)"></span>
         <span style="position:absolute;left:clamp(16px,1.6vw,22px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:999px;background:rgba(28,34,88,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.08em">03</span>
         <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(18px,1.8vw,26px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column">
-          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">Ambulance &amp; Rescue</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E8966C;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
+          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">Ambulance &amp; Rescue</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#F59067;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
           <span class="set-desc"><span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88);max-width:380px">Spine boards with head immobilisers for safe patient transfer and rescue.</span></span></span>
           <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Jivan</span></span>
         </span>
@@ -397,10 +410,124 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
         <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.35) 0%,rgba(28,34,88,0) 28%,rgba(28,34,88,0.2) 50%,rgba(28,34,88,0.94) 100%)"></span>
         <span style="position:absolute;left:clamp(16px,1.6vw,22px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;justify-content:center;min-width:38px;height:38px;padding:0 10px;border-radius:999px;background:rgba(28,34,88,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.18);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.08em">04</span>
         <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(18px,1.8vw,26px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column">
-          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">Maternity / Labour Rooms</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#E8966C;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
+          <span style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(20px,1.7vw,26px);line-height:1.15">Maternity / Labour Rooms</span><span class="set-go" style="flex:none;width:40px;height:40px;border-radius:50%;background:#F59067;display:flex;align-items:center;justify-content:center;font-size:17px">→</span></span>
           <span class="set-desc"><span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:10px;font-size:14.5px;line-height:1.55;color:rgba(255,255,255,0.88);max-width:380px">Bows, railings and bedside furniture for labour, delivery and recovery rooms.</span></span></span>
           <span style="display:flex;flex-wrap:wrap;gap:6px;margin-top:14px"><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Raksha</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Sahara</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Rahat</span><span style="font-size:12px;font-weight:600;letter-spacing:0.03em;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);white-space:nowrap">Rudra</span></span>
         </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="why" data-screen-label="05c Why Furnastra" style="position:relative;background:#F4F5FA;overflow:hidden;scroll-margin-top:88px">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(32px,5.5vh,96px) clamp(20px,4vw,72px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.4vh,44px);flex-wrap:wrap">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">WHY FURNASTRA</div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Where Healthcare Meets<br>Innovative <span style="color:#F59067">Expertise.</span></h2>
+      </div>
+      <a data-reveal="up" data-delay="120" href="#legacy" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">Learn More <span>→</span></a>
+    </div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,0.82fr) minmax(0,1fr);gap:clamp(16px,2vw,32px);align-items:center">
+      <div data-stagger="110" style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div class="why-card" style="grid-template-columns:minmax(0,1fr) 44px;text-align:right"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">100% in-house manufacturing</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Full control over production, quality and supply timelines. No third-party dependency.</span></span><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l5 3V10l5 3V6l8 4v11Z"/><path d="M7 17h2M12 17h2M17 17h1"/></svg></span></div>
+        <div class="why-card" style="grid-template-columns:minmax(0,1fr) 44px;text-align:right"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Advanced quality assurance &amp; testing</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Documented testing protocols, applied before every dispatch.</span></span><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="m8.8 13 2.2 2.2 4.2-4.4"/></svg></span></div>
+        <div class="why-card" style="grid-template-columns:minmax(0,1fr) 44px;text-align:right"><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Hospital-grade compliance</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Manufactured to meet applicable healthcare furniture standards.</span></span><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m8.8 12.2 2.2 2.2 4.4-4.6"/></svg></span></div>
+      </div>
+      <div data-reveal="scale" style="position:relative;justify-self:center;width:min(100%,clamp(300px,calc(100vh - 88px - 300px),440px));aspect-ratio:1/1">
+        <div data-spin="70" style="position:absolute;inset:0;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-6px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:#F59067;box-shadow:0 0 0 6px rgba(245,144,103,0.18)"></span></div>
+        <div data-spin="-110" style="position:absolute;inset:7%;border-radius:50%"><span style="position:absolute;left:-5px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:#4D4D9F"></span></div>
+        <div style="position:absolute;inset:7%;border-radius:50%;border:clamp(22px,2.6vw,36px) solid #E9EBFA"></div>
+        <div style="position:absolute;inset:22%;border-radius:50%;background:radial-gradient(circle at 30% 25%,#4D4D9F 0%,#2A3373 70%);box-shadow:0 30px 60px rgba(42,51,115,0.28),inset 0 0 0 6px rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:#FFFFFF;text-align:center;overflow:hidden">
+          <span aria-hidden="true" style="position:absolute;right:-12%;bottom:-14%;height:62%;aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.07);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+          <span style="position:relative;display:flex;align-items:center;gap:6px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.14em;color:#F7B79C"><svg width="11" height="11" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>SINCE 1990</span>
+          <span style="position:relative;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(40px,4.2vw,64px);line-height:1;letter-spacing:-0.02em">100%</span>
+          <span style="position:relative;font-size:clamp(12.5px,1vw,14px);line-height:1.35;color:#D7DEFF;max-width:70%">in-house manufacturing</span>
+        </div>
+      </div>
+      <div data-stagger="110" style="display:flex;flex-direction:column;gap:clamp(10px,1.4vh,16px)">
+        <div class="why-card" style="grid-template-columns:44px minmax(0,1fr)"><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/><path d="M3 13h18"/></svg></span><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Decades of OEM experience</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">35+ years of partnerships supplying parts to hospital bed manufacturers, OEMs and medical furniture manufacturers across India.</span></span></div>
+        <div class="why-card" style="grid-template-columns:44px minmax(0,1fr)"><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Standardized customization</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Colour, finish and specification options for facility-wide consistency, without added lead time.</span></span></div>
+        <div class="why-card" style="grid-template-columns:44px minmax(0,1fr)"><span class="why-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17.5" cy="18" r="2"/></svg></span><span style="display:flex;flex-direction:column;gap:6px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(16.5px,1.35vw,19px);line-height:1.25;color:#4D4D9F">Pan-India delivery</span><span style="font-size:clamp(13.5px,1.05vw,14.5px);line-height:1.55;color:#5B5F63">Distribution built for single-site and multi-facility rollouts.</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news" data-screen-label="05d Latest" style="background:#FFFFFF;scroll-margin-top:88px">
+  <div style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,96px) clamp(20px,4vw,72px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.2vh,40px);flex-wrap:wrap">
+      <div data-reveal="up" style="display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">BLOG &amp; NEWS</div>
+        <h2 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Latest at <span style="color:#F59067">Furnastra.</span></h2>
+      </div>
+      <a data-reveal="up" data-delay="120" href="#resources" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View All Blogs <span>→</span></a>
+    </div>
+    <div data-stagger="90" style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) minmax(0,0.62fr) minmax(0,0.62fr);grid-template-rows:repeat(2,clamp(200px,calc((100vh - 88px - 270px) / 2),280px));gap:clamp(12px,1.2vw,16px)">
+
+      <a href="#resources" class="news-card" style="grid-row:span 2;background:#2A3373;color:#FFFFFF">
+        <img src="assets/news-reading.jpg" alt="Person reading a newspaper" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;filter:grayscale(1) contrast(1.05)">
+        <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.15) 0%,rgba(28,34,88,0.25) 40%,rgba(28,34,88,0.94) 100%)"></span>
+        <span style="position:absolute;left:clamp(18px,1.8vw,26px);top:clamp(16px,1.6vw,22px);display:flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;background:rgba(28,34,88,0.78);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.14);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:#FFFFFF"><span style="width:6px;height:6px;border-radius:50%;background:#F59067"></span>IN THE NEWS</span>
+        <span style="position:absolute;left:clamp(18px,1.8vw,26px);right:clamp(64px,5vw,76px);bottom:clamp(18px,1.8vw,26px);display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(19px,1.7vw,25px);line-height:1.25">Furnastra expands its healthcare components range for hospital bed OEMs</span>
+          <span style="font-size:13px;color:#D7DEFF">26 March 2026 · 3 min read</span>
+        </span>
+        <span class="news-go" aria-hidden="true">→</span>
+      </a>
+
+      <div class="news-card" style="grid-row:span 2;background:#FFFFFF;border:1px solid #E4E7EF;display:flex;flex-direction:column;padding:clamp(16px,1.6vw,22px)">
+        <span style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px">
+          <span style="display:flex;align-items:center;gap:10px">
+            <span style="width:38px;height:38px;border-radius:10px;background:#F4F5FA;border:1px solid #E4E7EF;display:flex;align-items:center;justify-content:center"><span style="width:20px;aspect-ratio:126.7/140.9;background:#F59067;-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span></span>
+            <span style="display:flex;flex-direction:column;line-height:1.25"><span style="font-size:14px;font-weight:700;color:#2A3373">Furnastra</span><span style="font-size:11.5px;color:#6B7280">2w · LinkedIn</span></span>
+          </span>
+          <span style="width:26px;height:26px;border-radius:6px;background:#0A66C2;color:#FFFFFF;font:700 13px/26px Raleway,sans-serif;text-align:center">in</span>
+        </span>
+        <span style="position:relative;display:block;border-radius:12px;overflow:hidden;height:42%;flex:none;background:#2A3373"><img src="assets/story-moulding.jpg" alt="Injection moulding shop floor" style="width:100%;height:100%;object-fit:cover"></span>
+        <span class="li-scroll" style="flex:1;min-height:0;margin-top:12px;padding-right:8px;font-size:13.5px;line-height:1.6;color:#5B5F63">
+          <span style="display:block;margin-bottom:8px">March was about scale. Our moulding teams at Khalapur and Tarapur commissioned new tooling for the Raksha head and foot bow range — cutting changeover time and adding capacity for OEM partners.</span>
+          <span style="display:block;margin-bottom:8px">We also hosted procurement and engineering teams from three hospital bed manufacturers for plant walkthroughs, sample trials and fitment reviews.</span>
+          <span style="display:block;color:#4D4D9F;font-weight:600">#HealthcareManufacturing #HospitalFurniture #OEM #MakeInIndia</span>
+        </span>
+        <span style="display:flex;align-items:center;gap:14px;margin-top:10px;padding-top:10px;border-top:1px solid #E4E7EF;font-size:12px;color:#6B7280"><span>👍 128</span><span>💬 14</span><span>↗ 9</span></span>
+        <a href="#resources" class="news-go" aria-label="View on LinkedIn" style="color:#FFFFFF">→</a>
+      </div>
+
+      <a href="#resources" class="news-card" style="grid-column:span 2;background:#FFFFFF;border:1px solid #E4E7EF;display:flex;flex-direction:column;padding:clamp(16px,1.6vw,22px)">
+        <span style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
+          <span style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Share price</span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.04em;color:#6B7280">MITSU CHEM PLAST LTD.</span>
+            <span style="display:flex;align-items:baseline;gap:10px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.2vw,32px);line-height:1;color:#2A3373">₹222.10</span><span style="font-size:13px;font-weight:600;color:#1E9E6A">▲ 10.02 (+4.72%)</span></span>
+          </span>
+          <span style="display:flex;gap:6px"><span style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;background:#4D4D9F;color:#FFFFFF">BSE</span><span style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;border:1px solid #C9CFEF;color:#4D4D9F">NSE</span></span>
+        </span>
+        <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true" style="flex:1;min-height:0;width:100%;margin-top:10px;margin-right:44px;overflow:visible">
+          <defs><linearGradient id="spFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F59067" stop-opacity="0.28"/><stop offset="1" stop-color="#F59067" stop-opacity="0"/></linearGradient></defs>
+          <path d="M0,120 L0.0,110.0 L10.3,106.0 L20.5,91.1 L30.8,90.0 L41.0,87.6 L51.3,82.8 L61.5,90.0 L71.8,87.5 L82.1,81.4 L92.3,70.4 L102.6,80.4 L112.8,84.1 L123.1,94.1 L133.3,82.7 L143.6,74.7 L153.8,86.2 L164.1,69.5 L174.4,53.4 L184.6,46.6 L194.9,40.9 L205.1,49.0 L215.4,61.3 L225.6,58.3 L235.9,69.3 L246.2,76.4 L256.4,81.9 L266.7,93.7 L276.9,92.6 L287.2,92.2 L297.4,79.8 L307.7,77.1 L317.9,70.6 L328.2,68.4 L338.5,61.4 L348.7,60.5 L359.0,64.9 L369.2,47.8 L379.5,30.7 L389.7,18.4 L400.0,10.0 L400,120 Z" fill="url(#spFill)"/>
+          <polyline points="0.0,110.0 10.3,106.0 20.5,91.1 30.8,90.0 41.0,87.6 51.3,82.8 61.5,90.0 71.8,87.5 82.1,81.4 92.3,70.4 102.6,80.4 112.8,84.1 123.1,94.1 133.3,82.7 143.6,74.7 153.8,86.2 164.1,69.5 174.4,53.4 184.6,46.6 194.9,40.9 205.1,49.0 215.4,61.3 225.6,58.3 235.9,69.3 246.2,76.4 256.4,81.9 266.7,93.7 276.9,92.6 287.2,92.2 297.4,79.8 307.7,77.1 317.9,70.6 328.2,68.4 338.5,61.4 348.7,60.5 359.0,64.9 369.2,47.8 379.5,30.7 389.7,18.4 400.0,10.0" fill="none" stroke="#4D4D9F" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+        </svg>
+        <span style="font-size:11.5px;color:#6B7280;margin-top:6px">7 Oct 2026 · 15:30 IST</span>
+        <span class="news-go" aria-hidden="true">→</span>
+      </a>
+
+      <a href="#resources" class="news-card" style="background:#4D4D9F;color:#FFFFFF;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(16px,1.6vw,22px)">
+        <span aria-hidden="true" style="position:absolute;right:-12px;bottom:-16px;height:120px;aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.08);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:6px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F7B79C">Quarterly results</span></span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:4px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(26px,2.4vw,36px);line-height:1">Q1</span><span style="font-size:13.5px;color:#D7DEFF">FY 2026–27</span></span>
+        <span class="news-go" aria-hidden="true">→</span>
+      </a>
+
+      <a href="#resources" class="news-card" style="background:#F59067;color:#FFFFFF;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(16px,1.6vw,22px)">
+        <span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF">Annual report</span>
+        <span aria-hidden="true" style="position:absolute;right:clamp(14px,1.6vw,22px);top:clamp(30px,3vw,42px);width:38%;aspect-ratio:3/4;border-radius:6px;background:linear-gradient(160deg,#4D4D9F,#2A3373);box-shadow:0 14px 28px rgba(42,51,115,0.35);transform:rotate(6deg);overflow:hidden">
+          <span style="position:absolute;left:12%;top:12%;width:34%;aspect-ratio:126.7/140.9;background:#F59067;-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
+          <span style="position:absolute;left:12%;right:12%;bottom:14%;height:3px;background:rgba(255,255,255,0.5);border-radius:2px;box-shadow:0 -7px 0 rgba(255,255,255,0.3)"></span>
+        </span>
+        <span style="position:relative;display:flex;flex-direction:column;gap:4px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(22px,2vw,30px);line-height:1">FY 2025–26</span><span style="font-size:13px;color:rgba(255,255,255,0.9)">PDF · 4.2 MB</span></span>
+        <span class="news-go" aria-hidden="true" style="background:#2A3373;box-shadow:0 8px 18px rgba(42,51,115,0.35)">→</span>
       </a>
     </div>
   </div>
@@ -427,7 +554,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
             <span style="position:absolute;left:0;bottom:-1px;height:2px;background:#F59067;width:{{ st.bar }};transition:{{ st.barT }}"></span>
           </button>
         </sc-for>
-        <a href="#rfq" style="margin-top:28px;align-self:flex-start;display:flex;align-items:center;gap:10px;background:#2A3373;color:#FFFFFF;font-weight:700;font-size:15px;padding:17px 28px;border-radius:999px" style-hover="background:#44499E;color:#FFFFFF">Discuss a Custom Requirement →</a>
+        <a href="#rfq" style="margin-top:28px;align-self:flex-start;display:flex;align-items:center;gap:10px;background:#2A3373;color:#FFFFFF;font-weight:700;font-size:15px;padding:17px 28px;border-radius:999px" style-hover="background:#4D4D9F;color:#FFFFFF">Discuss a Custom Requirement →</a>
       </div>
       <div data-reveal="scale" style="position:relative;background:#F4F5FA;border-radius:24px;overflow:hidden;min-height:560px;display:flex;align-items:center;justify-content:center">
         <span style="position:absolute;left:28px;top:12px;font-family:Outfit,sans-serif;font-weight:800;font-size:clamp(140px,16vw,240px);line-height:1;letter-spacing:-0.05em;color:#E4E7F6">{{ step.num }}</span>
@@ -437,7 +564,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
         <img data-float="10" data-dur="4600" src="assets/p7.png" alt="Bed with components called out" style="position:relative;width:78%;max-width:640px;height:auto">
         <div style="position:absolute;left:24px;right:24px;bottom:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:#FFFFFF;border-radius:14px;padding:16px 20px;box-shadow:0 10px 30px rgba(42,51,115,0.08)">
           <span style="display:flex;flex-direction:column;gap:2px"><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.1em;color:#959EA9">STAGE {{ step.num }} OF 07</span><span style="font-size:16px;font-weight:700;color:#2A3373">{{ step.name }}</span></span>
-          <span style="font-size:13px;font-weight:700;color:#44499E;white-space:nowrap">Concept → Consignment</span>
+          <span style="font-size:13px;font-weight:700;color:#4D4D9F;white-space:nowrap">Concept → Consignment</span>
         </div>
       </div>
     </div>
@@ -455,7 +582,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
     <div style="display:flex;flex-direction:column;gap:26px">
       <div data-reveal="up" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">FURNASTRA + MITSU CHEM</div>
       <h2 data-reveal="up" style="margin:0;font-family:Outfit,sans-serif;font-weight:700;font-size:clamp(34px,3.8vw,56px);line-height:1.04;letter-spacing:-0.025em;color:#2A3373;text-wrap:balance">A focused components brand, built on 35+ years of moulding.</h2>
-      <p data-reveal="up" data-delay="100" style="margin:0;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(22px,2vw,28px);line-height:1.4;color:#44499E;max-width:620px">Hospital furniture parts have been part of Mitsu Chem for years. Furnastra gives them their own name.</p>
+      <p data-reveal="up" data-delay="100" style="margin:0;font-family:'EB Garamond',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(22px,2vw,28px);line-height:1.4;color:#4D4D9F;max-width:620px">Hospital furniture parts have been part of Mitsu Chem for years. Furnastra gives them their own name.</p>
       <p data-reveal="up" data-delay="200" style="margin:0;font-size:16.5px;line-height:1.7;color:#5B5F63;max-width:620px">Mitsu Chem Plast has manufactured blow and injection moulded solutions since 1990 and is listed on the Bombay Stock Exchange. Furnastra is its dedicated healthcare furniture components business — same plants, same quality systems, with a team focused on what OEMs need from a component partner.</p>
       <div data-reveal="up" data-delay="300" style="display:flex;gap:28px;align-items:center;flex-wrap:wrap">
         <a href="#legacy" style="display:flex;align-items:center;gap:10px;color:#2A3373;font-weight:700;font-size:15px;padding:15px 24px;border:1.5px solid #2A3373;border-radius:999px;white-space:nowrap" style-hover="background:#2A3373;color:#FFFFFF">About Furnastra →</a>
@@ -536,7 +663,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
           <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#959EA9">{{ rs.kind }}</span>
           <span style="font-size:18px;font-weight:700;color:#2A3373">{{ rs.name }}</span>
           <span style="font-size:13.5px;line-height:1.5;color:#5B5F63;flex:1">{{ rs.desc }}</span>
-          <span style="font-size:13px;font-weight:700;color:#44499E">{{ rs.cta }} →</span>
+          <span style="font-size:13px;font-weight:700;color:#4D4D9F">{{ rs.cta }} →</span>
         </a>
       </sc-for>
     </div>
@@ -563,7 +690,7 @@ a.set-card,a.set-card:hover{color:#FFFFFF}
         <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">Work email<input placeholder="name@company.com" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
         <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:#5B5F63">{{ fieldLabel }}<input placeholder="{{ fieldPh }}" style="font:500 15px Raleway,sans-serif;color:#2A3373;border:1px solid #C0C8D4;border-radius:10px;padding:12px;outline:none"></label>
       </div>
-      <div style="border:1.5px dashed #C0C8D4;border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:#5B5F63"><span>Upload drawing or requirement (PDF, DWG, STEP)</span><span style="font-weight:700;color:#44499E">Browse</span></div>
+      <div style="border:1.5px dashed #C0C8D4;border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center;font-size:13.5px;color:#5B5F63"><span>Upload drawing or requirement (PDF, DWG, STEP)</span><span style="font-weight:700;color:#4D4D9F">Browse</span></div>
       <a href="#rfq" style="display:flex;justify-content:center;align-items:center;gap:10px;background:#F59067;color:#1C2258;font-weight:700;font-size:15px;padding:18px;border-radius:999px" style-hover="background:#F7A27F;color:#1C2258">{{ submitLabel }} →</a>
     </div>
   </div>
@@ -685,16 +812,16 @@ class Component extends DCLogic {
       pts: [c.dot, ...c.path].map(p => p.join(',')).join(' '),
       enter: () => this.setState({ hot: i }), leave: () => this.setState({ hot: null }),
       op: s.hot == null || s.hot === i ? 1 : 0.3, z: s.hot === i ? 3 : 2,
-      bd: s.hot === i ? '#E8966C' : '#E4E7EF',
+      bd: s.hot === i ? '#F59067' : '#E4E7EF',
       sh: s.hot === i ? '0 14px 34px rgba(42,51,115,0.16)' : '0 6px 18px rgba(42,51,115,0.06)' }));
     const regions0 = [[22, 20, 16, 17], [50, 18, 12, 14], [49, 40, 25, 16], [60.4, 87.2, 5, 6]];
     const hr = regions0[s.hot ?? 0];
     const spotClip = `ellipse(${hr[2]}% ${hr[3]}% at ${hr[0]}% ${hr[1]}%)`;
     const hotOn = s.hot != null;
     const statTone = {
-      light: { bg: '#FFFFFF', bd: '#E4E7EF', ring: '#EEF0FB', num: '#44499E', fg: '#2A3373', sub: '#5B5F63', dot: '#E8966C' },
-      orange: { bg: '#E8966C', bd: '#E8966C', ring: 'rgba(255,255,255,0.14)', num: '#FFFFFF', fg: '#FFFFFF', sub: 'rgba(255,255,255,0.88)', dot: '#FFFFFF' },
-      indigo: { bg: '#44499E', bd: '#44499E', ring: 'rgba(255,255,255,0.08)', num: '#FFFFFF', fg: '#FFFFFF', sub: '#D7DEFF', dot: '#E8966C' },
+      light: { bg: '#FFFFFF', bd: '#E4E7EF', ring: '#EEF0FB', num: '#4D4D9F', fg: '#2A3373', sub: '#5B5F63', dot: '#F59067' },
+      orange: { bg: '#F59067', bd: '#F59067', ring: 'rgba(255,255,255,0.14)', num: '#FFFFFF', fg: '#FFFFFF', sub: 'rgba(255,255,255,0.88)', dot: '#FFFFFF' },
+      indigo: { bg: '#4D4D9F', bd: '#4D4D9F', ring: 'rgba(255,255,255,0.08)', num: '#FFFFFF', fg: '#FFFFFF', sub: '#D7DEFF', dot: '#F59067' },
     };
     const keyStats = [
       { v: 35, suf: '+', unit: 'yrs', label: 'Years of manufacturing', note: 'Moulding expertise since 1990', tone: 'light' },
@@ -710,7 +837,7 @@ class Component extends DCLogic {
       { year: '2024', badge: '2024', tag: 'FURNASTRA · 2024', title: 'Furnastra is born', desc: 'A brand built entirely for modern healthcare — ISO 13485 certified and shipping to OEMs in 11 countries.' },
     ].map((m, i, all) => { const a = i === msIdx, last = i === all.length - 1; return { ...m, active: a,
       enter: () => { this.msHold = true; this.setState({ ms: i }); }, leave: () => { this.msHold = false; },
-      circle: a ? '#E8966C' : '#2A3373', haloW: a ? '8px' : '0px', yearSize: m.badge.length > 3 ? '14px' : '15px',
+      circle: a ? '#F59067' : '#2A3373', haloW: a ? '8px' : '0px', yearSize: m.badge.length > 3 ? '14px' : '15px',
       rows: a ? '1fr' : '0fr', descOp: a ? 1 : 0, weight: a ? 700 : 500, titleFg: a ? '#2A3373' : '#5B5F63',
       tail: last ? 'calc(24px - var(--g))' : '0px', seg: (i < msIdx || (last && a)) ? 1 : 0 }; });
     const msCard = milestones[msIdx];
@@ -722,7 +849,7 @@ class Component extends DCLogic {
     ];
     const story = { ...storyData[s.story], n: '0' + (s.story + 1) };
     const storyImgs = storyData.map((d, i) => ({ ...d, op: i === s.story ? 1 : 0, tf: i === s.story ? 'scale(1) translateY(0)' : (i < s.story ? 'scale(0.9) translateY(-40px)' : 'scale(0.9) translateY(40px)') }));
-    const storyTabs = storyData.map((d, i) => ({ name: d.name, go: () => this.goStory(i), bg: i === s.story ? '#44499E' : 'transparent', fg: i === s.story ? '#FFFFFF' : '#44499E', bd: i === s.story ? '#44499E' : '#C9CFEF' }));
+    const storyTabs = storyData.map((d, i) => ({ name: d.name, go: () => this.goStory(i), bg: i === s.story ? '#4D4D9F' : 'transparent', fg: i === s.story ? '#FFFFFF' : '#4D4D9F', bd: i === s.story ? '#4D4D9F' : '#C9CFEF' }));
     const capabilities = [
       { name: 'Injection moulding', mat: 'PE · PP · FILLED PP', desc: 'Hospital bed parts, plus pharma, automotive and auto filter components.' },
       { name: 'Blow moulding', mat: 'HDPE · PP · FILLED PP', desc: 'Healthcare furniture alongside pharma, chemical, food, agrochemical and automotive.' },

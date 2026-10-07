@@ -21,6 +21,8 @@ Backups from each major step are not in the repo. Use git history instead.
 | 04b | `#talk` | Mid-page CTA panel: "Have a Hospital Furniture Requirement? Let's Talk." + Send Inquiry (orange) / WhatsApp Us (outline) | ✅ (WhatsApp number missing) |
 | 05 | `#manufacturing` | "Integrated Healthcare Manufacturing Excellence." Bento: Testing & Quality (white), Certifications (indigo), In-house R&D (orange, wide), Infrastructure (photo, tall, right) with counters 4 / 22 / 57 / 36,000+ | ✅ fits one screen |
 | 05b | `#applications` | "The Right Component for the Right Care Setting." 4 photo cards (ICU, General Wards, Ambulance & Rescue, Maternity); the hovered card expands and shows its description | ✅ fits one screen |
+| 05c | `#why` | Why Furnastra: "Where Healthcare Meets Innovative Expertise." + Learn More. 3 benefit cards (right-aligned) · centre seal (rotating dashed ring, pale ring, navy core "100% in-house manufacturing · since 1990") · 3 benefit cards. Cards: hover lift, orange icon tile fills | ✅ fits one screen |
+| 05d | `#news` | Latest at Furnastra (Blog & News): In the News photo card · LinkedIn post card (scrollable) · Mitsu Chem share-price chart (BSE/NSE) · Q1 results (indigo) · Annual report (orange, mock cover). **All content is dummy** | ✅ fits one screen |
 | 06 | `#oem` | OEM / custom development (7-step process) | ⏳ **old theme**, to redesign |
 | 07 | `#legacy` | Furnastra + Mitsu Chem (overlaps with Brand Story; consider merging or cutting) | ⏳ old |
 | 08 | — | Quality at every stage + certs marquee | ⏳ old |
@@ -46,6 +48,8 @@ Backups from each major step are not in the repo. Use git history instead.
 ---
 
 ## Open items (need client input)
+
+- **Latest at Furnastra (`#news`) is all dummy content.** That includes the headline, the LinkedIn post, and the **share price ₹222.10 / chart (fabricated)**, Q1 and the annual report. Connect it to real feeds (blog CMS, LinkedIn embed, BSE/NSE price API) or replace the dummy items before launch.
 
 - **WhatsApp number:** the `#talk` WhatsApp button points to `https://wa.me/` (there's a TODO comment).
 - **About page URL:** "Discover Our Story" and the "About" menu link go to `#legacy` for now. Product and resource links are `#products` / `#resources` placeholders.

@@ -12,11 +12,11 @@ this guide, not the old sections.
 
 | Token | Hex | Use |
 |---|---|---|
-| Indigo (primary text) | `#44499E` | All section headings (H1/H2), card titles on light cards, outline buttons, active tabs |
+| **Primary purple / indigo (brand)** | `#4D4D9F` | All section headings (H1/H2), card titles on light cards, outline buttons, active tabs |
 | Navy | `#2A3373` | Dark cards, dark buttons, lead/strong text, timeline circles |
 | Deep navy | `#1C2258` | Photo overlay gradients (`rgba(28,34,88,…)`), glass pills |
-| Orange (accent) | `#E8966C` | Primary buttons, eyebrow labels, category labels, accent word in headings, dots, lines |
-| Orange hover | `#DE8459` | Hover state of orange buttons |
+| **Orange accent (brand)** | `#F59067` | Primary buttons, eyebrow labels, category labels, accent word in headings, dots, lines |
+| Orange hover | `#E97F52` | Hover state of orange buttons |
 | Light orange | `#F7B79C` | Accent text on dark/photo backgrounds |
 | Pale orange | `#F3C9B3` | Inactive timeline line |
 | Orange tint | `#FCEFE8` | Icon tile background on white cards |
@@ -31,10 +31,10 @@ this guide, not the old sections.
 | Muted | `#6B7280` | Mono captions, "/ 04" style counters |
 | White | `#FFFFFF` | Text on orange/navy, white cards |
 
-**Legacy, do not use in new work:** `#F59067` (old orange), `#959EA9` (old muted),
+**Legacy, do not use in new work:** `#959EA9` (old muted),
 `#C0C8D4` and Outfit font colours. These only appear in the old dark sections.
 
-**Orange cards:** use **white text** on `#E8966C`. The user chose white over navy.
+**Orange cards:** use **white text** on `#F59067`. The user chose white over navy.
 
 ---
 
@@ -48,16 +48,16 @@ Raleway's default old-style figures look uneven.
 
 | Role | Spec |
 |---|---|
-| H1 / H2 (all section headings) | Raleway **600**, `font-size:clamp(30px,3.6vw,52px)`, `line-height:1.16`, `letter-spacing:-0.015em`, colour `#44499E`. The last word or phrase is often in orange `#E8966C`, e.g. "…is here.", "Let's Talk.", "Excellence." Sentence or title case; **never all caps**. |
+| H1 / H2 (all section headings) | Raleway **600**, `font-size:clamp(30px,3.6vw,52px)`, `line-height:1.16`, `letter-spacing:-0.015em`, colour `#4D4D9F`. The last word or phrase is often in orange `#F59067`, e.g. "…is here.", "Let's Talk.", "Excellence." Sentence or title case; **never all caps**. |
 | Hero H1 | Same spec. Two lines locked with `white-space:nowrap` spans: "Components Engineered / for Healthcare Furniture." |
-| Eyebrow (section label) | JetBrains Mono, `11.5px`, `letter-spacing:0.12em`, uppercase, `#E8966C`. **No numbering**: write "OUR STORY", not "02 — OUR STORY". |
-| Hero-style eyebrow | Sparkle icon (see §5) + Raleway 500, `letter-spacing:0.06em`, `#E8966C` |
+| Eyebrow (section label) | JetBrains Mono, `11.5px`, `letter-spacing:0.12em`, uppercase, `#F59067`. **No numbering**: write "OUR STORY", not "02 — OUR STORY". |
+| Hero-style eyebrow | Sparkle icon (see §5) + Raleway 500, `letter-spacing:0.06em`, `#F59067` |
 | Lead line | Raleway 500, `clamp(18px,1.55vw,22px)`, `#2A3373` |
 | Body | Raleway 400, `clamp(15.5px,1.2vw,17.5px)`, `line-height:1.65–1.7`, `#5B5F63` |
 | Card title (large) | Raleway 600, `clamp(36px,3.4vw,52px)` |
 | Card title (small) | Raleway 600, `clamp(18px,1.6vw,30px)` depending on tile |
-| Category label | `11.5–12px`, weight 600, `letter-spacing:0.08em`, uppercase, `#E8966C` (white on orange or navy) |
-| Chips | `11.5–12px`, weight 600, pill `border-radius:999px`, padding `5–6px 10–11px`; on white: bg `#EEF0FB`, text `#44499E`; on dark or photo: `rgba(255,255,255,.16)` + 1px `rgba(255,255,255,.22)` border |
+| Category label | `11.5–12px`, weight 600, `letter-spacing:0.08em`, uppercase, `#F59067` (white on orange or navy) |
+| Chips | `11.5–12px`, weight 600, pill `border-radius:999px`, padding `5–6px 10–11px`; on white: bg `#EEF0FB`, text `#4D4D9F`; on dark or photo: `rgba(255,255,255,.16)` + 1px `rgba(255,255,255,.22)` border |
 | Big numbers / stats | Raleway 500–600, lining nums, `clamp(28px,3vw,60px)` |
 | Mono tags / captions | JetBrains Mono `10–10.5px`, `letter-spacing:0.08–0.12em` |
 
@@ -72,9 +72,9 @@ framework's `style-hover="…"` attribute.
 
 | Variant | Style |
 |---|---|
-| Primary | bg `#E8966C`, text `#FFFFFF`, hover bg `#DE8459`. Padding `clamp(14px,1.2vw,18px) clamp(22px,2vw,30px)` |
-| Secondary (outline) | bg transparent or white, `1.5px solid #44499E`, text `#44499E`; hover: fill `#44499E` + white text, or white bg |
-| Dark | bg `#2A3373`, white text, hover `#44499E`. Used for "DISCOVER OUR STORY" (the only uppercase button, `letter-spacing:0.06em`) |
+| Primary | bg `#F59067`, text `#FFFFFF`, hover bg `#E97F52`. Padding `clamp(14px,1.2vw,18px) clamp(22px,2vw,30px)` |
+| Secondary (outline) | bg transparent or white, `1.5px solid #4D4D9F`, text `#4D4D9F`; hover: fill `#4D4D9F` + white text, or white bg |
+| Dark | bg `#2A3373`, white text, hover `#4D4D9F`. Used for "DISCOVER OUR STORY" (the only uppercase button, `letter-spacing:0.06em`) |
 | Header CTA | Orange, white text, sentence case "Request a quote →", radius 12px |
 
 Never use pill-shaped (999px) buttons or square (2px) buttons in new work.
@@ -104,7 +104,7 @@ Never use pill-shaped (999px) buttons or square (2px) buttons in new work.
 - **Rotating dashed ring:** `border:1px dashed #C9CFEF` + `data-spin="80"` + a 10–12px orange dot on its edge.
 - **Sparkle (4-point star) SVG**, used for eyebrows, dividers and timeline ends:
   ```html
-  <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#E8966C"/></svg>
+  <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>
   ```
 - **F-mark watermark in card corners:** a CSS mask of the logo mark:
   ```html
