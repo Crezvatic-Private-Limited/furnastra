@@ -31,6 +31,56 @@ html:not(.lenis){scroll-behavior:smooth}
 .dd-panel a{display:flex;justify-content:space-between;gap:20px;padding:11px 14px;border-radius:9px;font-size:15px;font-weight:600;color:#2A3373}
 .dd-panel a span{font-weight:500;font-size:13px;color:#5B5F63}
 .dd-panel a:hover{background:#F4F5FA;color:#2A3373}
+.nav-dd.mega{position:static}
+.mega .dd-menu{left:0;right:0;top:100%;padding-top:0;display:flex;justify-content:center}
+.mm{width:min(1000px,calc(100% - 2*clamp(20px,4vw,72px)));background:#FFFFFF;border:1px solid #E4E7EF;border-top:none;border-radius:0 0 18px 18px;box-shadow:0 28px 60px rgba(42,51,115,0.14);display:grid;grid-template-columns:300px minmax(0,1fr);white-space:normal;letter-spacing:0;overflow:hidden}
+.mm-side{background:#F7F8FC;border-right:1px solid #E4E7EF;padding:14px 10px;display:flex;flex-direction:column}
+.mm-label{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:#F59067;padding:6px 14px 10px}
+.mm-fam{position:static}
+.mm-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto 14px;align-items:center;gap:10px;padding:9px 14px;border-radius:10px;color:#2A3373;transition:background 200ms}
+.mm-row b{display:block;font-family:Raleway,system-ui,sans-serif;font-size:15px;font-weight:600;color:#4D4D9F;line-height:1.25}
+.mm-row small{display:block;font-size:12px;color:#6B7280;line-height:1.3;margin-top:1px}
+.mm-row em{font-style:normal;font-size:11px;font-weight:600;color:#9AA0AE}
+.mm-row i{font-style:normal;font-size:13px;color:#C9CFEF;transition:color 200ms,transform 200ms}
+.mm-row::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:#F59067;opacity:0;transition:opacity 200ms}
+.mm-pane{position:absolute;left:300px;right:0;top:0;bottom:0;padding:22px 28px;display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:24px;opacity:0;visibility:hidden;transition:opacity 200ms ease,visibility 200ms}
+.mm-fam:hover .mm-row,.mm-fam:focus-within .mm-row,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row{background:#FFFFFF;box-shadow:0 2px 10px rgba(42,51,115,0.06)}
+.mm-fam:hover .mm-row::before,.mm-fam:focus-within .mm-row::before,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row::before{opacity:1}
+.mm-fam:hover .mm-row i,.mm-fam:focus-within .mm-row i,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row i{color:#F59067;transform:translateX(2px)}
+.mm-fam:hover .mm-pane,.mm-fam:focus-within .mm-pane,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-pane{opacity:1;visibility:visible}
+.mm-main{position:relative;min-height:330px}
+.mm-crumb{font-size:12px;color:#9AA0AE;margin-bottom:6px}
+.mm-crumb span{color:#F59067;font-weight:600}
+.mm-title{font-family:Raleway,system-ui,sans-serif;font-size:22px;font-weight:600;color:#4D4D9F;line-height:1.2;margin-bottom:16px}
+.mm-tree{display:grid;grid-auto-flow:column;column-gap:28px;padding-left:2px}
+.mm-tree a{position:relative;display:flex;align-items:center;gap:8px;padding:6px 0 6px 22px;font-size:14px;font-weight:500;color:#2A3373;transition:color 200ms}
+.mm-tree a::before{content:"";position:absolute;left:4px;top:0;bottom:0;border-left:1.5px solid #E4E7EF}
+.mm-tree a.end::before{bottom:50%}
+.mm-tree a::after{content:"";position:absolute;left:4px;top:50%;width:12px;border-top:1.5px solid #E4E7EF}
+.mm-tree a:hover{color:#F59067}
+.mm-tag{font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;white-space:nowrap}
+.mm-tag.up{color:#B8572F;background:#FEF1EB}
+.mm-tag.std{color:#4D4D9F;background:#EEF0FB}
+.mm-aside{display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;gap:14px}
+.mm-pic{aspect-ratio:1/1;border-radius:14px;background:radial-gradient(circle at 50% 45%,#FFFFFF 0%,#EEF0FB 75%);display:flex;align-items:center;justify-content:center}
+.mm-pic img{max-width:80%;max-height:80%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(42,51,115,0.15))}
+.mm-go{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13.5px;font-weight:600;color:#4D4D9F;padding:10px 14px;border:1.5px solid #4D4D9F;border-radius:10px;transition:background 200ms,color 200ms}
+.mm-go:hover{background:#4D4D9F;color:#FFFFFF}
+.mm-all{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;margin-left:4px;margin-right:4px;border-top:1px solid #E4E7EF;font-size:13.5px;font-weight:600;color:#F59067}
+.mm-all:hover{color:#E97F52}
+.rs{width:380px;background:#FFFFFF;border:1px solid #E4E7EF;border-radius:16px;box-shadow:0 24px 50px rgba(42,51,115,0.14);padding:10px;white-space:normal;letter-spacing:0}
+.rs-label{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:#F59067;padding:8px 12px 8px}
+.rs a.rs-item{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:center;padding:10px 12px;border-radius:11px;transition:background 200ms}
+.rs a.rs-item:hover{background:#F4F5FA}
+.rs-ic{width:36px;height:36px;border-radius:10px;background:#FEF1EB;display:flex;align-items:center;justify-content:center;transition:background 200ms}
+.rs-ic svg{stroke:#F59067;transition:stroke 200ms}
+.rs a.rs-item:hover .rs-ic{background:#F59067}
+.rs a.rs-item:hover .rs-ic svg{stroke:#FFFFFF}
+.rs b{display:flex;align-items:center;gap:8px;font-family:Raleway,system-ui,sans-serif;font-size:15px;font-weight:600;color:#4D4D9F;line-height:1.25}
+.rs small{display:block;font-size:12.5px;color:#6B7280;line-height:1.4;margin-top:2px}
+.rs-tag{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#4D4D9F;background:#EEF0FB;padding:2px 7px;border-radius:999px}
+.rs-all{display:flex;align-items:center;justify-content:space-between;margin:6px 4px 0;padding:12px 10px 6px;border-top:1px solid #E4E7EF;font-size:13.5px;font-weight:600;color:#F59067}
+.rs-all:hover{color:#E97F52}
 .set-row{display:flex;gap:clamp(12px,1.2vw,16px);height:clamp(360px,calc(100vh - 88px - 260px),560px)}
 .set-card{position:relative;flex:1 1 0;min-width:0;border-radius:20px;overflow:hidden;background:#2A3373;color:#FFFFFF;transition:flex 650ms cubic-bezier(.2,.7,.2,1)}
 a.set-card,a.set-card:hover{color:#FFFFFF}
@@ -98,19 +148,68 @@ a.news-card,a.news-card:hover{color:inherit}
 </helmet>
 
 <header style="position:fixed;top:0;left:0;right:0;z-index:60;background:#FFFFFF;border-bottom:2px solid #F59067;box-shadow:{{ hdrShadow }};transition:box-shadow 400ms ease">
-  <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px);height:86px;display:flex;align-items:center;gap:clamp(16px,2.4vw,40px)">
+  <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px);height:86px;display:flex;align-items:center;gap:clamp(16px,2.4vw,40px)">
     <a href="#hero" style="display:flex;align-items:flex-start;gap:2px;flex:none"><img src="assets/logo-color.svg" alt="Furnastra" style="height:clamp(26px,2.6vw,34px);width:auto"><span style="font-size:8px;font-weight:600;color:#4D4D9F;line-height:1">™</span></a>
     <nav style="display:flex;justify-content:center;align-items:center;gap:clamp(14px,2.4vw,36px);font-size:clamp(13.5px,1.15vw,16px);font-weight:500;letter-spacing:0.01em;flex:1;min-width:0;white-space:nowrap">
-      <div class="nav-dd">
+      <div class="nav-dd mega">
         <a href="#products" class="nav-link">Product <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="dd-menu"><div class="dd-panel">
-          <a href="#products">Raksha <span>Head &amp; foot bows</span></a>
-          <a href="#products">Sahara <span>Side railings</span></a>
-          <a href="#products">Setu <span>Bed platforms</span></a>
-          <a href="#products">Aakaar <span>Buffer wheels</span></a>
-          <a href="#products">Rahat <span>Over bed tables</span></a>
-          <a href="#products">Rudra <span>Bedside lockers</span></a>
-          <a href="#products">Jivan <span>Spine boards</span></a>
+        <div class="dd-menu"><div class="mm" style="position:relative">
+          <div class="mm-side">
+            <div class="mm-label">PRODUCT FAMILIES</div>
+            <div class="mm-list">
+            <div class="mm-fam">
+              <a href="/products/abs-head-foot-bows/" class="mm-row"><span><b>Raksha</b><small>ABS head &amp; foot bows</small></span><em>11 SKUs</em><i>›</i></a>
+              <div class="mm-pane">
+                <div class="mm-main"><div class="mm-crumb">Products › <span>ABS head &amp; foot bows</span></div><div class="mm-title">Raksha</div><div class="mm-tree" style="grid-template-rows:repeat(6,auto)"><a href="/products/abs-head-foot-bows/raksha-m1/">Raksha M1</a><a href="/products/abs-head-foot-bows/raksha-m2/">Raksha M2</a><a href="/products/abs-head-foot-bows/raksha-m3/">Raksha M3</a><a href="/products/abs-head-foot-bows/raksha-m4/">Raksha M4</a><a href="/products/abs-head-foot-bows/raksha-m5/">Raksha M5</a><a href="/products/abs-head-foot-bows/raksha-m6/" class="end">Raksha M6</a><a href="/products/abs-head-foot-bows/raksha-m7/">Raksha M7</a><a href="/products/abs-head-foot-bows/raksha-m8/">Raksha M8</a><a href="/products/abs-head-foot-bows/raksha-m9/">Raksha M9</a><a href="/products/abs-head-foot-bows/raksha-m10/">Raksha M10</a><a href="/products/abs-head-foot-bows/raksha-m11/" class="end">Raksha M11</a></div></div>
+                <div class="mm-aside"><div class="mm-pic"><img src="assets/p49.png" alt=""></div><a href="/products/abs-head-foot-bows/" class="mm-go">View family <span>→</span></a></div>
+              </div>
+            </div>
+            <div class="mm-fam">
+              <a href="/products/side-railings/" class="mm-row"><span><b>Sahara</b><small>Side railings</small></span><em>9 SKUs</em><i>›</i></a>
+              <div class="mm-pane">
+                <div class="mm-main"><div class="mm-crumb">Products › <span>Side railings</span></div><div class="mm-title">Sahara</div><div class="mm-tree" style="grid-template-rows:repeat(5,auto)"><a href="/products/side-railings/sahara-msr1/">Sahara MSR1</a><a href="/products/side-railings/sahara-msr2/">Sahara MSR2</a><a href="/products/side-railings/sahara-msr3/">Sahara MSR3</a><a href="/products/side-railings/sahara-msr4/">Sahara MSR4</a><a href="/products/side-railings/sahara-msr5/" class="end">Sahara MSR5</a><a href="/products/side-railings/sahara-msr6/">Sahara MSR6</a><a href="/products/side-railings/sahara-msr7/">Sahara MSR7</a><a href="/products/side-railings/sahara-msr8/">Sahara MSR8</a><a href="/products/side-railings/sahara-nau-collapsible/" class="end">Sahara Nau · Collapsible</a></div></div>
+                <div class="mm-aside"><div class="mm-pic"><img src="assets/p14.png" alt=""></div><a href="/products/side-railings/" class="mm-go">View family <span>→</span></a></div>
+              </div>
+            </div>
+            <div class="mm-fam">
+              <a href="/products/bed-board-planks-bedliners/" class="mm-row"><span><b>Setu</b><small>Bed board planks &amp; bedliners</small></span><em>2 SKUs</em><i>›</i></a>
+              <div class="mm-pane">
+                <div class="mm-main"><div class="mm-crumb">Products › <span>Bed board planks &amp; bedliners</span></div><div class="mm-title">Setu</div><div class="mm-tree" style="grid-template-rows:repeat(2,auto)"><a href="/products/bed-board-planks-bedliners/setu-1-bed-board-plank/">Setu 1 · Bed board plank</a><a href="/products/bed-board-planks-bedliners/setu-2-bedliner/" class="end">Setu 2 · Bedliner</a></div></div>
+                <div class="mm-aside"><div class="mm-pic"><img src="assets/p25.png" alt=""></div><a href="/products/bed-board-planks-bedliners/" class="mm-go">View family <span>→</span></a></div>
+              </div>
+            </div>
+            <div class="mm-fam">
+              <a href="/products/over-bed-table-tops/" class="mm-row"><span><b>Rahat</b><small>Over-bed table tops</small></span><em>2 SKUs</em><i>›</i></a>
+              <div class="mm-pane">
+                <div class="mm-main"><div class="mm-crumb">Products › <span>Over-bed table tops</span></div><div class="mm-title">Rahat</div><div class="mm-tree" style="grid-template-rows:repeat(2,auto)"><a href="/products/over-bed-table-tops/rahat-1/">Rahat 1</a><a href="/products/over-bed-table-tops/rahat-2/" class="end">Rahat 2</a></div></div>
+                <div class="mm-aside"><div class="mm-pic"><img src="assets/p29.png" alt=""></div><a href="/products/over-bed-table-tops/" class="mm-go">View family <span>→</span></a></div>
+              </div>
+            </div>
+            <div class="mm-fam">
+              <a href="/products/bedside-locker-parts/" class="mm-row"><span><b>Rudra</b><small>Bedside locker parts</small></span><em>2 SKUs</em><i>›</i></a>
+              <div class="mm-pane">
+                <div class="mm-main"><div class="mm-crumb">Products › <span>Bedside locker parts</span></div><div class="mm-title">Rudra</div><div class="mm-tree" style="grid-template-rows:repeat(2,auto)"><a href="/products/bedside-locker-parts/rudra-1/">Rudra 1</a><a href="/products/bedside-locker-parts/rudra-2/" class="end">Rudra 2<span class="mm-tag up">Upcoming</span></a></div></div>
+                <div class="mm-aside"><div class="mm-pic"><img src="assets/p32.png" alt=""></div><a href="/products/bedside-locker-parts/" class="mm-go">View family <span>→</span></a></div>
+              </div>
+            </div>
+            <div class="mm-fam">
+              <a href="/products/bed-accessories/" class="mm-row"><span><b>Bed accessories</b><small>Wheels, brackets &amp; fitments</small></span><em>5 items</em><i>›</i></a>
+              <div class="mm-pane">
+                <div class="mm-main"><div class="mm-crumb">Products › <span>Wheels, brackets &amp; fitments</span></div><div class="mm-title">Bed accessories</div><div class="mm-tree" style="grid-template-rows:repeat(5,auto)"><a href="/products/bed-accessories/aakaar-buffer-wheels/">Aakaar buffer wheels</a><a href="/products/bed-accessories/b1-bracket-mechanism/">B1 bracket mechanism</a><a href="/products/bed-accessories/b2-bracket-mechanism/">B2 bracket mechanism<span class="mm-tag std">IEC 60601-2-52</span></a><a href="/products/bed-accessories/fitments-and-mounts/">Fitments &amp; mounts</a><a href="/products/bed-accessories/mprh-patient-report-holder/" class="end">MPRH patient report holder<span class="mm-tag up">Upcoming</span></a></div></div>
+                <div class="mm-aside"><div class="mm-pic"><img src="assets/p27.png" alt=""></div><a href="/products/bed-accessories/" class="mm-go">View family <span>→</span></a></div>
+              </div>
+            </div>
+            <div class="mm-fam">
+              <a href="/products/custom-moulded-parts/" class="mm-row"><span><b>Custom moulded parts</b><small>Gallery · built to OEM drawings</small></span><em>Gallery</em><i>›</i></a>
+              <div class="mm-pane">
+                <div class="mm-main"><div class="mm-crumb">Products › <span>Gallery · built to OEM drawings</span></div><div class="mm-title">Custom moulded parts</div><p style="margin:0;font-size:14px;line-height:1.65;color:#5B5F63;max-width:380px">A gallery of components we’ve developed to OEM drawings and samples — taken from first discussion through prototype mould, trials and approval into commercial production.</p></div>
+                <div class="mm-aside"><div class="mm-pic"><img src="assets/p7.png" alt=""></div><a href="/products/custom-moulded-parts/" class="mm-go">View gallery <span>→</span></a></div>
+              </div>
+            </div>
+            </div>
+            <a href="/products/" class="mm-all">View all products <span>→</span></a>
+          </div>
+          <div></div>
         </div></div>
       </div>
       <a href="#oem" class="nav-link">OEM Solutions</a>
@@ -118,11 +217,14 @@ a.news-card,a.news-card:hover{color:inherit}
       <a href="#legacy" class="nav-link">About</a>
       <div class="nav-dd">
         <a href="#resources" class="nav-link">Resources <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-        <div class="dd-menu"><div class="dd-panel">
-          <a href="#resources">Product catalogue</a>
-          <a href="#resources">Technical datasheets</a>
-          <a href="#resources">Insights</a>
-          <a href="#resources">News &amp; events</a>
+        <div class="dd-menu"><div class="rs">
+          <div class="rs-label">RESOURCES</div>
+          <a href="/resources/downloads/" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19h14"/></svg></span><span><b>Downloads<span class="rs-tag"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4D4D9F" stroke-width="3" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Gated</span></b><small>Catalogue, technical drawings &amp; certificates</small></span></a>
+          <a href="/resources/faqs/" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 0 1 4.8 1c0 1.7-2.4 2.2-2.4 3.5"/><path d="M12 17h.01"/></svg></span><span><b>FAQs</b><small>Fitment, MOQs, materials &amp; lead times</small></span></a>
+          <a href="/resources/insights/" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4"/><path d="M8.5 12h7M8.5 15.5h7"/></svg></span><span><b>Insights</b><small>Articles on component sourcing &amp; moulding</small></span></a>
+          <a href="/resources/case-studies/" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="2"/><path d="M9 7V5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V7"/><path d="M3.5 12.5h17"/></svg></span><span><b>Case studies</b><small>How OEMs built beds with Furnastra parts</small></span></a>
+          <a href="/resources/news-and-events/" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9.5h16M8.5 3v4M15.5 3v4"/><path d="M8 13.5h3v3H8z"/></svg></span><span><b>News &amp; events</b><small>Expos like MEDICA, launches &amp; announcements</small></span></a>
+          <a href="/resources/" class="rs-all">All resources <span>→</span></a>
         </div></div>
       </div>
       <a href="#rfq" class="nav-link">Contact</a>
@@ -153,19 +255,20 @@ a.news-card,a.news-card:hover{color:inherit}
       <div data-depth="14" style="position:relative;width:92%;margin:clamp(64px,6.5vw,96px) 0 clamp(8px,1vw,16px) auto">
         <div data-float="12" data-dur="5200" style="position:relative;width:100%;aspect-ratio:1252/1090">
           <img src="assets/p6.png" alt="Hospital bed assembled from Furnastra components" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:{{ bedFilter }};transition:filter 450ms ease">
-          <img src="assets/p6.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;clip-path:{{ spotClip }};opacity:{{ spotOp }};transition:clip-path 500ms cubic-bezier(.2,.7,.2,1),opacity 350ms ease">
+          <span aria-hidden="true" style="position:absolute;pointer-events:none;left:{{ ring.l }};top:{{ ring.t }};width:{{ ring.w }};height:{{ ring.h }};border-radius:50%;background:radial-gradient(closest-side,rgba(245,144,103,0.42),rgba(245,144,103,0.14) 62%,rgba(245,144,103,0) 100%);transform:scale(1.18);opacity:{{ spotOp }};transition:all 500ms cubic-bezier(.2,.7,.2,1)"></span>
+          <img src="assets/p6.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;clip-path:{{ spotClip }};opacity:{{ spotOp }};filter:saturate(1.12) contrast(1.04);transition:clip-path 500ms cubic-bezier(.2,.7,.2,1),opacity 350ms ease">
+          <span aria-hidden="true" style="position:absolute;pointer-events:none;left:{{ ring.l }};top:{{ ring.t }};width:{{ ring.w }};height:{{ ring.h }};border-radius:50%;border:1.5px dashed rgba(245,144,103,0.95);box-shadow:0 0 0 6px rgba(245,144,103,0.10),0 0 40px rgba(245,144,103,0.35);opacity:{{ spotOp }};transition:all 500ms cubic-bezier(.2,.7,.2,1)"></span>
           <sc-for list="{{ callouts }}" as="c" hint-placeholder-count="4">
             <div onMouseEnter="{{ c.enter }}" onMouseLeave="{{ c.leave }}" style="position:absolute;inset:0;pointer-events:none;opacity:{{ c.op }};transition:opacity 350ms ease;z-index:{{ c.z }}">
               <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible"><polyline points="{{ c.pts }}" fill="none" stroke="#F59067" stroke-width="1.4" vector-effect="non-scaling-stroke"/></svg>
               <span style="position:absolute;left:{{ c.dx }};top:{{ c.dy }};width:0;height:0;pointer-events:auto;cursor:pointer">
                 <span data-pulse="1" style="position:absolute;left:-13px;top:-13px;width:26px;height:26px;border-radius:50%;background:rgba(245,144,103,0.4)"></span>
                 <span style="position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%"></span>
-                <span style="position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#F59067;border:3px solid #FFFFFF;box-shadow:0 0 0 4px rgba(245,144,103,0.28)"></span>
+                <span style="position:absolute;left:-8px;top:-8px;width:16px;height:16px;border-radius:50%;background:#F59067;border:3px solid #FFFFFF;box-shadow:0 0 0 {{ c.halo }} rgba(245,144,103,0.28);transform:scale({{ c.dotS }});transition:transform 350ms cubic-bezier(.2,.7,.2,1),box-shadow 350ms ease"></span>
               </span>
-              <div style="position:absolute;left:{{ c.lx }};top:{{ c.ly }};transform:{{ c.ltf }};pointer-events:auto;cursor:pointer;white-space:nowrap;background:#FFFFFF;border:1px solid {{ c.bd }};border-left:3px solid #F59067;box-shadow:{{ c.sh }};padding:9px clamp(16px,1.6vw,26px) 9px 14px;display:flex;flex-direction:column;gap:1px;transition:border-color 300ms,box-shadow 300ms">
-                <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.08em;color:#6B7280">{{ c.code }}</span>
-                <span style="font-size:clamp(15px,1.25vw,18px);font-weight:800;line-height:1.2;color:#1C2258">{{ c.name }}</span>
-                <span style="font-size:clamp(12.5px,1vw,14px);font-weight:500;color:#2A3373">{{ c.type }}</span>
+              <div style="position:absolute;left:{{ c.lx }};top:{{ c.ly }};transform:{{ c.ltf }} translateY({{ c.lift }});pointer-events:auto;cursor:pointer;white-space:nowrap;background:{{ c.lbg }};backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid {{ c.bd }};border-radius:12px;box-shadow:{{ c.sh }};padding:10px clamp(14px,1.3vw,18px) 11px;display:flex;flex-direction:column;gap:3px;transition:border-color 300ms,box-shadow 300ms,background 300ms,transform 350ms cubic-bezier(.2,.7,.2,1)">
+                <span style="display:flex;align-items:center;justify-content:space-between;gap:14px"><span style="display:flex;align-items:center;gap:6px;font-family:Raleway,system-ui,sans-serif;font-size:10.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:{{ c.tfg }};transition:color 300ms"><span style="width:5px;height:5px;border-radius:50%;background:{{ c.tfg }}"></span>{{ c.type }}</span><span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:9.5px;letter-spacing:0.06em;color:{{ c.cfg }};transition:color 300ms">{{ c.code }}</span></span>
+                <span style="font-family:Raleway,system-ui,sans-serif;font-size:clamp(16px,1.35vw,20px);font-weight:600;line-height:1.15;letter-spacing:-0.01em;color:{{ c.nfg }};transition:color 300ms">{{ c.name }}</span>
               </div>
             </div>
           </sc-for>
@@ -935,10 +1038,13 @@ class Component extends DCLogic {
       enter: () => this.setState({ hot: i }), leave: () => this.setState({ hot: null }),
       op: s.hot == null || s.hot === i ? 1 : 0.3, z: s.hot === i ? 3 : 2,
       bd: s.hot === i ? '#F59067' : '#E4E7EF',
-      sh: s.hot === i ? '0 14px 34px rgba(42,51,115,0.16)' : '0 6px 18px rgba(42,51,115,0.06)' }));
+      sh: s.hot === i ? '0 18px 40px rgba(245,144,103,0.38)' : '0 6px 18px rgba(42,51,115,0.06)',
+      lbg: s.hot === i ? '#F59067' : 'rgba(255,255,255,0.94)', tfg: s.hot === i ? '#FFFFFF' : '#F59067', nfg: s.hot === i ? '#FFFFFF' : '#4D4D9F', cfg: s.hot === i ? 'rgba(255,255,255,0.8)' : '#9AA0AE',
+      lift: s.hot === i ? '-4px' : '0px', dotS: s.hot === i ? 1.35 : 1, halo: s.hot === i ? '8px' : '4px' }));
     const regions0 = [[22, 20, 16, 17], [50, 18, 12, 14], [49, 40, 25, 16], [60.4, 87.2, 5, 6]];
     const hr = regions0[s.hot ?? 0];
     const spotClip = `ellipse(${hr[2]}% ${hr[3]}% at ${hr[0]}% ${hr[1]}%)`;
+    const ring = { l: (hr[0] - hr[2]) + '%', t: (hr[1] - hr[3]) + '%', w: hr[2] * 2 + '%', h: hr[3] * 2 + '%' };
     const hotOn = s.hot != null;
     const statTone = {
       light: { bg: '#FFFFFF', bd: '#E4E7EF', ring: '#EEF0FB', num: '#4D4D9F', fg: '#2A3373', sub: '#5B5F63', dot: '#F59067' },
@@ -1053,8 +1159,8 @@ class Component extends DCLogic {
     return {
       qaSteps, qaLine: `calc(75% * ${Math.max(0, qaN - 1) / 3})`, ringOff: s.ringOn || !this.motion() ? 0 : 326.7,
       showFlags: flags, keyStats, faqs, colourways, colourPoints,
-      colourName: colourways[cwIdx].name, colourGlow: colourways[cwIdx].hex, colourTag: 'SHOWN · ' + colourways[cwIdx].name.toUpperCase(), milestones, msCard, callouts, spotClip, spotOp: hotOn ? 1 : 0,
-      bedFilter: hotOn ? 'drop-shadow(0 30px 40px rgba(42,51,115,0.12)) grayscale(0.85) opacity(0.35)' : 'drop-shadow(0 30px 40px rgba(42,51,115,0.16))',
+      colourName: colourways[cwIdx].name, colourGlow: colourways[cwIdx].hex, colourTag: 'SHOWN · ' + colourways[cwIdx].name.toUpperCase(), milestones, msCard, callouts, spotClip, ring, spotOp: hotOn ? 1 : 0,
+      bedFilter: hotOn ? 'drop-shadow(0 30px 40px rgba(42,51,115,0.08)) grayscale(1) opacity(0.2) blur(1.2px)' : 'drop-shadow(0 30px 40px rgba(42,51,115,0.16))',
       hdrShadow: s.scrolled ? '0 6px 24px rgba(42,51,115,0.08)' : 'none',
       marqueeMats: [...mats, ...mats], marqueeCerts: [...certs, ...certs],
       story, storyImgs, storyTabs, capabilities, steps, step: steps[s.step], quality, regions, resources,
