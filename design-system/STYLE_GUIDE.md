@@ -49,7 +49,7 @@ Raleway's default old-style figures look uneven.
 | Role | Spec |
 |---|---|
 | H1 / H2 (all section headings) | Raleway **600**, `font-size:clamp(30px,3.6vw,52px)`, `line-height:1.16`, `letter-spacing:-0.015em`, colour `#4D4D9F`. The last word or phrase is often in orange `#F59067`, e.g. "…is here.", "Let's Talk.", "Excellence." Sentence or title case; **never all caps**. |
-| Hero H1 | Same spec. Two lines locked with `white-space:nowrap` spans: "Components Engineered / for Healthcare Furniture." |
+| Hero H1 | Same spec. Client headline "India’s First & Most Trusted Hospital Furniture Components Manufacturer" in one `.hw-w` block with `text-wrap:balance` (wraps to 4 lines at 1440). |
 | Eyebrow (section label) | JetBrains Mono, `11.5px`, `letter-spacing:0.12em`, uppercase, `#F59067`. **No numbering**: write "OUR STORY", not "02 — OUR STORY". |
 | Hero-style eyebrow | Sparkle icon (see §5) + Raleway 500, `letter-spacing:0.06em`, `#F59067` |
 | Lead line | Raleway 500, `clamp(18px,1.55vw,22px)`, `#2A3373` |
@@ -177,6 +177,7 @@ that at 1440×900 and 1504×731. Measure the section height with
 - **Stock photos** (free Unsplash licence, no attribution required) are **placeholders** until the client supplies real ones:
   - `assets/story-moulding.jpg`
   - `assets/mfg-floor.jpg`
+  - `assets/why-inhouse.jpg` (injection moulding, Unsplash `0c20239ad292`), `assets/why-custom.jpg` (colour fan deck, Unsplash `67865ea83118`): photo backgrounds of the In-house and Customisation tiles in `#why`, under navy / orange tint overlays
   - `assets/setting-icu.jpg`, `assets/setting-ward.jpg`, `assets/setting-ambulance.jpg`, `assets/setting-maternity.jpg`
   - `assets/story-ward.jpg` is unused, because it shows a competitor's "GITA" branding.
 - Resize photos to ≤1400px wide with `sips -Z 1400 -s formatOptions 72-78` (aim for <400 KB).
