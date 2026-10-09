@@ -1112,11 +1112,11 @@ class Component extends DCLogic {
       rows: o ? '1fr' : '0fr', op: o ? 1 : 0, rot: o ? '0deg' : '90deg',
       qFg: o ? '#2A3373' : '#4D4D9F', bd: o ? 'rgba(245,144,103,0.55)' : '#E4E7EF', sh: o ? '0 16px 34px rgba(42,51,115,0.08)' : 'none',
       icBg: o ? '#F59067' : '#FFFFFF', icBd: o ? '#F59067' : '#E4E7EF', icFg: o ? '#FFFFFF' : '#F59067' }; });
-    // Sky Blue and Teal Green are real renders (p12 / p10); the others hue-shift p12's blue panels.
+    // Sky Blue is the real render (p12); the others hue-shift p12's blue panels.
     const cwIdx = s.cw ?? 0;
     const colourways = [
       { name: 'Sky Blue', hex: '#0A98D6', src: 'assets/p12.png', filter: '' },
-      { name: 'Teal Green', hex: '#15988A', src: 'assets/p10.png', filter: '' },
+      { name: 'Teal Green', hex: '#15988A', src: 'assets/p12.png', filter: 'hue-rotate(-28deg) saturate(0.8) brightness(0.9)' },
       { name: 'Indigo', hex: '#4D4D9F', src: 'assets/p12.png', filter: 'hue-rotate(42deg) saturate(0.75) brightness(0.92)' },
       { name: 'Coral', hex: '#F59067', src: 'assets/p12.png', filter: 'hue-rotate(178deg) saturate(0.72) brightness(1.06)' },
       { name: 'Plum', hex: '#9B4F96', src: 'assets/p12.png', filter: 'hue-rotate(102deg) saturate(0.5) brightness(0.9)' },
