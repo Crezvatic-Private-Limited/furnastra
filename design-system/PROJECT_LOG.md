@@ -73,3 +73,12 @@ Backups from each major step are not in the repo. Use git history instead.
 ## Repo
 
 `https://github.com/Crezvatic-Private-Limited/furnastra` (private), branch `main`.
+
+## Dark mode
+
+`index-dark.html` is **generated**. Don't edit it by hand. After every change to `index.html`, run
+`python3 design-system/build_dark.py`. The script remaps the light colours by CSS property (page `#1E2360`,
+cards `#2A3175`, text white, secondary `#D7DEFF`, orange unchanged), including colours held in JS state keys
+(`bg`/`fg`/`bd`…). It also swaps in the white logo and flips the header toggle (a moon button beside "Request a quote"
+on `index.html`, a sun button on the dark page). A new light colour that isn't in its tables passes through unchanged,
+so add it there.

@@ -14,14 +14,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Outfit:wght@500;600;700;800&family=EB+Garamond:ital,wght@1,500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#F4F5FA;font-variant-numeric:lining-nums;color:#2A3373;font-family:Raleway,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{margin:0;background:#1E2360;font-variant-numeric:lining-nums;color:#FFFFFF;font-family:Raleway,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 *{box-sizing:border-box}
-a{color:#4D4D9F;text-decoration:none}
-a:hover{color:#2A3373}
+a{color:#FFFFFF;text-decoration:none}
+a:hover{color:#FFFFFF}
 img{display:block}
 html:not(.lenis){scroll-behavior:smooth}
-.nav-link{display:flex;align-items:center;gap:8px;color:#4D4D9F;padding:8px 0;transition:color 200ms}
-.nav-link:hover{color:#2A3373}
+.nav-link{display:flex;align-items:center;gap:8px;color:#FFFFFF;padding:8px 0;transition:color 200ms}
+.nav-link:hover{color:#FFFFFF}
 .nav-dd{position:relative}
 .dd-chev{transition:transform 250ms ease}
 .dd-menu{position:absolute;top:100%;left:-18px;padding-top:18px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity 200ms ease,transform 200ms ease,visibility 200ms}
@@ -29,66 +29,66 @@ html:not(.lenis){scroll-behavior:smooth}
 .dd-menu{pointer-events:none}.nav-dd:hover .dd-menu,.nav-dd:focus-within .dd-menu{pointer-events:auto}
 .nav-dd:not(:hover):not(:focus-within) .dd-menu *{visibility:hidden!important}
 .nav-dd:hover .dd-chev,.nav-dd:focus-within .dd-chev{transform:rotate(180deg)}
-.dd-panel{min-width:240px;background:#FFFFFF;border:1px solid #E4E7EF;border-radius:14px;box-shadow:0 18px 40px rgba(42,51,115,0.12);padding:8px;display:flex;flex-direction:column}
-.dd-panel a{display:flex;justify-content:space-between;gap:20px;padding:11px 14px;border-radius:9px;font-size:15px;font-weight:600;color:#2A3373}
-.dd-panel a span{font-weight:500;font-size:13px;color:#5B5F63}
-.dd-panel a:hover{background:#F4F5FA;color:#2A3373}
+.dd-panel{min-width:240px;background:#2A3175;border:1px solid rgba(255,255,255,0.14);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,0.30);padding:8px;display:flex;flex-direction:column}
+.dd-panel a{display:flex;justify-content:space-between;gap:20px;padding:11px 14px;border-radius:9px;font-size:15px;font-weight:600;color:#FFFFFF}
+.dd-panel a span{font-weight:500;font-size:13px;color:#D7DEFF}
+.dd-panel a:hover{background:#1E2360;color:#FFFFFF}
 .nav-dd.mega{position:static}
 .mega .dd-menu{left:0;right:0;top:100%;padding-top:0;display:flex;justify-content:center}
 .mega .dd-menu::before{content:"";position:absolute;left:0;right:0;top:-44px;height:44px}
-.mm{width:min(1000px,calc(100% - 2*clamp(20px,4vw,72px)));background:#FFFFFF;border:1px solid #E4E7EF;border-top:none;border-radius:0 0 18px 18px;box-shadow:0 28px 60px rgba(42,51,115,0.14);display:grid;grid-template-columns:300px minmax(0,1fr);white-space:normal;letter-spacing:0;overflow:hidden}
-.mm-side{background:#F7F8FC;border-right:1px solid #E4E7EF;padding:14px 10px;display:flex;flex-direction:column}
+.mm{width:min(1000px,calc(100% - 2*clamp(20px,4vw,72px)));background:#2A3175;border:1px solid rgba(255,255,255,0.14);border-top:none;border-radius:0 0 18px 18px;box-shadow:0 28px 60px rgba(0,0,0,0.35);display:grid;grid-template-columns:300px minmax(0,1fr);white-space:normal;letter-spacing:0;overflow:hidden}
+.mm-side{background:#232966;border-right:1px solid rgba(255,255,255,0.14);padding:14px 10px;display:flex;flex-direction:column}
 .mm-label{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:#F59067;padding:6px 14px 10px}
 .mm-fam{position:static}
-.mm-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto 14px;align-items:center;gap:10px;padding:9px 14px;border-radius:10px;color:#2A3373;transition:background 200ms}
-.mm-row b{display:block;font-family:Raleway,system-ui,sans-serif;font-size:15px;font-weight:600;color:#4D4D9F;line-height:1.25}
-.mm-row small{display:block;font-size:12px;color:#6B7280;line-height:1.3;margin-top:1px}
-.mm-row em{font-style:normal;font-size:11px;font-weight:600;color:#9AA0AE}
-.mm-row i{font-style:normal;font-size:13px;color:#C9CFEF;transition:color 200ms,transform 200ms}
+.mm-row{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto 14px;align-items:center;gap:10px;padding:9px 14px;border-radius:10px;color:#FFFFFF;transition:background 200ms}
+.mm-row b{display:block;font-family:Raleway,system-ui,sans-serif;font-size:15px;font-weight:600;color:#FFFFFF;line-height:1.25}
+.mm-row small{display:block;font-size:12px;color:#D7DEFF;line-height:1.3;margin-top:1px}
+.mm-row em{font-style:normal;font-size:11px;font-weight:600;color:#A9B1E0}
+.mm-row i{font-style:normal;font-size:13px;color:#8C94CC;transition:color 200ms,transform 200ms}
 .mm-row::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:#F59067;opacity:0;transition:opacity 200ms}
 .mm-pane{position:absolute;left:300px;right:0;top:0;bottom:0;padding:22px 28px;display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:24px;opacity:0;visibility:hidden;transition:opacity 200ms ease,visibility 200ms}
-.mm-fam:hover .mm-row,.mm-fam:focus-within .mm-row,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row{background:#FFFFFF;box-shadow:0 2px 10px rgba(42,51,115,0.06)}
+.mm-fam:hover .mm-row,.mm-fam:focus-within .mm-row,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row{background:#2A3175;box-shadow:0 2px 10px rgba(0,0,0,0.15)}
 .mm-fam:hover .mm-row::before,.mm-fam:focus-within .mm-row::before,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row::before{opacity:1}
 .mm-fam:hover .mm-row i,.mm-fam:focus-within .mm-row i,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row i{color:#F59067;transform:translateX(2px)}
 .mm-fam:hover .mm-pane,.mm-fam:focus-within .mm-pane,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-pane{opacity:1;visibility:visible}
 .mm-main{position:relative;min-height:330px}
-.mm-crumb{font-size:12px;color:#9AA0AE;margin-bottom:6px}
+.mm-crumb{font-size:12px;color:#A9B1E0;margin-bottom:6px}
 .mm-crumb span{color:#F59067;font-weight:600}
-.mm-title{font-family:Raleway,system-ui,sans-serif;font-size:22px;font-weight:600;color:#4D4D9F;line-height:1.2;margin-bottom:16px}
+.mm-title{font-family:Raleway,system-ui,sans-serif;font-size:22px;font-weight:600;color:#FFFFFF;line-height:1.2;margin-bottom:16px}
 .mm-tree{display:grid;grid-auto-flow:column;column-gap:28px;padding-left:2px}
-.mm-tree a{position:relative;display:flex;align-items:center;gap:8px;padding:6px 0 6px 22px;font-size:14px;font-weight:500;color:#2A3373;transition:color 200ms}
-.mm-tree a::before{content:"";position:absolute;left:4px;top:0;bottom:0;border-left:1.5px solid #E4E7EF}
+.mm-tree a{position:relative;display:flex;align-items:center;gap:8px;padding:6px 0 6px 22px;font-size:14px;font-weight:500;color:#FFFFFF;transition:color 200ms}
+.mm-tree a::before{content:"";position:absolute;left:4px;top:0;bottom:0;border-left:1.5px solid rgba(255,255,255,0.14)}
 .mm-tree a.end::before{bottom:50%}
-.mm-tree a::after{content:"";position:absolute;left:4px;top:50%;width:12px;border-top:1.5px solid #E4E7EF}
+.mm-tree a::after{content:"";position:absolute;left:4px;top:50%;width:12px;border-top:1.5px solid rgba(255,255,255,0.14)}
 .mm-tree a:hover{color:#F59067}
 .mm-tag{font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:2px 7px;border-radius:999px;white-space:nowrap}
-.mm-tag.up{color:#B8572F;background:#FEF1EB}
-.mm-tag.std{color:#4D4D9F;background:#EEF0FB}
+.mm-tag.up{color:#B8572F;background:rgba(245,144,103,0.16)}
+.mm-tag.std{color:#FFFFFF;background:#232966}
 .mm-aside{display:flex;flex-direction:column;justify-content:space-between;align-items:stretch;gap:14px}
-.mm-pic{aspect-ratio:1/1;border-radius:14px;background:radial-gradient(circle at 50% 45%,#FFFFFF 0%,#EEF0FB 75%);display:flex;align-items:center;justify-content:center}
-.mm-pic img{max-width:80%;max-height:80%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(42,51,115,0.15))}
-.mm-go{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13.5px;font-weight:600;color:#4D4D9F;padding:10px 14px;border:1.5px solid #4D4D9F;border-radius:10px;transition:background 200ms,color 200ms}
+.mm-pic{aspect-ratio:1/1;border-radius:14px;background:radial-gradient(circle at 50% 45%,#2A3175 0%,#232966 75%);display:flex;align-items:center;justify-content:center}
+.mm-pic img{max-width:80%;max-height:80%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 10px 14px rgba(0,0,0,0.38))}
+.mm-go{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13.5px;font-weight:600;color:#FFFFFF;padding:10px 14px;border:1.5px solid rgba(255,255,255,0.7);border-radius:10px;transition:background 200ms,color 200ms}
 .mm-go:hover{background:#4D4D9F;color:#FFFFFF}
-.mm-all{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;margin-left:4px;margin-right:4px;border-top:1px solid #E4E7EF;font-size:13.5px;font-weight:600;color:#F59067}
+.mm-all{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 14px;margin-left:4px;margin-right:4px;border-top:1px solid rgba(255,255,255,0.14);font-size:13.5px;font-weight:600;color:#F59067}
 .mm-all:hover{color:#E97F52}
-.rs{width:380px;background:#FFFFFF;border:1px solid #E4E7EF;border-radius:16px;box-shadow:0 24px 50px rgba(42,51,115,0.14);padding:10px;white-space:normal;letter-spacing:0}
+.rs{width:380px;background:#2A3175;border:1px solid rgba(255,255,255,0.14);border-radius:16px;box-shadow:0 24px 50px rgba(0,0,0,0.35);padding:10px;white-space:normal;letter-spacing:0}
 .rs-label{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.12em;color:#F59067;padding:8px 12px 8px}
 .rs a.rs-item{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:center;padding:10px 12px;border-radius:11px;transition:background 200ms}
-.rs a.rs-item:hover{background:#F4F5FA}
-.rs-ic{width:36px;height:36px;border-radius:10px;background:#FEF1EB;display:flex;align-items:center;justify-content:center;transition:background 200ms}
+.rs a.rs-item:hover{background:#1E2360}
+.rs-ic{width:36px;height:36px;border-radius:10px;background:rgba(245,144,103,0.16);display:flex;align-items:center;justify-content:center;transition:background 200ms}
 .rs-ic svg{stroke:#F59067;transition:stroke 200ms}
 .rs a.rs-item:hover .rs-ic{background:#F59067}
 .rs a.rs-item:hover .rs-ic svg{stroke:#FFFFFF}
-.rs b{display:flex;align-items:center;gap:8px;font-family:Raleway,system-ui,sans-serif;font-size:15px;font-weight:600;color:#4D4D9F;line-height:1.25}
-.rs small{display:block;font-size:12.5px;color:#6B7280;line-height:1.4;margin-top:2px}
-.rs-tag{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#4D4D9F;background:#EEF0FB;padding:2px 7px;border-radius:999px}
-.rs-all{display:flex;align-items:center;justify-content:space-between;margin:6px 4px 0;padding:12px 10px 6px;border-top:1px solid #E4E7EF;font-size:13.5px;font-weight:600;color:#F59067}
+.rs b{display:flex;align-items:center;gap:8px;font-family:Raleway,system-ui,sans-serif;font-size:15px;font-weight:600;color:#FFFFFF;line-height:1.25}
+.rs small{display:block;font-size:12.5px;color:#D7DEFF;line-height:1.4;margin-top:2px}
+.rs-tag{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#FFFFFF;background:#232966;padding:2px 7px;border-radius:999px}
+.rs-all{display:flex;align-items:center;justify-content:space-between;margin:6px 4px 0;padding:12px 10px 6px;border-top:1px solid rgba(255,255,255,0.14);font-size:13.5px;font-weight:600;color:#F59067}
 .rs-all:hover{color:#E97F52}
 .set-row{display:flex;gap:clamp(12px,1.2vw,16px);height:clamp(360px,calc(100vh - 88px - 260px),560px)}
 .set-card{position:relative;flex:1 1 0;min-width:0;border-radius:20px;overflow:hidden;background:#2A3373;color:#FFFFFF;transition:flex 650ms cubic-bezier(.2,.7,.2,1)}
 a.set-card,a.set-card:hover{color:#FFFFFF}
 .why-tile{position:relative;overflow:hidden;border-radius:18px;padding:clamp(14px,2.4vh,26px) clamp(16px,1.7vw,26px);display:flex;flex-direction:column;min-height:0;transition:transform 350ms cubic-bezier(.2,.7,.2,1),box-shadow 350ms ease}
-.why-tile:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(42,51,115,0.12)}
+.why-tile:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(0,0,0,0.30)}
 .st-grid:not([data-static]) .st-c{animation:stIn 1000ms cubic-bezier(.2,.7,.2,1) var(--d,0ms) both paused}
 .st-grid:not([data-static]) .st-l{animation:stLine 800ms cubic-bezier(.2,.7,.2,1) var(--d,0ms) both paused}
 .st-grid:not([data-static]) .st-m{animation:stMark 1300ms cubic-bezier(.2,.7,.2,1) var(--d,0ms) both paused}
@@ -116,12 +116,12 @@ a:hover .pd-a,a:focus-visible .pd-a{opacity:1;animation:pdSweep 1.6s cubic-bezie
 [data-stagger]>:nth-child(2){--i:1}[data-stagger]>:nth-child(3){--i:2}[data-stagger]>:nth-child(4){--i:3}[data-stagger]>:nth-child(5){--i:4}[data-stagger]>:nth-child(6){--i:5}[data-stagger]>:nth-child(7){--i:6}[data-stagger]>:nth-child(8){--i:7}[data-stagger]>:nth-child(9){--i:8}[data-stagger]>:nth-child(10){--i:9}[data-stagger]>:nth-child(11){--i:10}[data-stagger]>:nth-child(12){--i:11}
 .news-go{position:absolute;right:clamp(14px,1.4vw,18px);bottom:clamp(14px,1.4vw,18px);z-index:2;width:38px;height:38px;border-radius:50%;background:#F59067;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:16px;box-shadow:0 8px 18px rgba(245,144,103,0.35);transition:transform 300ms cubic-bezier(.2,.7,.2,1),background 300ms}
 .news-card{position:relative;overflow:hidden;border-radius:18px;transition:transform 350ms cubic-bezier(.2,.7,.2,1),box-shadow 350ms ease}
-.news-card:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(42,51,115,0.12)}
+.news-card:hover{transform:translateY(-3px);box-shadow:0 18px 36px rgba(0,0,0,0.30)}
 .news-card:hover .news-go{transform:translateX(3px);background:#E97F52}
 a.news-card,a.news-card:hover{color:inherit}
-.li-scroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:#C9CFEF transparent}
-.li-scroll::-webkit-scrollbar{width:6px}.li-scroll::-webkit-scrollbar-thumb{background:#C9CFEF;border-radius:6px}
-.faq-item{background:#FFFFFF;border:1px solid #E4E7EF;border-radius:16px;transition:border-color 350ms ease,box-shadow 350ms ease}
+.li-scroll{overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,0.25) transparent}
+.li-scroll::-webkit-scrollbar{width:6px}.li-scroll::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.22);border-radius:6px}
+.faq-item{background:#2A3175;border:1px solid rgba(255,255,255,0.14);border-radius:16px;transition:border-color 350ms ease,box-shadow 350ms ease}
 .faq-item:hover{border-color:rgba(245,144,103,0.55)}
 .faq-q{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:clamp(13px,2vh,19px) clamp(18px,1.6vw,24px);font-family:Raleway,system-ui,sans-serif;font-size:clamp(15.5px,1.25vw,18px);font-weight:600;line-height:1.35}
 .faq-q:focus-visible{outline:2px solid #F59067;outline-offset:-2px;border-radius:16px}
@@ -137,7 +137,7 @@ a.news-card,a.news-card:hover{color:inherit}
 .ft-link:hover{color:#F7B79C}
 .ft-chip{font-size:11.5px;font-weight:600;letter-spacing:0.04em;color:#FFFFFF;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.16);padding:5px 10px;border-radius:999px}
 .ft-ic{width:34px;height:34px;flex:none;border-radius:10px;background:rgba(245,144,103,0.14);display:flex;align-items:center;justify-content:center}
-.to-top{position:fixed;right:clamp(16px,2.2vw,32px);bottom:clamp(16px,2.6vh,32px);z-index:70;width:56px;height:56px;border-radius:50%;background:#FFFFFF;color:#4D4D9F;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(42,51,115,0.16);opacity:0;visibility:hidden;transform:translateY(12px) scale(0.9);transition:opacity 350ms ease,transform 350ms cubic-bezier(.2,.7,.2,1),visibility 350ms,background 250ms,color 250ms}
+.to-top{position:fixed;right:clamp(16px,2.2vw,32px);bottom:clamp(16px,2.6vh,32px);z-index:70;width:56px;height:56px;border-radius:50%;background:#2A3175;color:#FFFFFF;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(0,0,0,0.40);opacity:0;visibility:hidden;transform:translateY(12px) scale(0.9);transition:opacity 350ms ease,transform 350ms cubic-bezier(.2,.7,.2,1),visibility 350ms,background 250ms,color 250ms}
 .to-top.on{opacity:1;visibility:visible;transform:none}
 .to-top:hover{background:#4D4D9F;color:#FFFFFF}
 .to-top:focus-visible{outline:2px solid #F59067;outline-offset:3px}
@@ -155,9 +155,9 @@ a.news-card,a.news-card:hover{color:inherit}
 </style>
 </helmet>
 
-<header style="position:fixed;top:0;left:0;right:0;z-index:60;background:#FFFFFF;border-bottom:2px solid #F59067;box-shadow:{{ hdrShadow }};transition:box-shadow 400ms ease">
+<header style="position:fixed;top:0;left:0;right:0;z-index:60;background:#2A3175;border-bottom:2px solid #F59067;box-shadow:{{ hdrShadow }};transition:box-shadow 400ms ease">
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px);height:86px;display:flex;align-items:center;gap:clamp(16px,2.4vw,40px)">
-    <a href="#hero" style="display:flex;align-items:flex-start;gap:2px;flex:none"><img src="assets/logo-header.png" alt="Furnastra" style="height:clamp(28px,2.8vw,38px);width:auto"></a>
+    <a href="#hero" style="display:flex;align-items:flex-start;gap:2px;flex:none"><img src="assets/logo-header-dark.png" alt="Furnastra" style="height:clamp(28px,2.8vw,38px);width:auto"></a>
     <nav style="display:flex;justify-content:center;align-items:center;gap:clamp(14px,2.4vw,36px);font-size:clamp(13.5px,1.15vw,16px);font-weight:500;letter-spacing:0.01em;flex:1;min-width:0;white-space:nowrap">
       <div class="nav-dd mega">
         <a href="#products" class="nav-link">Product <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
@@ -210,7 +210,7 @@ a.news-card,a.news-card:hover{color:inherit}
             <div class="mm-fam">
               <a href="#" class="mm-row"><span><b>Custom moulded parts</b><small>Gallery · built to OEM drawings</small></span><em>Gallery</em><i>›</i></a>
               <div class="mm-pane">
-                <div class="mm-main"><div class="mm-crumb">Products › <span>Gallery · built to OEM drawings</span></div><div class="mm-title">Custom moulded parts</div><p style="margin:0;font-size:14px;line-height:1.65;color:#5B5F63;max-width:380px">A gallery of components we’ve developed to OEM drawings and samples — taken from first discussion through prototype mould, trials and approval into commercial production.</p></div>
+                <div class="mm-main"><div class="mm-crumb">Products › <span>Gallery · built to OEM drawings</span></div><div class="mm-title">Custom moulded parts</div><p style="margin:0;font-size:14px;line-height:1.65;color:#D7DEFF;max-width:380px">A gallery of components we’ve developed to OEM drawings and samples — taken from first discussion through prototype mould, trials and approval into commercial production.</p></div>
                 <div class="mm-aside"><div class="mm-pic"><img src="assets/p7.png" alt=""></div><a href="#" class="mm-go">View gallery <span>→</span></a></div>
               </div>
             </div>
@@ -227,7 +227,7 @@ a.news-card,a.news-card:hover{color:inherit}
         <a href="#resources" class="nav-link">Resources <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="dd-menu"><div class="rs">
           <div class="rs-label">RESOURCES</div>
-          <a href="#" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19h14"/></svg></span><span><b>Downloads<span class="rs-tag"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#4D4D9F" stroke-width="3" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Gated</span></b><small>Catalogue, technical drawings &amp; certificates</small></span></a>
+          <a href="#" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 19h14"/></svg></span><span><b>Downloads<span class="rs-tag"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Gated</span></b><small>Catalogue, technical drawings &amp; certificates</small></span></a>
           <a href="#" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 0 1 4.8 1c0 1.7-2.4 2.2-2.4 3.5"/><path d="M12 17h.01"/></svg></span><span><b>FAQs</b><small>Fitment, MOQs, materials &amp; lead times</small></span></a>
           <a href="#" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10l4 4v12H5z"/><path d="M15 4v4h4"/><path d="M8.5 12h7M8.5 15.5h7"/></svg></span><span><b>Insights</b><small>Articles on component sourcing &amp; moulding</small></span></a>
           <a href="#" class="rs-item"><span class="rs-ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="7" width="17" height="12.5" rx="2"/><path d="M9 7V5.5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1V7"/><path d="M3.5 12.5h17"/></svg></span><span><b>Case studies</b><small>How OEMs built beds with Furnastra parts</small></span></a>
@@ -238,27 +238,27 @@ a.news-card,a.news-card:hover{color:inherit}
       <a href="#rfq" class="nav-link">Contact</a>
     </nav>
     <div style="display:flex;align-items:center;gap:12px;flex:none">
-    <a href="index-dark.html" class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode" style="display:flex;align-items:center;justify-content:center;width:clamp(42px,3.4vw,50px);aspect-ratio:1/1;border-radius:12px;border:1.5px solid #E4E7EF;color:#4D4D9F;transition:border-color 200ms" style-hover="border-color:#4D4D9F"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></a>
+    <a href="index.html" class="theme-toggle" aria-label="Switch to light mode" title="Switch to light mode" style="display:flex;align-items:center;justify-content:center;width:clamp(42px,3.4vw,50px);aspect-ratio:1/1;border-radius:12px;border:1.5px solid rgba(255,255,255,0.14);color:#FFFFFF;transition:border-color 200ms" style-hover="border-color:rgba(255,255,255,0.7)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg></a>
     <a href="#rfq" style="display:flex;align-items:center;gap:12px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(14px,1.15vw,16px);letter-spacing:0.01em;padding:clamp(12px,1.1vw,16px) clamp(16px,1.6vw,24px);border-radius:12px;white-space:nowrap;flex:none;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Request a quote <span style="font-size:17px">→</span></a>
     </div>
   </div>
 </header>
 
-<section id="hero" data-screen-label="01 Hero" style="position:relative;overflow:hidden;background:#F4F5FA;color:#2A3373;padding-top:88px;border-bottom:1px solid #E4E7EF">
-  <div style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
-  <div style="position:absolute;right:-7.5vw;top:calc(388px - 29.5vw);width:59vw;aspect-ratio:1/1;border-radius:50%;border:6vw solid #ECEDF8"></div>
+<section id="hero" data-screen-label="01 Hero" style="position:relative;overflow:hidden;background:#1E2360;color:#FFFFFF;padding-top:88px;border-bottom:1px solid rgba(255,255,255,0.14)">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+  <div style="position:absolute;right:-7.5vw;top:calc(388px - 29.5vw);width:59vw;aspect-ratio:1/1;border-radius:50%;border:6vw solid rgba(255,255,255,0.14)"></div>
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(32px,4vw,56px) clamp(20px,4vw,72px) clamp(20px,2.4vw,36px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(24px,2.5vw,40px);align-items:center;min-height:min(700px,calc(100vh - 88px))">
     <div class="hw" style="position:relative;z-index:2;container-type:inline-size;display:flex;flex-direction:column;gap:clamp(22px,2.2vw,32px)">
       <div style="display:flex;align-items:center;gap:14px;font-size:clamp(13px,1.1vw,15.5px);font-weight:500;letter-spacing:0.06em;color:#F59067">
         <svg class="hw-spark" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" style="--d:150ms;flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg><span class="hw-w" style="--d:350ms;--t:1300ms">HEALTHCARE FURNITURE COMPONENTS FOR OEMs</span>
       </div>
-      <h1 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">
+      <h1 style="margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF">
         <span class="hw-w" style="--d:750ms;--t:1600ms;display:block;text-wrap:balance">India’s First &amp; Most Trusted Hospital Furniture Components Manufacturer</span>
       </h1>
-      <p class="hw-w" style="--d:1950ms;--t:1700ms;margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#5B5F63;max-width:560px;text-wrap:pretty">Furnastra by Mitsu Chem designs and moulds durable, ergonomic components for hospital furniture in 12 countries.</p>
+      <p class="hw-w" style="--d:1950ms;--t:1700ms;margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#D7DEFF;max-width:560px;text-wrap:pretty">Furnastra by Mitsu Chem designs and moulds durable, ergonomic components for hospital furniture in 12 countries.</p>
       <div class="hw-up" style="--d:2700ms;display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(4px,1vw,14px)">
         <a href="#products" style="display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Explore Products <span>→</span></a>
-        <a href="#oem" style="display:flex;align-items:center;gap:14px;background:transparent;color:#4D4D9F;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2.4vw,40px);border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#FFFFFF;color:#4D4D9F">Know More <span>→</span></a>
+        <a href="#oem" style="display:flex;align-items:center;gap:14px;background:transparent;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2.4vw,40px);border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#2A3175;color:#FFFFFF">Know More <span>→</span></a>
       </div>
     </div>
     <div style="position:relative">
@@ -302,11 +302,11 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="brand-story" data-screen-label="02 Brand Story" style="position:relative;background:#FFFFFF;overflow:hidden;scroll-margin-top:88px">
+<section id="brand-story" data-screen-label="02 Brand Story" style="position:relative;background:#2A3175;overflow:hidden;scroll-margin-top:88px">
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(48px,5vw,72px) clamp(20px,4vw,72px) clamp(88px,9vw,136px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(40px,5.5vw,96px);align-items:stretch">
     <div style="position:relative;z-index:2;display:flex;flex-direction:column">
       <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067;margin-bottom:20px">OUR STORY</div>
-      <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">The next era of<br>healthcare <span style="color:#F59067">is here</span></h2>
+      <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF">The next era of<br>healthcare <span style="color:#F59067">is here</span></h2>
       <div data-reveal="line" style="display:flex;align-items:center;gap:8px;margin:22px 0 clamp(26px,2.6vw,36px);transform-origin:left">
         <span style="width:clamp(140px,14vw,200px);height:2px;background:#F59067"></span>
         <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>
@@ -320,7 +320,7 @@ a.news-card,a.news-card:hover{color:inherit}
             <span style="display:flex;flex-direction:column;padding-top:13px">
               <span style="font-size:clamp(16px,1.3vw,19px);font-weight:{{ ms.weight }};line-height:1.3;color:{{ ms.titleFg }};transition:color 300ms">{{ ms.title }}</span>
               <span style="display:grid;grid-template-rows:{{ ms.rows }};opacity:{{ ms.descOp }};transition:grid-template-rows 550ms cubic-bezier(.2,.7,.2,1),opacity 450ms ease">
-                <span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:6px;font-size:14.5px;line-height:1.55;color:#5B5F63;max-width:400px">{{ ms.desc }}</span></span>
+                <span style="min-height:0;overflow:hidden"><span style="display:block;padding-top:6px;font-size:14.5px;line-height:1.55;color:#D7DEFF;max-width:400px">{{ ms.desc }}</span></span>
               </span>
             </span>
           </div>
@@ -331,11 +331,11 @@ a.news-card,a.news-card:hover{color:inherit}
     </div>
     <div style="position:relative;display:flex;flex-direction:column;gap:clamp(24px,2.4vw,34px);padding-top:clamp(0px,3.4vw,50px)">
       <div>
-      <p data-reveal="up" data-delay="80" style="margin:0 0 12px;font-size:clamp(18px,1.55vw,22px);font-weight:500;line-height:1.45;color:#2A3373;max-width:540px;text-wrap:balance">Fueled by 35+ years of world-class plastic manufacturing precision.</p>
-      <p data-reveal="up" data-delay="160" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#5B5F63;max-width:540px;text-wrap:pretty">Furnastra was born in 2024 from a legacy that Mitsu Chem Plast Limited has built over decades as a pioneer in plastic blow-moulded and injection-moulded manufacturing in India. Today, we stand as India’s leading hospital furniture components manufacturers, carrying forward a foundation of quality, innovation and trust into a brand built entirely for modern healthcare.</p>
+      <p data-reveal="up" data-delay="80" style="margin:0 0 12px;font-size:clamp(18px,1.55vw,22px);font-weight:500;line-height:1.45;color:#FFFFFF;max-width:540px;text-wrap:balance">Fueled by 35+ years of world-class plastic manufacturing precision.</p>
+      <p data-reveal="up" data-delay="160" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#D7DEFF;max-width:540px;text-wrap:pretty">Furnastra was born in 2024 from a legacy that Mitsu Chem Plast Limited has built over decades as a pioneer in plastic blow-moulded and injection-moulded manufacturing in India. Today, we stand as India’s leading hospital furniture components manufacturers, carrying forward a foundation of quality, innovation and trust into a brand built entirely for modern healthcare.</p>
       </div>
       <div style="position:relative;flex:1;min-height:clamp(240px,22vw,340px)">
-        <div data-reveal="scale" style="position:absolute;inset:0;border-top-left-radius:clamp(90px,9vw,140px);overflow:hidden;background:#2A3373;box-shadow:0 30px 60px rgba(42,51,115,0.18)">
+        <div data-reveal="scale" style="position:absolute;inset:0;border-top-left-radius:clamp(90px,9vw,140px);overflow:hidden;background:#2A3373;box-shadow:0 30px 60px rgba(0,0,0,0.45)">
           <img src="assets/story-moulding.jpg" alt="Injection moulding machines on a factory floor" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 45%">
           <span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,34,88,0.5) 0%,rgba(28,34,88,0.05) 30%,rgba(28,34,88,0.2) 55%,rgba(28,34,88,0.92) 100%)"></span>
           <span style="position:absolute;right:clamp(18px,2vw,26px);top:clamp(16px,1.8vw,24px);display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(28,34,88,0.82);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.14);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;color:#FFFFFF"><span style="width:6px;height:6px;border-radius:50%;background:#F59067;flex:none"></span>{{ msCard.tag }}</span>
@@ -344,9 +344,9 @@ a.news-card,a.news-card:hover{color:inherit}
             <span style="font-size:14px;line-height:1.45;color:#E4E8FF;max-width:420px">{{ msCard.title }}</span>
           </span>
         </div>
-      <div style="position:absolute;left:calc(-1 * clamp(50px,4.4vw,64px));bottom:clamp(28px,3vw,44px);width:clamp(100px,8.8vw,128px);aspect-ratio:1/1;border-radius:50%;background:#FFFFFF;box-shadow:0 18px 40px rgba(42,51,115,0.16);display:flex;align-items:center;justify-content:center;z-index:3">
-        <svg data-spin="28" viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;inset:6%;width:88%;height:88%"><defs><path id="isoRing" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text style="font:600 9.2px Raleway,sans-serif;letter-spacing:2.4px;fill:#4D4D9F"><textPath href="#isoRing">ISO 13485 · ISO 9001 · ISO 45001 · </textPath></text></svg>
-        <span style="display:flex;flex-direction:column;align-items:center;line-height:1"><span style="font-weight:800;font-size:clamp(15px,1.3vw,18px);color:#F59067">ISO</span><span style="font-size:9px;font-weight:600;letter-spacing:0.12em;color:#5B5F63;margin-top:3px">CERTIFIED</span></span>
+      <div style="position:absolute;left:calc(-1 * clamp(50px,4.4vw,64px));bottom:clamp(28px,3vw,44px);width:clamp(100px,8.8vw,128px);aspect-ratio:1/1;border-radius:50%;background:#2A3175;box-shadow:0 18px 40px rgba(0,0,0,0.40);display:flex;align-items:center;justify-content:center;z-index:3">
+        <svg data-spin="28" viewBox="0 0 120 120" aria-hidden="true" style="position:absolute;inset:6%;width:88%;height:88%"><defs><path id="isoRing" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text style="font:600 9.2px Raleway,sans-serif;letter-spacing:2.4px;fill:#FFFFFF"><textPath href="#isoRing">ISO 13485 · ISO 9001 · ISO 45001 · </textPath></text></svg>
+        <span style="display:flex;flex-direction:column;align-items:center;line-height:1"><span style="font-weight:800;font-size:clamp(15px,1.3vw,18px);color:#F59067">ISO</span><span style="font-size:9px;font-weight:600;letter-spacing:0.12em;color:#D7DEFF;margin-top:3px">CERTIFIED</span></span>
       </div>
       </div>
     </div>
@@ -354,24 +354,24 @@ a.news-card,a.news-card:hover{color:inherit}
 </section>
 
 <!-- Hidden for now: remove "display:none;" to bring the Inside the Bed section back -->
-<section id="story" data-screen-label="03 Inside the Bed" style="display:none;position:relative;height:420vh;background:#F4F5FA">
+<section id="story" data-screen-label="03 Inside the Bed" style="display:none;position:relative;height:420vh;background:#1E2360">
   <div style="position:sticky;top:0;height:100vh;min-height:620px;overflow:hidden;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);max-width:1440px;margin:0 auto;padding:112px clamp(20px,4vw,72px) 40px;gap:40px;align-items:center">
-    <div style="position:absolute;right:-12vw;top:50%;width:70vw;max-width:980px;aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(40px,6vw,90px) solid #E9EBFA"></div>
+    <div style="position:absolute;right:-12vw;top:50%;width:70vw;max-width:980px;aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(40px,6vw,90px) solid rgba(255,255,255,0.14)"></div>
     <div style="position:relative;display:grid;grid-template-columns:28px minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center">
       <div style="position:relative;height:300px;width:2px;background:#D7DEFF;justify-self:center">
         <div data-story-bar="1" style="position:absolute;left:0;top:0;width:2px;height:100%;background:#F59067;transform-origin:top;transform:scaleY(0)"></div>
       </div>
       <div style="display:flex;flex-direction:column;gap:22px">
         <div style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">INSIDE A FURNASTRA-BUILT BED</div>
-        <div style="display:flex;align-items:baseline;gap:12px;font-family:Raleway,system-ui,sans-serif;color:#4D4D9F">
+        <div style="display:flex;align-items:baseline;gap:12px;font-family:Raleway,system-ui,sans-serif;color:#FFFFFF">
           <span style="font-size:clamp(64px,7vw,108px);font-weight:600;line-height:0.9;letter-spacing:-0.03em">{{ story.n }}</span>
-          <span style="font-size:clamp(18px,1.5vw,22px);font-weight:500;color:#6B7280">/ 04</span>
+          <span style="font-size:clamp(18px,1.5vw,22px);font-weight:500;color:#D7DEFF">/ 04</span>
         </div>
         <div style="display:flex;flex-direction:column;gap:8px">
           <span style="font-size:clamp(13px,1.1vw,15px);font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:#F59067">{{ story.type }}</span>
-          <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(40px,4.2vw,64px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">{{ story.name }}</span>
+          <span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(40px,4.2vw,64px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">{{ story.name }}</span>
         </div>
-        <p style="margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#5B5F63;max-width:460px;min-height:90px;text-wrap:pretty">{{ story.desc }}</p>
+        <p style="margin:0;font-size:clamp(15.5px,1.25vw,18px);line-height:1.65;color:#D7DEFF;max-width:460px;min-height:90px;text-wrap:pretty">{{ story.desc }}</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <sc-for list="{{ storyTabs }}" as="t" hint-placeholder-count="4">
             <button onClick="{{ t.go }}" style="all:unset;cursor:pointer;font-size:15px;font-weight:500;letter-spacing:0.03em;padding:11px 22px;border-radius:12px;background:{{ t.bg }};color:{{ t.fg }};border:1.5px solid {{ t.bd }};transition:all 300ms">{{ t.name }}</button>
@@ -380,24 +380,24 @@ a.news-card,a.news-card:hover{color:inherit}
       </div>
     </div>
     <div style="position:relative;height:100%;min-height:420px">
-      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.0.op }};transform:{{ storyImgs.0.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p49.png" alt="Raksha" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,51,115,0.22))"></div>
-      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.1.op }};transform:{{ storyImgs.1.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p14.png" alt="Sahara" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,51,115,0.22))"></div>
-      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.2.op }};transform:{{ storyImgs.2.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p25.png" alt="Setu" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,51,115,0.22))"></div>
-      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.3.op }};transform:{{ storyImgs.3.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p27.png" alt="Aakaar" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,51,115,0.22))"></div>
-      <div style="position:absolute;right:0;bottom:8px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#6B7280">SCROLL TO MOVE THROUGH THE BED ↓</div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.0.op }};transform:{{ storyImgs.0.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p49.png" alt="Raksha" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,0.55))"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.1.op }};transform:{{ storyImgs.1.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p14.png" alt="Sahara" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,0.55))"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.2.op }};transform:{{ storyImgs.2.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p25.png" alt="Setu" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,0.55))"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:{{ storyImgs.3.op }};transform:{{ storyImgs.3.tf }};transition:opacity 700ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)"><img src="assets/p27.png" alt="Aakaar" style="max-width:88%;max-height:78%;width:auto;height:auto;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(0,0,0,0.55))"></div>
+      <div style="position:absolute;right:0;bottom:8px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;letter-spacing:0.08em;color:#D7DEFF">SCROLL TO MOVE THROUGH THE BED ↓</div>
     </div>
   </div>
 </section>
 
-<section id="products" data-screen-label="04 Catalogue" style="background:#FFFFFF;scroll-margin-top:88px">
-  <div aria-hidden="true" style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px)"><div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:#E4E7EF"></span><svg width="14" height="14" viewBox="0 0 20 20" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg><span style="flex:1;height:1px;background:#E4E7EF"></span></div></div>
+<section id="products" data-screen-label="04 Catalogue" style="background:#2A3175;scroll-margin-top:88px">
+  <div aria-hidden="true" style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px)"><div style="display:flex;align-items:center;gap:14px"><span style="flex:1;height:1px;background:#353C85"></span><svg width="14" height="14" viewBox="0 0 20 20" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg><span style="flex:1;height:1px;background:#353C85"></span></div></div>
   <div style="max-width:1440px;margin:0 auto;padding:clamp(28px,4.5vh,56px) clamp(20px,4vw,72px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,2.6vw,36px);flex-wrap:wrap">
       <div style="flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:14px">
         <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">COMPONENT CATALOGUE</div>
-        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Our Comprehensive Range of healthcare furniture components</h2>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF;text-wrap:balance">Our Comprehensive Range of healthcare furniture components</h2>
       </div>
-      <a data-reveal="up" href="#products" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View All Products <span>→</span></a>
+      <a data-reveal="up" href="#products" style="display:flex;align-items:center;gap:14px;color:#FFFFFF;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View All Products <span>→</span></a>
     </div>
     <div data-stagger="70" style="display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,clamp(180px,calc((100vh - 88px - 252px) / 2),300px));gap:clamp(12px,1.2vw,16px)">
       <a href="#products" data-tilt="1" style="grid-row:span 2;position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#2A3373;border-radius:18px;padding:clamp(22px,2.2vw,30px);overflow:hidden;color:#FFFFFF">
@@ -406,30 +406,30 @@ a.news-card,a.news-card:hover{color:inherit}
         <span data-tilt-img="1" style="position:relative;display:block;align-self:center;height:62%;aspect-ratio:1/1;max-width:90%"><img src="assets/products/FARNASTRA_RAKSHA.svg#svgView(viewBox(153,88,775,875))" alt="Raksha head and foot bows, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;filter:brightness(0) invert(1) drop-shadow(0 0 0.5px #FFFFFF)"><img class="pd-a" src="assets/products/anim/FARNASTRA_RAKSHA.svg#svgView(viewBox(153,88,775,875))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
         <span style="position:relative;display:flex;justify-content:space-between;gap:12px;font-size:14px;font-weight:500"><span style="color:#D7DEFF">Incl. Raksha 4 (M4) with integrated CPR board</span><span style="color:#F59067">→</span></span>
       </a>
-      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#F4F5FA;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Side Railings</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">Sahara</span></span>
-        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_SAHARA.svg#svgView(viewBox(48,179,967,750))" alt="Sahara side railings, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.5px rgba(0,0,0,0.55))"><img class="pd-a" src="assets/products/anim/FARNASTRA_SAHARA.svg#svgView(viewBox(48,179,967,750))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
-        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">9 variants</span>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#1E2360;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Side Railings</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Sahara</span></span>
+        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_SAHARA.svg#svgView(viewBox(48,179,967,750))" alt="Sahara side railings, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:invert(1) brightness(3) drop-shadow(0 0 0.5px rgba(255,255,255,0.5))"><img class="pd-a" src="assets/products/anim/FARNASTRA_SAHARA.svg#svgView(viewBox(48,179,967,750))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#D7DEFF;max-width:48%">9 variants</span>
       </a>
-      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#EEF0FB;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Bed Platforms</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">Setu</span></span>
-        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_SETU.svg#svgView(viewBox(319,63,442,930))" alt="Setu bed platforms, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.5px rgba(0,0,0,0.55))"><img class="pd-a" src="assets/products/anim/FARNASTRA_SETU.svg#svgView(viewBox(319,63,442,930))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
-        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">2 variants</span>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#232966;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Bed Platforms</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Setu</span></span>
+        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_SETU.svg#svgView(viewBox(319,63,442,930))" alt="Setu bed platforms, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:invert(1) brightness(3) drop-shadow(0 0 0.5px rgba(255,255,255,0.5))"><img class="pd-a" src="assets/products/anim/FARNASTRA_SETU.svg#svgView(viewBox(319,63,442,930))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#D7DEFF;max-width:48%">2 variants</span>
       </a>
       <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#F59067;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
         <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF">Buffer Wheels</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Aakaar</span></span>
-        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_AKAAR.svg#svgView(viewBox(74,287,931,487))" alt="Aakaar buffer wheels, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:brightness(0) invert(1) drop-shadow(0 0 0.5px #FFFFFF)"><img class="pd-a" src="assets/products/anim/FARNASTRA_AKAAR.svg#svgView(viewBox(74,287,931,487))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(42,51,115)) drop-shadow(0 0 4px rgba(42,51,115,0.7))"></span>
+        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_AKAAR.svg#svgView(viewBox(74,287,931,487))" alt="Aakaar buffer wheels, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:brightness(0) invert(1) drop-shadow(0 0 0.5px #FFFFFF)"><img class="pd-a" src="assets/products/anim/FARNASTRA_AKAAR.svg#svgView(viewBox(74,287,931,487))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(42,51,115)) drop-shadow(0 0 4px rgba(0,0,0,0.60))"></span>
         <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:rgba(255,255,255,0.9);max-width:48%">1 variant</span>
       </a>
-      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#EEF0FB;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Over Bed Tables</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">Rahat</span></span>
-        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_RAHAT.svg#svgView(viewBox(65,124,938,825))" alt="Rahat over bed table, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.5px rgba(0,0,0,0.55))"><img class="pd-a" src="assets/products/anim/FARNASTRA_RAHAT.svg#svgView(viewBox(65,124,938,825))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
-        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">2 variants</span>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#232966;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Over Bed Tables</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Rahat</span></span>
+        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_RAHAT.svg#svgView(viewBox(65,124,938,825))" alt="Rahat over bed table, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:invert(1) brightness(3) drop-shadow(0 0 0.5px rgba(255,255,255,0.5))"><img class="pd-a" src="assets/products/anim/FARNASTRA_RAHAT.svg#svgView(viewBox(65,124,938,825))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#D7DEFF;max-width:48%">2 variants</span>
       </a>
-      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#F4F5FA;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
-        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Bedside Lockers</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#4D4D9F">Rudra</span></span>
-        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_RUDRA.svg#svgView(viewBox(175,82,735,915))" alt="Rudra bedside locker components, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.5px rgba(0,0,0,0.55))"><img class="pd-a" src="assets/products/anim/FARNASTRA_RUDRA.svg#svgView(viewBox(175,82,735,915))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
-        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#5B5F63;max-width:48%">Top · Door · Drawer · Handles</span>
+      <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#1E2360;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
+        <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Bedside Lockers</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Rudra</span></span>
+        <span data-tilt-img="1" style="position:absolute;right:clamp(14px,1.4vw,20px);bottom:clamp(14px,1.4vw,20px);width:62%;height:64%"><img src="assets/products/FARNASTRA_RUDRA.svg#svgView(viewBox(175,82,735,915))" alt="Rudra bedside locker components, line drawing" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:invert(1) brightness(3) drop-shadow(0 0 0.5px rgba(255,255,255,0.5))"><img class="pd-a" src="assets/products/anim/FARNASTRA_RUDRA.svg#svgView(viewBox(175,82,735,915))" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:right bottom;filter:drop-shadow(0 0 0.8px rgb(245,144,103)) drop-shadow(0 0 4px rgba(245,144,103,0.7))"></span>
+        <span style="position:relative;z-index:1;font-size:13px;line-height:1.35;color:#D7DEFF;max-width:48%">Top · Door · Drawer · Handles</span>
       </a>
       <a href="#products" data-tilt="1" style="position:relative;display:flex;flex-direction:column;justify-content:space-between;background:#2A3373;border-radius:18px;padding:clamp(18px,1.7vw,24px);overflow:hidden;min-height:0">
         <span style="position:relative;z-index:1;display:flex;flex-direction:column;gap:4px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Spine Boards</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.1vw,30px);line-height:1.05;letter-spacing:-0.015em;color:#FFFFFF">Jivan</span></span>
@@ -440,23 +440,23 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="talk" data-screen-label="04b Mid-Page CTA" style="background:#FFFFFF">
+<section id="talk" data-screen-label="04b Mid-Page CTA" style="background:#2A3175">
   <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,72px) clamp(88px,9vw,136px)">
-    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:24px;background:#F4F5FA;border:1px solid #E4E7EF;padding:clamp(36px,4.4vw,64px) clamp(28px,4.4vw,64px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center">
-      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
-      <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(36px,4vw,60px) solid #E9EBFA"></div>
-      <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%)"><div data-spin="90" style="position:absolute;inset:-5%;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#F59067"></span></div></div>
+    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:24px;background:#1E2360;border:1px solid rgba(255,255,255,0.14);padding:clamp(36px,4.4vw,64px) clamp(28px,4.4vw,64px);display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:center">
+      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+      <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(36px,4vw,60px) solid rgba(255,255,255,0.14)"></div>
+      <div aria-hidden="true" style="position:absolute;right:-8%;top:50%;width:min(620px,48vw);aspect-ratio:1/1;transform:translateY(-50%)"><div data-spin="90" style="position:absolute;inset:-5%;border-radius:50%;border:1px dashed rgba(255,255,255,0.25)"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#F59067"></span></div></div>
       <div style="position:relative;display:flex;flex-direction:column;gap:clamp(16px,1.6vw,22px)">
         <div class="wr" style="--d:0ms;display:flex;align-items:center;gap:12px;font-size:clamp(12.5px,1vw,14px);font-weight:500;letter-spacing:0.06em;color:#F59067">
           <svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true" style="flex:none"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>GET IN TOUCH
         </div>
-        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,46px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Have a Hospital Furniture Parts Requirement? <span style="color:#F59067">Let’s Talk.</span></h2>
-        <p style="margin:0;font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:#5B5F63;max-width:520px">Share a drawing, part number or sample photo and our team will come back with a fitment and quotation.</p>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(28px,3.2vw,46px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF;text-wrap:balance">Have a Hospital Furniture Parts Requirement? <span style="color:#F59067">Let’s Talk.</span></h2>
+        <p style="margin:0;font-size:clamp(15px,1.15vw,17px);line-height:1.65;color:#D7DEFF;max-width:520px">Share a drawing, part number or sample photo and our team will come back with a fitment and quotation.</p>
       </div>
       <div style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:14px;justify-self:end">
         <a href="#rfq" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(16px,1.3vw,20px) clamp(22px,2vw,28px);border-radius:12px;white-space:nowrap;box-shadow:0 14px 30px rgba(245,144,103,0.28);transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Send Inquiry <span>→</span></a>
         <!-- TODO: replace with Furnastra's WhatsApp number, e.g. https://wa.me/9198XXXXXXXX -->
-        <a href="https://wa.me/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#FFFFFF;color:#4D4D9F;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(15px,1.25vw,19px) clamp(22px,2vw,28px);border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF"><span style="display:flex;align-items:center;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 5.83 2.42 8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>WhatsApp Us</span><span>→</span></a>
+        <a href="https://wa.me/" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;gap:28px;min-width:min(300px,100%);background:#2A3175;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(15px,1.25vw,19px) clamp(22px,2vw,28px);border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF"><span style="display:flex;align-items:center;gap:12px"><svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24a8.2 8.2 0 0 1 5.83 2.42 8.2 8.2 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></svg>WhatsApp Us</span><span>→</span></a>
       </div>
     </div>
   </div>
@@ -479,14 +479,14 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="applications" data-screen-label="05b Applications" style="background:#FFFFFF;scroll-margin-top:88px">
+<section id="applications" data-screen-label="05b Applications" style="background:#2A3175;scroll-margin-top:88px">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,96px) clamp(20px,4vw,72px) clamp(72px,10vh,128px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.2vh,40px);flex-wrap:wrap">
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">APPLICATIONS BY HOSPITAL SETTING</div>
-        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">The Right Component for<br>the Right Care <span style="color:#F59067">Setting.</span></h2>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF">The Right Component for<br>the Right Care <span style="color:#F59067">Setting.</span></h2>
       </div>
-      <p data-reveal="up" data-delay="120" style="margin:0;font-size:14px;line-height:1.6;color:#5B5F63;display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>Hover a setting to see where our parts fit</p>
+      <p data-reveal="up" data-delay="120" style="margin:0;font-size:14px;line-height:1.6;color:#D7DEFF;display:flex;align-items:center;gap:10px"><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg>Hover a setting to see where our parts fit</p>
     </div>
     <div data-reveal="up" data-delay="150" class="set-row">
       <a href="#products" class="set-card">
@@ -533,15 +533,15 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="why" data-screen-label="05c Why Furnastra" style="position:relative;background:#F4F5FA;overflow:hidden;scroll-margin-top:88px">
-  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+<section id="why" data-screen-label="05c Why Furnastra" style="position:relative;background:#1E2360;overflow:hidden;scroll-margin-top:88px">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(32px,5.5vh,96px) clamp(20px,4vw,72px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.4vh,44px);flex-wrap:wrap">
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">WHY FURNASTRA</div>
-        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Where Healthcare Meets<br>Innovative <span style="color:#F59067">Expertise.</span></h2>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF">Where Healthcare Meets<br>Innovative <span style="color:#F59067">Expertise.</span></h2>
       </div>
-      <a data-reveal="up" data-delay="120" href="#brand-story" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">Learn More <span>→</span></a>
+      <a data-reveal="up" data-delay="120" href="#brand-story" style="display:flex;align-items:center;gap:14px;color:#FFFFFF;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">Learn More <span>→</span></a>
     </div>
     <div data-stagger="80" style="display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,clamp(170px,calc((100vh - 88px - 262px) / 2),270px));gap:clamp(12px,1.2vw,16px)">
       <div class="why-tile" style="grid-row:span 2;background:#2A3373;color:#FFFFFF;justify-content:space-between">
@@ -559,20 +559,20 @@ a.news-card,a.news-card:hover{color:inherit}
           <span style="font-size:13.5px;line-height:1.5;color:#D7DEFF">Full control over production, quality and timelines. No third-party dependency.</span>
         </span>
       </div>
-      <div class="why-tile" style="grid-column:span 2;background:#FFFFFF;border:1px solid #E4E7EF;justify-content:space-between">
+      <div class="why-tile" style="grid-column:span 2;background:#2A3175;border:1px solid rgba(255,255,255,0.14);justify-content:space-between">
         <span style="position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
-          <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">OEM experience</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#4D4D9F">Decades of OEM experience</span></span>
-          <span style="display:flex;align-items:baseline;gap:6px;font-family:Raleway,system-ui,sans-serif;color:#4D4D9F;line-height:1"><span data-count="35" data-suffix="+" style="font-weight:600;font-size:clamp(40px,3.8vw,58px);letter-spacing:-0.02em">35+</span><span style="font-weight:600;font-size:clamp(15px,1.3vw,19px);color:#F59067">yrs</span></span>
+          <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">OEM experience</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#FFFFFF">Decades of OEM experience</span></span>
+          <span style="display:flex;align-items:baseline;gap:6px;font-family:Raleway,system-ui,sans-serif;color:#FFFFFF;line-height:1"><span data-count="35" data-suffix="+" style="font-weight:600;font-size:clamp(40px,3.8vw,58px);letter-spacing:-0.02em">35+</span><span style="font-weight:600;font-size:clamp(15px,1.3vw,19px);color:#F59067">yrs</span></span>
         </span>
         <div style="position:relative;margin:0 8px clamp(56px,7.6vh,66px) 7px">
           <span style="position:absolute;left:0;right:0;top:0;height:2px;background:#F3C9B3"></span>
           <span data-reveal="line" style="position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,#F59067,#E97F52);transform-origin:left"></span>
-            <span style="position:absolute;left:0%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#FFFFFF;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
-            <span style="position:absolute;left:0%;top:16px;transform:translateX(0);display:flex;flex-direction:column;gap:1px;white-space:nowrap;margin-left:-7px;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#2A3373">1990</span><span style="font-size:11.5px;color:#6B7280">Moulding begins</span></span>
-            <span style="position:absolute;left:72.2%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#FFFFFF;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
-            <span style="position:absolute;left:72.2%;top:16px;transform:translateX(-50%);display:flex;flex-direction:column;gap:1px;white-space:nowrap;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#2A3373">2016</span><span style="font-size:11.5px;color:#6B7280">BSE listed</span></span>
-            <span style="position:absolute;left:94.4%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#FFFFFF;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
-            <span style="position:absolute;left:94.4%;top:16px;transform:translateX(-85%);display:flex;flex-direction:column;gap:1px;white-space:nowrap;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#2A3373">2024</span><span style="font-size:11.5px;color:#6B7280">Furnastra</span></span>
+            <span style="position:absolute;left:0%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#2A3175;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
+            <span style="position:absolute;left:0%;top:16px;transform:translateX(0);display:flex;flex-direction:column;gap:1px;white-space:nowrap;margin-left:-7px;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#FFFFFF">1990</span><span style="font-size:11.5px;color:#D7DEFF">Moulding begins</span></span>
+            <span style="position:absolute;left:72.2%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#2A3175;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
+            <span style="position:absolute;left:72.2%;top:16px;transform:translateX(-50%);display:flex;flex-direction:column;gap:1px;white-space:nowrap;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#FFFFFF">2016</span><span style="font-size:11.5px;color:#D7DEFF">BSE listed</span></span>
+            <span style="position:absolute;left:94.4%;top:0;width:14px;height:14px;margin:-6px 0 0 -7px;border-radius:50%;background:#2A3175;border:3px solid #F59067;box-shadow:0 0 0 4px rgba(245,144,103,0.16)"></span>
+            <span style="position:absolute;left:94.4%;top:16px;transform:translateX(-85%);display:flex;flex-direction:column;gap:1px;white-space:nowrap;"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:14px;color:#FFFFFF">2024</span><span style="font-size:11.5px;color:#D7DEFF">Furnastra</span></span>
             <span style="position:absolute;right:-8px;top:-7px"><svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 0c.6 5.2 4.8 9.4 10 10-5.2.6-9.4 4.8-10 10-.6-5.2-4.8-9.4-10-10C5.2 9.4 9.4 5.2 10 0Z" fill="#F59067"/></svg></span>
         </div>
       </div>
@@ -582,18 +582,18 @@ a.news-card,a.news-card:hover{color:inherit}
         <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.14);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
         <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF">Customisation</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#FFFFFF">Standardised customisation</span></span>
         <span style="position:relative;display:flex;flex-direction:column;gap:12px">
-          <span style="display:flex;align-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#0A98D6;border:3px solid #FFFFFF;margin-left:0;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:5"></span><span style="width:34px;height:34px;border-radius:50%;background:#15988A;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:4"></span><span style="width:34px;height:34px;border-radius:50%;background:#4D4D9F;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:3"></span><span style="width:34px;height:34px;border-radius:50%;background:#2A3373;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:2"></span><span style="width:34px;height:34px;border-radius:50%;background:#9B4F96;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(28,34,88,0.18);z-index:1"></span></span>
+          <span style="display:flex;align-items:center"><span style="width:34px;height:34px;border-radius:50%;background:#0A98D6;border:3px solid #FFFFFF;margin-left:0;box-shadow:0 6px 14px rgba(0,0,0,0.45);z-index:5"></span><span style="width:34px;height:34px;border-radius:50%;background:#15988A;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(0,0,0,0.45);z-index:4"></span><span style="width:34px;height:34px;border-radius:50%;background:#4D4D9F;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(0,0,0,0.45);z-index:3"></span><span style="width:34px;height:34px;border-radius:50%;background:#2A3373;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(0,0,0,0.45);z-index:2"></span><span style="width:34px;height:34px;border-radius:50%;background:#9B4F96;border:3px solid #FFFFFF;margin-left:-9px;box-shadow:0 6px 14px rgba(0,0,0,0.45);z-index:1"></span></span>
           <span style="display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Colour</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Finish</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Spec</span></span>
         </span>
       </div>
-      <div class="why-tile" style="background:#FFFFFF;border:1px solid #E4E7EF;justify-content:space-between">
-        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Compliance</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#4D4D9F">Hospital-grade compliance</span></span>
-        <span style="display:flex;align-items:center"><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#2A3373;border:1.5px solid #2A3373;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:0;box-shadow:0 8px 18px rgba(42,51,115,0.10)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">13485</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#FFFFFF;border:1.5px solid #C9CFEF;color:#4D4D9F;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(42,51,115,0.10)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">9001</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#FFFFFF;border:1.5px solid #C9CFEF;color:#4D4D9F;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(42,51,115,0.10)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">45001</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#F59067;border:1.5px solid #F59067;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(42,51,115,0.10)"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:18px;margin-top:0">CE</span></span></span>
+      <div class="why-tile" style="background:#2A3175;border:1px solid rgba(255,255,255,0.14);justify-content:space-between">
+        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Compliance</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#FFFFFF">Hospital-grade compliance</span></span>
+        <span style="display:flex;align-items:center"><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#2A3373;border:1.5px solid #2A3373;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:0;box-shadow:0 8px 18px rgba(0,0,0,0.25)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">13485</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#2A3175;border:1.5px solid rgba(255,255,255,0.25);color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(0,0,0,0.25)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">9001</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#2A3175;border:1.5px solid rgba(255,255,255,0.25);color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(0,0,0,0.25)"><span style="font-size:9px;font-weight:700;letter-spacing:0.1em;opacity:0.8">ISO</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:13px;margin-top:2px">45001</span></span><span style="width:min(clamp(54px,4.6vw,66px),7.4vh);aspect-ratio:1/1;flex:none;border-radius:50%;background:#F59067;border:1.5px solid #F59067;color:#FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;margin-left:-8px;box-shadow:0 8px 18px rgba(0,0,0,0.25)"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:700;font-size:18px;margin-top:0">CE</span></span></span>
       </div>
-      <div class="why-tile" style="background:#FFFFFF;border:1px solid #E4E7EF;justify-content:space-between">
-        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Quality assurance</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#4D4D9F">Tested before every dispatch</span></span>
+      <div class="why-tile" style="background:#2A3175;border:1px solid rgba(255,255,255,0.14);justify-content:space-between">
+        <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Quality assurance</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#FFFFFF">Tested before every dispatch</span></span>
         <span style="position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))">
-          <span style="position:absolute;left:12.5%;right:12.5%;top:13px;height:2px;background:#C9CFEF"></span>
+          <span style="position:absolute;left:12.5%;right:12.5%;top:13px;height:2px;background:rgba(255,255,255,0.22)"></span>
           <span style="position:absolute;left:12.5%;top:13px;height:2px;width:{{ qaLine }};background:#F59067;transition:width 600ms cubic-bezier(.2,.7,.2,1)"></span>
           <sc-for list="{{ qaSteps }}" as="q" hint-placeholder-count="4">
             <span style="position:relative;display:flex;flex-direction:column;align-items:center;gap:7px">
@@ -611,9 +611,9 @@ a.news-card,a.news-card:hover{color:inherit}
             <span style="width:34px;height:34px;flex:none;border-radius:10px;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l5 3V10l5 3V6l8 4v11Z"/><path d="M3 21h18"/></svg></span>
             <span style="position:relative;flex:1;height:30px">
               <span style="position:absolute;left:0;right:0;top:50%;border-top:2px dashed rgba(255,255,255,0.35)"></span>
-              <span data-drive="1" style="position:absolute;left:0;top:50%;margin-top:-13px;width:30px;height:26px;border-radius:8px;background:#F59067;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(28,34,88,0.3)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></span>
+              <span data-drive="1" style="position:absolute;left:0;top:50%;margin-top:-13px;width:30px;height:26px;border-radius:8px;background:#F59067;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px rgba(0,0,0,0.60)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg></span>
             </span>
-            <span style="width:34px;height:34px;flex:none;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <span style="width:34px;height:34px;flex:none;border-radius:50%;background:#2A3175;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
           </span>
           <span style="display:flex;gap:6px;flex-wrap:wrap"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Single-site</span><span style="font-size:11.5px;font-weight:600;letter-spacing:0.02em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.22);color:#FFFFFF;white-space:nowrap">Multi-facility rollouts</span></span>
         </span>
@@ -622,14 +622,14 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="news" data-screen-label="05d Latest" style="background:#FFFFFF;scroll-margin-top:88px">
+<section id="news" data-screen-label="05d Latest" style="background:#2A3175;scroll-margin-top:88px">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(40px,6vh,96px) clamp(20px,4vw,72px)">
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px 40px;margin-bottom:clamp(24px,3.2vh,40px);flex-wrap:wrap">
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">BLOG &amp; NEWS</div>
-        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Latest at <span style="color:#F59067">Furnastra.</span></h2>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF">Latest at <span style="color:#F59067">Furnastra.</span></h2>
       </div>
-      <a data-reveal="up" data-delay="120" href="#resources" style="display:flex;align-items:center;gap:14px;color:#4D4D9F;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View All Blogs <span>→</span></a>
+      <a data-reveal="up" data-delay="120" href="#resources" style="display:flex;align-items:center;gap:14px;color:#FFFFFF;font-weight:500;font-size:16px;letter-spacing:0.03em;padding:15px 28px;border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View All Blogs <span>→</span></a>
     </div>
     <div data-stagger="90" style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr) minmax(0,0.62fr) minmax(0,0.62fr);grid-template-rows:repeat(2,clamp(200px,calc((100vh - 88px - 270px) / 2),280px));gap:clamp(12px,1.2vw,16px)">
 
@@ -644,39 +644,39 @@ a.news-card,a.news-card:hover{color:inherit}
         <span class="news-go" aria-hidden="true">→</span>
       </a>
 
-      <div class="news-card" style="grid-row:span 2;background:#FFFFFF;border:1px solid #E4E7EF;display:flex;flex-direction:column;padding:clamp(16px,1.6vw,22px)">
+      <div class="news-card" style="grid-row:span 2;background:#2A3175;border:1px solid rgba(255,255,255,0.14);display:flex;flex-direction:column;padding:clamp(16px,1.6vw,22px)">
         <span style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px">
           <span style="display:flex;align-items:center;gap:10px">
-            <span style="width:38px;height:38px;border-radius:10px;background:#F4F5FA;border:1px solid #E4E7EF;display:flex;align-items:center;justify-content:center"><span style="width:20px;aspect-ratio:126.7/140.9;background:#F59067;-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span></span>
-            <span style="display:flex;flex-direction:column;line-height:1.25"><span style="font-size:14px;font-weight:700;color:#2A3373">Furnastra</span><span style="font-size:11.5px;color:#6B7280">2w · LinkedIn</span></span>
+            <span style="width:38px;height:38px;border-radius:10px;background:#1E2360;border:1px solid rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center"><span style="width:20px;aspect-ratio:126.7/140.9;background:#F59067;-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span></span>
+            <span style="display:flex;flex-direction:column;line-height:1.25"><span style="font-size:14px;font-weight:700;color:#FFFFFF">Furnastra</span><span style="font-size:11.5px;color:#D7DEFF">2w · LinkedIn</span></span>
           </span>
           <span style="width:26px;height:26px;border-radius:6px;background:#0A66C2;color:#FFFFFF;font:700 13px/26px Raleway,sans-serif;text-align:center">in</span>
         </span>
         <span style="position:relative;display:block;border-radius:12px;overflow:hidden;height:42%;flex:none;background:#2A3373"><img src="assets/news-ward.jpg" alt="Doctor and nurse reviewing notes beside hospital beds" style="width:100%;height:100%;object-fit:cover;object-position:65% 40%"></span>
-        <span class="li-scroll" data-lenis-prevent style="flex:1;min-height:0;margin-top:12px;padding-right:8px;font-size:13.5px;line-height:1.6;color:#5B5F63">
+        <span class="li-scroll" data-lenis-prevent style="flex:1;min-height:0;margin-top:12px;padding-right:8px;font-size:13.5px;line-height:1.6;color:#D7DEFF">
           <span style="display:block;margin-bottom:8px">March was about scale. Our moulding teams at Khalapur and Tarapur commissioned new tooling for the Raksha head and foot bow range — cutting changeover time and adding capacity for OEM partners.</span>
           <span style="display:block;margin-bottom:8px">We also hosted procurement and engineering teams from three hospital bed manufacturers for plant walkthroughs, sample trials and fitment reviews.</span>
-          <span style="display:block;color:#4D4D9F;font-weight:600">#HealthcareManufacturing #HospitalFurnitureParts #OEM #MakeInIndia</span>
+          <span style="display:block;color:#FFFFFF;font-weight:600">#HealthcareManufacturing #HospitalFurnitureParts #OEM #MakeInIndia</span>
         </span>
-        <span style="display:flex;align-items:center;gap:14px;margin-top:10px;padding-top:10px;border-top:1px solid #E4E7EF;font-size:12px;color:#6B7280"><span>👍 128</span><span>💬 14</span><span>↗ 9</span></span>
+        <span style="display:flex;align-items:center;gap:14px;margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.14);font-size:12px;color:#D7DEFF"><span>👍 128</span><span>💬 14</span><span>↗ 9</span></span>
         <a href="#resources" class="news-go" aria-label="View on LinkedIn" style="color:#FFFFFF">→</a>
       </div>
 
-      <a href="#resources" class="news-card" style="grid-column:span 2;background:#FFFFFF;border:1px solid #E4E7EF;display:flex;flex-direction:column;padding:clamp(16px,1.6vw,22px)">
+      <a href="#resources" class="news-card" style="grid-column:span 2;background:#2A3175;border:1px solid rgba(255,255,255,0.14);display:flex;flex-direction:column;padding:clamp(16px,1.6vw,22px)">
         <span style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
           <span style="display:flex;flex-direction:column;gap:6px">
             <span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">Share price</span>
-            <span style="font-size:12px;font-weight:600;letter-spacing:0.04em;color:#6B7280">MITSU CHEM PLAST LTD.</span>
-            <span style="display:flex;align-items:baseline;gap:10px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.2vw,32px);line-height:1;color:#2A3373">₹222.10</span><span style="font-size:13px;font-weight:600;color:#1E9E6A">▲ 10.02 (+4.72%)</span></span>
+            <span style="font-size:12px;font-weight:600;letter-spacing:0.04em;color:#D7DEFF">MITSU CHEM PLAST LTD.</span>
+            <span style="display:flex;align-items:baseline;gap:10px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(24px,2.2vw,32px);line-height:1;color:#FFFFFF">₹222.10</span><span style="font-size:13px;font-weight:600;color:#1E9E6A">▲ 10.02 (+4.72%)</span></span>
           </span>
-          <span style="display:flex;gap:6px"><span style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;background:#4D4D9F;color:#FFFFFF">BSE</span><span style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;border:1px solid #C9CFEF;color:#4D4D9F">NSE</span></span>
+          <span style="display:flex;gap:6px"><span style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;background:#4D4D9F;color:#FFFFFF">BSE</span><span style="font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.25);color:#FFFFFF">NSE</span></span>
         </span>
         <svg viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true" style="flex:1;min-height:0;width:100%;margin-top:10px;margin-right:44px;overflow:visible">
           <defs><linearGradient id="spFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F59067" stop-opacity="0.28"/><stop offset="1" stop-color="#F59067" stop-opacity="0"/></linearGradient></defs>
           <path d="M0,120 L0.0,110.0 L10.3,106.0 L20.5,91.1 L30.8,90.0 L41.0,87.6 L51.3,82.8 L61.5,90.0 L71.8,87.5 L82.1,81.4 L92.3,70.4 L102.6,80.4 L112.8,84.1 L123.1,94.1 L133.3,82.7 L143.6,74.7 L153.8,86.2 L164.1,69.5 L174.4,53.4 L184.6,46.6 L194.9,40.9 L205.1,49.0 L215.4,61.3 L225.6,58.3 L235.9,69.3 L246.2,76.4 L256.4,81.9 L266.7,93.7 L276.9,92.6 L287.2,92.2 L297.4,79.8 L307.7,77.1 L317.9,70.6 L328.2,68.4 L338.5,61.4 L348.7,60.5 L359.0,64.9 L369.2,47.8 L379.5,30.7 L389.7,18.4 L400.0,10.0 L400,120 Z" fill="url(#spFill)"/>
-          <polyline points="0.0,110.0 10.3,106.0 20.5,91.1 30.8,90.0 41.0,87.6 51.3,82.8 61.5,90.0 71.8,87.5 82.1,81.4 92.3,70.4 102.6,80.4 112.8,84.1 123.1,94.1 133.3,82.7 143.6,74.7 153.8,86.2 164.1,69.5 174.4,53.4 184.6,46.6 194.9,40.9 205.1,49.0 215.4,61.3 225.6,58.3 235.9,69.3 246.2,76.4 256.4,81.9 266.7,93.7 276.9,92.6 287.2,92.2 297.4,79.8 307.7,77.1 317.9,70.6 328.2,68.4 338.5,61.4 348.7,60.5 359.0,64.9 369.2,47.8 379.5,30.7 389.7,18.4 400.0,10.0" fill="none" stroke="#4D4D9F" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+          <polyline points="0.0,110.0 10.3,106.0 20.5,91.1 30.8,90.0 41.0,87.6 51.3,82.8 61.5,90.0 71.8,87.5 82.1,81.4 92.3,70.4 102.6,80.4 112.8,84.1 123.1,94.1 133.3,82.7 143.6,74.7 153.8,86.2 164.1,69.5 174.4,53.4 184.6,46.6 194.9,40.9 205.1,49.0 215.4,61.3 225.6,58.3 235.9,69.3 246.2,76.4 256.4,81.9 266.7,93.7 276.9,92.6 287.2,92.2 297.4,79.8 307.7,77.1 317.9,70.6 328.2,68.4 338.5,61.4 348.7,60.5 359.0,64.9 369.2,47.8 379.5,30.7 389.7,18.4 400.0,10.0" fill="none" stroke="#FFFFFF" stroke-width="2" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
         </svg>
-        <span style="font-size:11.5px;color:#6B7280;margin-top:6px">7 Oct 2026 · 15:30 IST</span>
+        <span style="font-size:11.5px;color:#D7DEFF;margin-top:6px">7 Oct 2026 · 15:30 IST</span>
         <span class="news-go" aria-hidden="true">→</span>
       </a>
 
@@ -689,26 +689,26 @@ a.news-card,a.news-card:hover{color:inherit}
 
       <a href="#resources" class="news-card" style="background:#F59067;color:#FFFFFF;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(16px,1.6vw,22px)">
         <span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#FFFFFF">Annual report</span>
-        <span aria-hidden="true" style="position:absolute;right:clamp(14px,1.6vw,22px);top:clamp(30px,3vw,42px);width:38%;aspect-ratio:3/4;border-radius:6px;background:linear-gradient(160deg,#4D4D9F,#2A3373);box-shadow:0 14px 28px rgba(42,51,115,0.35);transform:rotate(6deg);overflow:hidden">
+        <span aria-hidden="true" style="position:absolute;right:clamp(14px,1.6vw,22px);top:clamp(30px,3vw,42px);width:38%;aspect-ratio:3/4;border-radius:6px;background:linear-gradient(160deg,#4D4D9F,#2A3373);box-shadow:0 14px 28px rgba(0,0,0,0.60);transform:rotate(6deg);overflow:hidden">
           <span style="position:absolute;left:12%;top:12%;width:34%;aspect-ratio:126.7/140.9;background:#F59067;-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
           <span style="position:absolute;left:12%;right:12%;bottom:14%;height:3px;background:rgba(255,255,255,0.5);border-radius:2px;box-shadow:0 -7px 0 rgba(255,255,255,0.3)"></span>
         </span>
         <span style="position:relative;display:flex;flex-direction:column;gap:4px"><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(22px,2vw,30px);line-height:1">FY 2025–26</span><span style="font-size:13px;color:rgba(255,255,255,0.9)">PDF · 4.2 MB</span></span>
-        <span class="news-go" aria-hidden="true" style="background:#2A3373;box-shadow:0 8px 18px rgba(42,51,115,0.35)">→</span>
+        <span class="news-go" aria-hidden="true" style="background:#2A3373;box-shadow:0 8px 18px rgba(0,0,0,0.60)">→</span>
       </a>
     </div>
   </div>
 </section>
 
-<section id="faq" data-screen-label="05e FAQ" style="position:relative;background:#F4F5FA;overflow:hidden;scroll-margin-top:88px">
-  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
-  <div aria-hidden="true" style="position:absolute;left:-14vw;bottom:-22vw;width:44vw;aspect-ratio:1/1;border-radius:50%;border:4.5vw solid #E9EBFA"></div>
+<section id="faq" data-screen-label="05e FAQ" style="position:relative;background:#1E2360;overflow:hidden;scroll-margin-top:88px">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+  <div aria-hidden="true" style="position:absolute;left:-14vw;bottom:-22vw;width:44vw;aspect-ratio:1/1;border-radius:50%;border:4.5vw solid rgba(255,255,255,0.14)"></div>
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(36px,6vh,96px) clamp(20px,4vw,72px);display:grid;grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,88px);align-items:stretch">
     <div style="display:flex;flex-direction:column;gap:clamp(18px,2.6vh,28px)">
       <div style="display:flex;flex-direction:column;gap:14px">
-        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F">Frequently Asked<br><span style="color:#F59067">Questions.</span></h2>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF">Frequently Asked<br><span style="color:#F59067">Questions.</span></h2>
       </div>
-      <p data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#5B5F63;max-width:440px;text-wrap:pretty">Materials, compliance, customisation and supply: the questions OEMs and hospital buyers ask us most.</p>
+      <p data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#D7DEFF;max-width:440px;text-wrap:pretty">Materials, compliance, customisation and supply: the questions OEMs and hospital buyers ask us most.</p>
       <div data-reveal="scale" data-delay="160" style="position:relative;overflow:hidden;border-radius:20px;background:#2A3373;color:#FFFFFF;padding:clamp(22px,2.2vw,32px);display:flex;flex-direction:column;gap:clamp(14px,2vh,20px);max-width:460px;margin-top:auto">
         <span aria-hidden="true" style="position:absolute;right:-14px;bottom:-18px;height:clamp(120px,10vw,150px);aspect-ratio:126.7/140.9;background:rgba(255,255,255,0.08);-webkit-mask:url(assets/f-mark.svg) center/contain no-repeat;mask:url(assets/f-mark.svg) center/contain no-repeat"></span>
         <span style="position:relative;display:flex;flex-direction:column;gap:8px">
@@ -729,7 +729,7 @@ a.news-card,a.news-card:hover{color:inherit}
             <span class="faq-ic" style="background:{{ f.icBg }};border-color:{{ f.icBd }}"><span style="background:{{ f.icFg }}"></span><span style="background:{{ f.icFg }};transform:rotate({{ f.rot }})"></span></span>
           </button>
           <div style="display:grid;grid-template-rows:{{ f.rows }};opacity:{{ f.op }};transition:grid-template-rows 500ms cubic-bezier(.2,.7,.2,1),opacity 400ms ease">
-            <div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 clamp(60px,5vw,76px) clamp(14px,2vh,20px) clamp(18px,1.6vw,24px);font-size:clamp(14.5px,1.1vw,16px);line-height:1.65;color:#5B5F63">{{ f.a }}</p></div>
+            <div style="min-height:0;overflow:hidden"><p style="margin:0;padding:0 clamp(60px,5vw,76px) clamp(14px,2vh,20px) clamp(18px,1.6vw,24px);font-size:clamp(14.5px,1.1vw,16px);line-height:1.65;color:#D7DEFF">{{ f.a }}</p></div>
           </div>
         </div>
       </sc-for>
@@ -737,41 +737,41 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="colours" data-screen-label="05f Colour Customisation" style="position:relative;background:#FFFFFF;overflow:hidden;scroll-margin-top:88px">
+<section id="colours" data-screen-label="05f Colour Customisation" style="position:relative;background:#2A3175;overflow:hidden;scroll-margin-top:88px">
   <div style="position:relative;max-width:1440px;margin:0 auto;padding:clamp(36px,6vh,96px) clamp(20px,4vw,72px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4.5vw,72px);align-items:stretch">
     <div style="display:flex;flex-direction:column;justify-content:center;gap:clamp(14px,2.2vh,26px)">
       <div style="display:flex;flex-direction:column;gap:14px">
         <div class="wr" style="--d:0ms;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11.5px;letter-spacing:0.12em;color:#F59067">COLOUR CUSTOMISATION</div>
-        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#4D4D9F;text-wrap:balance">Furniture components that match your space, <span style="color:#F59067">not just any space.</span></h2>
+        <h2 class="wr" style="--d:220ms;margin:0;font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(30px,3.6vw,52px);line-height:1.16;letter-spacing:-0.015em;color:#FFFFFF;text-wrap:balance">Furniture components that match your space, <span style="color:#F59067">not just any space.</span></h2>
       </div>
-      <p data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#5B5F63;max-width:540px;text-wrap:pretty">Furnastra offers colour and finish customisation so manufacturers can standardise across product lines, with no variance in material quality or performance.</p>
-      <div data-stagger="90" style="display:flex;flex-direction:column;border-top:1px solid #E4E7EF;max-width:540px">
+      <p data-reveal="up" data-delay="80" style="margin:0;font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;color:#D7DEFF;max-width:540px;text-wrap:pretty">Furnastra offers colour and finish customisation so manufacturers can standardise across product lines, with no variance in material quality or performance.</p>
+      <div data-stagger="90" style="display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,0.14);max-width:540px">
         <sc-for list="{{ colourPoints }}" as="cp" hint-placeholder-count="3">
-          <div style="display:flex;align-items:center;gap:16px;padding:clamp(8px,1.2vh,13px) 0;border-bottom:1px solid #E4E7EF">
-            <span style="width:36px;height:36px;flex:none;border-radius:11px;background:#FCEFE8;display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ cp.icon }}"/></svg></span>
-            <span style="font-size:clamp(16px,1.3vw,19px);font-weight:600;line-height:1.3;color:#2A3373">{{ cp.name }}</span>
+          <div style="display:flex;align-items:center;gap:16px;padding:clamp(8px,1.2vh,13px) 0;border-bottom:1px solid rgba(255,255,255,0.14)">
+            <span style="width:36px;height:36px;flex:none;border-radius:11px;background:rgba(245,144,103,0.16);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F59067" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ cp.icon }}"/></svg></span>
+            <span style="font-size:clamp(16px,1.3vw,19px);font-weight:600;line-height:1.3;color:#FFFFFF">{{ cp.name }}</span>
           </div>
         </sc-for>
       </div>
       <div data-reveal="up" data-delay="200" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(0px,0.6vh,8px)">
         <a href="#rfq" style="display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Discuss Your Requirement <span>→</span></a>
-        <a href="#products" style="display:flex;align-items:center;gap:14px;background:transparent;color:#4D4D9F;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2vw,30px);border:1.5px solid #4D4D9F;border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View Product Range <span>→</span></a>
+        <a href="#products" style="display:flex;align-items:center;gap:14px;background:transparent;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2vw,30px);border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#4D4D9F;color:#FFFFFF">View Product Range <span>→</span></a>
       </div>
     </div>
-    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:20px;border-top-right-radius:clamp(90px,9vw,140px);background:#F4F5FA;border:1px solid #E4E7EF;min-height:clamp(400px,calc(100vh - 88px - 12vh),620px)">
-      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(#E3E6F0 1px,transparent 1px),linear-gradient(90deg,#E3E6F0 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
+    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:20px;border-top-right-radius:clamp(90px,9vw,140px);background:#1E2360;border:1px solid rgba(255,255,255,0.14);min-height:clamp(400px,calc(100vh - 88px - 12vh),620px)">
+      <div aria-hidden="true" style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.06) 1px,transparent 1px);background-size:56px 56px;opacity:0.55"></div>
       <div aria-hidden="true" style="position:absolute;left:50%;top:46%;width:78%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:{{ colourGlow }};opacity:0.16;filter:blur(60px);transition:background 700ms ease"></div>
-      <div aria-hidden="true" style="position:absolute;left:50%;top:46%;width:82%;aspect-ratio:1/1;transform:translate(-50%,-50%)"><div data-spin="90" style="position:absolute;inset:0;border-radius:50%;border:1px dashed #C9CFEF"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:{{ colourGlow }};transition:background 700ms ease"></span></div></div>
-      <span style="position:absolute;left:clamp(18px,2vw,26px);top:clamp(16px,1.8vw,24px);z-index:2;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#FFFFFF;border:1px solid #E4E7EF;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;color:#2A3373"><span style="width:8px;height:8px;border-radius:50%;background:{{ colourGlow }};flex:none;transition:background 700ms ease"></span>{{ colourTag }}</span>
+      <div aria-hidden="true" style="position:absolute;left:50%;top:46%;width:82%;aspect-ratio:1/1;transform:translate(-50%,-50%)"><div data-spin="90" style="position:absolute;inset:0;border-radius:50%;border:1px dashed rgba(255,255,255,0.25)"><span style="position:absolute;left:50%;top:-5px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:{{ colourGlow }};transition:background 700ms ease"></span></div></div>
+      <span style="position:absolute;left:clamp(18px,2vw,26px);top:clamp(16px,1.8vw,24px);z-index:2;display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:#2A3175;border:1px solid rgba(255,255,255,0.14);font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10.5px;font-weight:500;letter-spacing:0.12em;color:#FFFFFF"><span style="width:8px;height:8px;border-radius:50%;background:{{ colourGlow }};flex:none;transition:background 700ms ease"></span>{{ colourTag }}</span>
       <div data-float="10" data-dur="5600" style="position:absolute;left:8%;right:8%;top:9%;bottom:24%">
         <sc-for list="{{ colourways }}" as="cw" hint-placeholder-count="5">
           <img src="{{ cw.src }}" alt="{{ cw.alt }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:{{ cw.filter }} drop-shadow(0 30px 40px rgba(42,51,115,0.16));opacity:{{ cw.op }};transform:{{ cw.tf }};transition:opacity 650ms ease,transform 900ms cubic-bezier(.2,.7,.2,1)">
         </sc-for>
       </div>
-      <div style="position:absolute;left:clamp(16px,1.8vw,24px);right:clamp(16px,1.8vw,24px);bottom:clamp(16px,1.8vw,24px);z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(12px,1.2vw,16px) clamp(16px,1.6vw,22px);background:rgba(255,255,255,0.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #E4E7EF;border-radius:16px;box-shadow:0 14px 30px rgba(42,51,115,0.08)">
+      <div style="position:absolute;left:clamp(16px,1.8vw,24px);right:clamp(16px,1.8vw,24px);bottom:clamp(16px,1.8vw,24px);z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:clamp(12px,1.2vw,16px) clamp(16px,1.6vw,22px);background:rgba(42,49,117,0.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.14);border-radius:16px;box-shadow:0 14px 30px rgba(0,0,0,0.20)">
         <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
-          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.12em;color:#6B7280">SELECT A FINISH</span>
-          <span style="font-size:clamp(16px,1.3vw,19px);font-weight:600;color:#2A3373;white-space:nowrap">{{ colourName }}</span>
+          <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:0.12em;color:#D7DEFF">SELECT A FINISH</span>
+          <span style="font-size:clamp(16px,1.3vw,19px);font-weight:600;color:#FFFFFF;white-space:nowrap">{{ colourName }}</span>
         </span>
         <span role="radiogroup" aria-label="Panel colour" style="display:flex;gap:clamp(8px,0.9vw,12px)">
           <sc-for list="{{ colourways }}" as="cw" hint-placeholder-count="5">
@@ -783,9 +783,9 @@ a.news-card,a.news-card:hover{color:inherit}
   </div>
 </section>
 
-<section id="final-cta" data-screen-label="05g Final CTA" style="background:#FFFFFF;scroll-margin-top:88px">
+<section id="final-cta" data-screen-label="05g Final CTA" style="background:#2A3175;scroll-margin-top:88px">
   <div style="max-width:1440px;margin:0 auto;padding:clamp(8px,2vh,24px) clamp(20px,4vw,72px) clamp(56px,9vh,120px)">
-    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:24px;border-top-left-radius:clamp(90px,9vw,140px);background:#1C2258;color:#FFFFFF;min-height:clamp(420px,calc(100vh - 88px - 18vh),600px);display:flex;align-items:center;box-shadow:0 30px 60px rgba(42,51,115,0.18)">
+    <div data-reveal="scale" style="position:relative;overflow:hidden;border-radius:24px;border-top-left-radius:clamp(90px,9vw,140px);background:#1C2258;color:#FFFFFF;min-height:clamp(420px,calc(100vh - 88px - 18vh),600px);display:flex;align-items:center;box-shadow:0 30px 60px rgba(0,0,0,0.45)">
       <img src="assets/cta-hospital.jpg" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;filter:saturate(0.6) brightness(0.8)">
       <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,34,88,0.97) 0%,rgba(28,34,88,0.9) 38%,rgba(28,34,88,0.55) 70%,rgba(28,34,88,0.35) 100%),linear-gradient(180deg,rgba(28,34,88,0) 55%,rgba(28,34,88,0.6) 100%)"></span>
       <div aria-hidden="true" style="position:absolute;right:-6%;top:50%;width:min(620px,46vw);aspect-ratio:1/1;transform:translateY(-50%);border-radius:50%;border:clamp(36px,4vw,60px) solid rgba(215,222,255,0.07)"></div>
@@ -800,7 +800,7 @@ a.news-card,a.news-card:hover{color:inherit}
         <div data-reveal="up" data-delay="240" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(2px,0.8vh,10px)">
           <a href="#rfq" style="display:flex;align-items:center;gap:14px;background:#F59067;color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(14px,1.2vw,18px) clamp(22px,2vw,30px);border-radius:12px;white-space:nowrap;box-shadow:0 14px 30px rgba(245,144,103,0.3);transition:background 200ms" style-hover="background:#E97F52;color:#FFFFFF">Contact Us <span>→</span></a>
           <!-- TODO: point to the catalogue PDF once the client supplies it -->
-          <a href="#resources" style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.06);color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2vw,30px);border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#FFFFFF;color:#2A3373">Download Catalogue <span>↓</span></a>
+          <a href="#resources" style="display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.06);color:#FFFFFF;font-weight:500;font-size:clamp(15px,1.2vw,17px);letter-spacing:0.03em;padding:clamp(13px,1.15vw,17px) clamp(22px,2vw,30px);border:1.5px solid rgba(255,255,255,0.7);border-radius:12px;white-space:nowrap;transition:background 200ms,color 200ms" style-hover="background:#2A3175;color:#FFFFFF">Download Catalogue <span>↓</span></a>
         </div>
         <div data-stagger="80" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:clamp(6px,2vh,22px)">
           <span style="display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);font-size:13px;font-weight:600;letter-spacing:0.02em"><span style="width:6px;height:6px;border-radius:50%;background:#F59067;flex:none"></span>35+ years of moulding</span>
@@ -865,7 +865,7 @@ a.news-card,a.news-card:hover{color:inherit}
 </footer>
 
 <a href="#hero" class="to-top" data-to-top="1" aria-label="Back to top">
-  <svg class="ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="none" stroke="#E4E7EF" stroke-width="2.5"/><circle data-to-top-ring="1" cx="28" cy="28" r="26" fill="none" stroke="#F59067" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="163.36"/></svg>
+  <svg class="ring" viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="26" fill="none" stroke="rgba(255,255,255,0.14)" stroke-width="2.5"/><circle data-to-top-ring="1" cx="28" cy="28" r="26" fill="none" stroke="#F59067" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="163.36" stroke-dashoffset="163.36"/></svg>
   <svg class="arr" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg>
 </a>
 </x-dc>
@@ -1013,9 +1013,9 @@ class Component extends DCLogic {
       pts: [c.dot, ...c.path].map(p => p.join(',')).join(' '),
       enter: () => this.setState({ hot: i }), leave: () => this.setState({ hot: null }),
       op: s.hot == null || s.hot === i ? 1 : 0.3, z: s.hot === i ? 3 : 2,
-      bd: s.hot === i ? '#F59067' : '#E4E7EF',
+      bd: s.hot === i ? '#F59067' : 'rgba(255,255,255,0.14)',
       sh: s.hot === i ? '0 18px 40px rgba(245,144,103,0.38)' : '0 6px 18px rgba(42,51,115,0.06)',
-      lbg: s.hot === i ? '#F59067' : 'rgba(255,255,255,0.94)', tfg: s.hot === i ? '#FFFFFF' : '#F59067', nfg: s.hot === i ? '#FFFFFF' : '#4D4D9F', cfg: s.hot === i ? 'rgba(255,255,255,0.8)' : '#9AA0AE',
+      lbg: s.hot === i ? '#F59067' : 'rgba(42,49,117,0.94)', tfg: s.hot === i ? '#FFFFFF' : '#F59067', nfg: s.hot === i ? '#FFFFFF' : '#FFFFFF', cfg: s.hot === i ? 'rgba(255,255,255,0.8)' : '#A9B1E0',
       lift: s.hot === i ? '-4px' : '0px', dotS: s.hot === i ? 1.35 : 1, halo: s.hot === i ? '8px' : '4px' }));
     const regions0 = [[22, 20, 16, 17], [50, 18, 12, 14], [49, 40, 25, 16], [60.4, 87.2, 5, 6]];
     const hr = regions0[s.hot ?? 0];
@@ -1023,9 +1023,9 @@ class Component extends DCLogic {
     const ring = { l: (hr[0] - hr[2]) + '%', t: (hr[1] - hr[3]) + '%', w: hr[2] * 2 + '%', h: hr[3] * 2 + '%' };
     const hotOn = s.hot != null;
     const statTone = {
-      light: { bg: '#FFFFFF', bd: '#E4E7EF', ring: '#EEF0FB', num: '#4D4D9F', fg: '#2A3373', sub: '#5B5F63', dot: '#F59067' },
+      light: { bg: '#2A3175', bd: 'rgba(255,255,255,0.14)', ring: '#232966', num: '#FFFFFF', fg: '#FFFFFF', sub: '#D7DEFF', dot: '#F59067' },
       orange: { bg: '#F59067', bd: '#F59067', ring: 'rgba(255,255,255,0.14)', num: '#FFFFFF', fg: '#FFFFFF', sub: 'rgba(255,255,255,0.88)', dot: '#FFFFFF' },
-      indigo: { bg: '#4D4D9F', bd: '#4D4D9F', ring: 'rgba(255,255,255,0.08)', num: '#FFFFFF', fg: '#FFFFFF', sub: '#D7DEFF', dot: '#F59067' },
+      indigo: { bg: '#4D4D9F', bd: 'rgba(255,255,255,0.7)', ring: 'rgba(255,255,255,0.08)', num: '#FFFFFF', fg: '#FFFFFF', sub: '#D7DEFF', dot: '#F59067' },
     };
     const keyStats = [
       { v: 35, suf: '+', label: 'Years of engineering excellence in plastic moulding', tone: 'light' },
@@ -1044,7 +1044,7 @@ class Component extends DCLogic {
     ].map((m, i, all) => { const a = i === msIdx, last = i === all.length - 1; return { ...m, active: a,
       enter: () => { this.msHold = true; this.setState({ ms: i }); }, leave: () => { this.msHold = false; },
       circle: a ? '#F59067' : '#2A3373', haloW: a ? '8px' : '0px', yearSize: m.badge.length > 3 ? '14px' : '15px',
-      rows: a ? '1fr' : '0fr', descOp: a ? 1 : 0, weight: a ? 700 : 500, titleFg: a ? '#2A3373' : '#5B5F63',
+      rows: a ? '1fr' : '0fr', descOp: a ? 1 : 0, weight: a ? 700 : 500, titleFg: a ? '#FFFFFF' : '#D7DEFF',
       tail: last ? 'calc(24px - var(--g))' : '0px', seg: (i < msIdx || (last && a)) ? 1 : 0 }; });
     const msCard = milestones[msIdx];
     const storyData = [
@@ -1055,7 +1055,7 @@ class Component extends DCLogic {
     ];
     const story = { ...storyData[s.story], n: '0' + (s.story + 1) };
     const storyImgs = storyData.map((d, i) => ({ ...d, op: i === s.story ? 1 : 0, tf: i === s.story ? 'scale(1) translateY(0)' : (i < s.story ? 'scale(0.9) translateY(-40px)' : 'scale(0.9) translateY(40px)') }));
-    const storyTabs = storyData.map((d, i) => ({ name: d.name, go: () => this.goStory(i), bg: i === s.story ? '#4D4D9F' : 'transparent', fg: i === s.story ? '#FFFFFF' : '#4D4D9F', bd: i === s.story ? '#4D4D9F' : '#C9CFEF' }));
+    const storyTabs = storyData.map((d, i) => ({ name: d.name, go: () => this.goStory(i), bg: i === s.story ? '#4D4D9F' : 'transparent', fg: i === s.story ? '#FFFFFF' : '#FFFFFF', bd: i === s.story ? 'rgba(255,255,255,0.7)' : 'rgba(255,255,255,0.25)' }));
     const capabilities = [
       { name: 'Injection moulding', mat: 'PE · PP · FILLED PP', desc: 'Hospital bed parts, plus pharma, automotive and auto filter components.' },
       { name: 'Blow moulding', mat: 'HDPE · PP · FILLED PP', desc: 'Healthcare furniture parts alongside pharma, chemical, food, agrochemical and automotive.' },
@@ -1076,7 +1076,7 @@ class Component extends DCLogic {
       const a = i === s.step;
       return { num: String(i + 1).padStart(2, '0'), name: n, desc: d, active: a,
         select: () => { this.hold = true; clearTimeout(this.holdT); this.holdT = setTimeout(() => { this.hold = false; }, 8000); this.setState({ step: i }); },
-        numColor: a ? '#F59067' : '#959EA9', labelColor: a ? '#2A3373' : '#959EA9', size: a ? '28px' : '19px',
+        numColor: a ? '#F59067' : '#A9B1E0', labelColor: a ? '#FFFFFF' : '#A9B1E0', size: a ? '28px' : '19px',
         bar: a ? '100%' : '0%', barT: a && m ? 'width 4200ms linear' : 'none' };
     });
     const quality = [
@@ -1110,8 +1110,8 @@ class Component extends DCLogic {
     ].map((f, i) => { const o = i === s.faq; return { ...f, open: o ? 'true' : 'false',
       toggle: () => this.setState({ faq: o ? null : i }),
       rows: o ? '1fr' : '0fr', op: o ? 1 : 0, rot: o ? '0deg' : '90deg',
-      qFg: o ? '#2A3373' : '#4D4D9F', bd: o ? 'rgba(245,144,103,0.55)' : '#E4E7EF', sh: o ? '0 16px 34px rgba(42,51,115,0.08)' : 'none',
-      icBg: o ? '#F59067' : '#FFFFFF', icBd: o ? '#F59067' : '#E4E7EF', icFg: o ? '#FFFFFF' : '#F59067' }; });
+      qFg: o ? '#FFFFFF' : '#FFFFFF', bd: o ? 'rgba(245,144,103,0.55)' : 'rgba(255,255,255,0.14)', sh: o ? '0 16px 34px rgba(42,51,115,0.08)' : 'none',
+      icBg: o ? '#F59067' : '#2A3175', icBd: o ? '#F59067' : 'rgba(255,255,255,0.14)', icFg: o ? '#FFFFFF' : '#F59067' }; });
     // Sky Blue and Teal Green are real renders (p12 / p10); the others hue-shift p12's blue panels.
     const cwIdx = s.cw ?? 0;
     const colourways = [
@@ -1131,7 +1131,7 @@ class Component extends DCLogic {
     ];
     const qaN = this.motion() ? s.step % 5 : 4;
     const qaSteps = ['Material', 'Moulding', 'Testing', 'PDI'].map((name, i) => { const d = i < qaN; return { name,
-      bg: d ? '#F59067' : '#FFFFFF', bd: d ? '#F59067' : '#C9CFEF', op: d ? 1 : 0, fg: d ? '#2A3373' : '#6B7280' }; });
+      bg: d ? '#F59067' : '#2A3175', bd: d ? '#F59067' : 'rgba(255,255,255,0.25)', op: d ? 1 : 0, fg: d ? '#FFFFFF' : '#D7DEFF' }; });
     const custom = s.mode === 'custom';
     return {
       qaSteps, qaLine: `calc(75% * ${Math.max(0, qaN - 1) / 3})`, ringOff: s.ringOn || !this.motion() ? 0 : 326.7,
@@ -1142,8 +1142,8 @@ class Component extends DCLogic {
       marqueeMats: [...mats, ...mats], marqueeCerts: [...certs, ...certs],
       story, storyImgs, storyTabs, capabilities, steps, step: steps[s.step], quality, regions, resources,
       setQuote: () => this.setState({ mode: 'quote' }), setCustom: () => this.setState({ mode: 'custom' }),
-      tabQuoteBg: custom ? 'transparent' : '#2A3373', tabQuoteFg: custom ? '#2A3373' : '#FFFFFF',
-      tabCustomBg: custom ? '#2A3373' : 'transparent', tabCustomFg: custom ? '#FFFFFF' : '#2A3373',
+      tabQuoteBg: custom ? 'transparent' : '#2A3373', tabQuoteFg: custom ? '#FFFFFF' : '#FFFFFF',
+      tabCustomBg: custom ? '#2A3373' : 'transparent', tabCustomFg: custom ? '#FFFFFF' : '#FFFFFF',
       fieldLabel: custom ? 'Component to develop' : 'Component & quantity',
       fieldPh: custom ? 'e.g. moulded footboard for new bed' : 'e.g. Raksha 4 · 2,000 sets / yr',
       submitLabel: custom ? 'Start a Custom Discussion' : 'Send Request for Quote',
