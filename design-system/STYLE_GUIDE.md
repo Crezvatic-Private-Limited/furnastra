@@ -58,7 +58,7 @@ Raleway's default old-style figures look uneven.
 | Card title (small) | Raleway 600, `clamp(18px,1.6vw,30px)` depending on tile |
 | Category label | `11.5–12px`, weight 600, `letter-spacing:0.08em`, uppercase, `#F59067` (white on orange or navy) |
 | Chips | `11.5–12px`, weight 600, pill `border-radius:999px`, padding `5–6px 10–11px`; on white: bg `#EEF0FB`, text `#4D4D9F`; on dark or photo: `rgba(255,255,255,.16)` + 1px `rgba(255,255,255,.22)` border |
-| Big numbers / stats | Raleway 500–600, lining nums, `clamp(28px,3vw,60px)` |
+| Big numbers / stats | Raleway **700** (bold, user request Oct 2026), `lining-nums tabular-nums`, hero strip `clamp(34px,3.1vw,46px)`; a text prefix like "ISO" at 0.5em |
 | Mono tags / captions | JetBrains Mono `10–10.5px`, `letter-spacing:0.08–0.12em` |
 
 ---

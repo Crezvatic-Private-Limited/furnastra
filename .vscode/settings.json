@@ -1,0 +1,5 @@
+{
+  // The pages use {{ }} template placeholders inside style="" attributes,
+  // which VS Code's CSS checker reports as errors. They render correctly.
+  "html.validate.styles": false
+}

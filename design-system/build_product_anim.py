@@ -2,7 +2,7 @@
 
 assets/products/FARNASTRA_*.svg  (black = part Furnastra makes, .cls-1 grey = rest)
   -> assets/products/anim/FARNASTRA_*.svg
-     only the black parts, recoloured orange (navy for the orange Aakaar card);
+     only the black parts, recoloured orange;
      grey parts hidden. index.html lays this over the drawing (.pd-a) and sweeps
      a CSS mask band across it on card hover, so the motion starts instantly.
 
@@ -12,7 +12,7 @@ import pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent / 'assets' / 'products'
 OUT = ROOT / 'anim'
-COLOUR = {'AKAAR': '#2A3373'}  # orange card: an orange highlight would vanish
+COLOUR = {}  # per-drawing override; all cards are light/navy now, so orange everywhere
 
 GREY = re.compile(r'<(?:path|polygon|polyline|rect|circle|ellipse|line)\b[^>]*class="cls-1"[^>]*/>')
 

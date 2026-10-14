@@ -60,7 +60,7 @@ def decl(m):
     return f"{prop}:{value}"
 
 
-s = SRC.read_text()
+s = SRC.read_text(encoding="utf-8")
 # CSS declarations, wherever they live: <style>, style="", style-hover="", JS strings
 s = re.sub(r"(?<![\w-])([a-zA-Z-]+)\s*:\s*([^;\"'{}]*#[0-9A-Fa-f]{6}[^;\"'{}]*|[^;\"'{}]*rgba\([^;\"'{}]*)", decl, s)
 
@@ -68,7 +68,9 @@ def js_key(m):
     """Colours held in component state, e.g. `bg: a ? '#F59067' : '#FFFFFF'`, classified by key name."""
     key, value = m.group(1), m.group(2)
     k = key.lower()
-    if k.endswith("bg") or k == "ring":
+    if k == "mk":  # stat-card F-mark watermark: only the pale one on white cards needs darkening
+        table = {"#EEF0FB": BG["#EEF0FB"]}
+    elif k.endswith("bg") or k == "ring":
         table = BG
     elif k.endswith("bd"):
         table = BORDER
@@ -83,9 +85,30 @@ JS_VAL = r"(?:[^,\n{}()]|\([^)]*\))*"  # a value up to the next comma, keeping r
 s = re.sub(rf"\b(\w+):\s*({JS_VAL}'(?:#[0-9A-Fa-f]{{6}}|rgba\([^)]*\))'{JS_VAL})", js_key, s)
 s = re.sub(r'\b(fill|stroke)="(#[0-9A-Fa-f]{6})"', lambda m: f'{m.group(1)}="{TEXT.get(m.group(2).upper(), m.group(2))}"', s)
 
-# product line drawings on the (now dark) light cards: black Furnastra parts -> white, grey context -> mid grey
-s = re.sub(r'(<img src="assets/products/FARNASTRA_[^"]*"[^>]*?)filter:drop-shadow\(0 0 0\.5px rgba\(0,0,0,0\.55\)\)',
-           r'\1filter:invert(1) brightness(3) drop-shadow(0 0 0.5px rgba(255,255,255,0.5))', s)
+# product line drawings on the (now dark) cards: the whole drawing is a dull navy tint (white at 30%),
+# then the Furnastra-made parts -- the same anim/ layer the orange hover sweep uses -- are laid on top
+# in white, so only Furnastra's parts stand out and the rest of the furniture (Rahat, Rudra) stays dull
+DRAWING = re.compile(r'<img src="(assets/products/FARNASTRA_[^"]*)" alt="([^"]*)" style="([^"]*)'
+                     r'filter:drop-shadow\(0 0 0\.5px rgba\(0,0,0,0\.55\)\)([^"]*)">(<img class="pd-a" src="([^"]*)")')
+
+
+def drawing(m):
+    src, alt, pre, post, pd_a, anim = m.groups()
+    dull = f'<img src="{src}" alt="{alt}" style="{pre}filter:brightness(0) invert(1);opacity:0.3{post}">'
+    white = (f'<img class="pd-w" src="{anim}" alt="" aria-hidden="true" style="{pre}'
+             f'filter:brightness(0) invert(1) drop-shadow(0 0 0.5px rgba(255,255,255,0.55)){post}">')
+    return dull + white + pd_a
+
+
+s = DRAWING.sub(drawing, s)
+assert not re.search(r'<img src="assets/products/FARNASTRA_[^>]*rgba\(0,0,0,0\.55\)', s), "product drawing not converted"
+# navy feature cards (Raksha, Jivan) would vanish into the dark section surface: lift them to brand indigo
+for sid in ("products", "products-2"):
+    if f'<section id="{sid}"' not in s:
+        continue
+    a = s.index(f'<section id="{sid}"')
+    b = s.index('</section>', a)
+    s = s[:a] + s[a:b].replace('background:#2A3373', 'background:#4D4D9F') + s[b:]
 # dark-header logo (has its own ™)
 s = s.replace('<img src="assets/logo-header.png" alt="Furnastra" style="height:clamp(28px,2.8vw,38px);width:auto">',
               '<img src="assets/logo-header-dark.png" alt="Furnastra" style="height:clamp(28px,2.8vw,38px);width:auto">')
@@ -96,5 +119,5 @@ s = s.replace('<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>',
               '<circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/>')
 
 assert "index-dark.html" not in s, "toggle not flipped"
-OUT.write_text(s)
+OUT.write_text(s, encoding="utf-8")
 print(f"wrote {OUT.name}")
