@@ -25,10 +25,10 @@ html:not(.lenis){scroll-behavior:smooth}
 .nav-dd{position:relative}
 .dd-chev{transition:transform 250ms ease}
 .dd-menu{position:absolute;top:100%;left:-18px;padding-top:18px;opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity 200ms ease,transform 200ms ease,visibility 200ms}
-.nav-dd:hover .dd-menu,.nav-dd:focus-within .dd-menu{opacity:1;visibility:visible;transform:none}
-.dd-menu{pointer-events:none}.nav-dd:hover .dd-menu,.nav-dd:focus-within .dd-menu{pointer-events:auto}
-.nav-dd:not(:hover):not(:focus-within) .dd-menu *{visibility:hidden!important}
-.nav-dd:hover .dd-chev,.nav-dd:focus-within .dd-chev{transform:rotate(180deg)}
+.nav-dd:hover .dd-menu,.nav-dd:has(:focus-visible) .dd-menu{opacity:1;visibility:visible;transform:none}
+.dd-menu{pointer-events:none}.nav-dd:hover .dd-menu,.nav-dd:has(:focus-visible) .dd-menu{pointer-events:auto}
+.nav-dd:not(:hover):not(:has(:focus-visible)) .dd-menu *{visibility:hidden!important}
+.nav-dd:hover .dd-chev,.nav-dd:has(:focus-visible) .dd-chev{transform:rotate(180deg)}
 .dd-panel{min-width:240px;background:#FFFFFF;border:1px solid #E4E7EF;border-radius:14px;box-shadow:0 18px 40px rgba(42,51,115,0.12);padding:8px;display:flex;flex-direction:column}
 .dd-panel a{display:flex;justify-content:space-between;gap:20px;padding:11px 14px;border-radius:9px;font-size:15px;font-weight:600;color:#2A3373}
 .dd-panel a span{font-weight:500;font-size:13px;color:#5B5F63}
@@ -47,10 +47,10 @@ html:not(.lenis){scroll-behavior:smooth}
 .mm-row i{font-style:normal;font-size:13px;color:#C9CFEF;transition:color 200ms,transform 200ms}
 .mm-row::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:3px;background:#F59067;opacity:0;transition:opacity 200ms}
 .mm-pane{position:absolute;left:300px;right:0;top:0;bottom:0;padding:22px 28px;display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:24px;opacity:0;visibility:hidden;transition:opacity 200ms ease,visibility 200ms}
-.mm-fam:hover .mm-row,.mm-fam:focus-within .mm-row,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row{background:#FFFFFF;box-shadow:0 2px 10px rgba(42,51,115,0.06)}
-.mm-fam:hover .mm-row::before,.mm-fam:focus-within .mm-row::before,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row::before{opacity:1}
-.mm-fam:hover .mm-row i,.mm-fam:focus-within .mm-row i,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-row i{color:#F59067;transform:translateX(2px)}
-.mm-fam:hover .mm-pane,.mm-fam:focus-within .mm-pane,.mm-list:not(:hover):not(:focus-within) .mm-fam:first-child .mm-pane{opacity:1;visibility:visible}
+.mm-fam:hover .mm-row,.mm-list:not(:hover) .mm-fam:has(:focus-visible) .mm-row,.mm-list:not(:hover):not(:has(:focus-visible)) .mm-fam:first-child .mm-row{background:#FFFFFF;box-shadow:0 2px 10px rgba(42,51,115,0.06)}
+.mm-fam:hover .mm-row::before,.mm-list:not(:hover) .mm-fam:has(:focus-visible) .mm-row::before,.mm-list:not(:hover):not(:has(:focus-visible)) .mm-fam:first-child .mm-row::before{opacity:1}
+.mm-fam:hover .mm-row i,.mm-list:not(:hover) .mm-fam:has(:focus-visible) .mm-row i,.mm-list:not(:hover):not(:has(:focus-visible)) .mm-fam:first-child .mm-row i{color:#F59067;transform:translateX(2px)}
+.mm-fam:hover .mm-pane,.mm-list:not(:hover) .mm-fam:has(:focus-visible) .mm-pane,.mm-list:not(:hover):not(:has(:focus-visible)) .mm-fam:first-child .mm-pane{opacity:1;visibility:visible}
 .mm-main{position:relative;min-height:330px}
 .mm-crumb{font-size:12px;color:#9AA0AE;margin-bottom:6px}
 .mm-crumb span{color:#F59067;font-weight:600}
@@ -163,7 +163,7 @@ a.news-card,a.news-card:hover{color:inherit}
     <a href="#hero" style="display:flex;align-items:flex-start;gap:2px;flex:none"><img src="assets/logo-header.png" alt="Furnastra" style="height:clamp(28px,2.8vw,38px);width:auto"></a>
     <nav style="display:flex;justify-content:center;align-items:center;gap:clamp(14px,2.4vw,36px);font-size:clamp(13.5px,1.15vw,16px);font-weight:500;letter-spacing:0.01em;flex:1;min-width:0;white-space:nowrap">
       <div class="nav-dd mega">
-        <a href="#products" class="nav-link">Product <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="nav-link" tabindex="0" aria-haspopup="true" style="cursor:default">Product <svg class="dd-chev" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <div class="dd-menu"><div class="mm" style="position:relative">
           <div class="mm-side">
             <div class="mm-label">PRODUCT FAMILIES</div>
@@ -633,7 +633,7 @@ GET IN TOUCH
       <div class="why-tile" style="grid-column:span 2;background:#FFFFFF;border:1px solid #E4E7EF;justify-content:space-between">
         <span style="position:relative;display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
           <span style="position:relative;display:flex;flex-direction:column;gap:5px"><span style="font-size:11.5px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#F59067">OEM experience</span><span style="font-family:Raleway,system-ui,sans-serif;font-weight:600;font-size:clamp(18px,1.5vw,22px);line-height:1.2;letter-spacing:-0.01em;color:#4D4D9F">Decades of OEM experience</span></span>
-          <span style="display:flex;align-items:baseline;gap:6px;font-family:Raleway,system-ui,sans-serif;color:#4D4D9F;line-height:1"><span data-count="35" data-suffix="+" style="font-weight:600;font-size:clamp(40px,3.8vw,58px);letter-spacing:-0.02em">36+</span><span style="font-weight:600;font-size:clamp(15px,1.3vw,19px);color:#F59067">yrs</span></span>
+          <span style="display:flex;align-items:baseline;gap:6px;font-family:Raleway,system-ui,sans-serif;color:#4D4D9F;line-height:1"><span data-count="36" data-suffix="+" style="font-weight:600;font-size:clamp(40px,3.8vw,58px);letter-spacing:-0.02em">36+</span><span style="font-weight:600;font-size:clamp(15px,1.3vw,19px);color:#F59067">yrs</span></span>
         </span>
         <div style="position:relative;margin:0 8px clamp(56px,7.6vh,66px) 7px">
           <span style="position:absolute;left:0;right:0;top:0;height:2px;background:#F3C9B3"></span>
